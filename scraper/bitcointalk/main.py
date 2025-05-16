@@ -55,7 +55,6 @@ def fetch_all_topics() -> list:
             break
 
         time.sleep(0.8)
-        break
 
     return topics
 
@@ -72,6 +71,10 @@ def get_documents_from_post(url: str) -> dict:
     first_tr_class = table.find('tr').get('class')
     tr_list = table.find_all('tr', class_=first_tr_class)
     logger.info(f"Found {len(tr_list)} posts in {url}")
+    body_text = ""
+    _id = None
+    title = None
+    post_url = None
 
     documents = []
     for tr in tr_list:
@@ -79,48 +82,41 @@ def get_documents_from_post(url: str) -> dict:
             author = tr.select_one('.poster_info > b > a').text
         except:
             continue
+        
+        # print(author)
 
-        if author not in authors:
-            continue
+        # if author not in authors:
+        #     print("con")
+        #     continue
+            
+        # print("here")
 
         logger.info(f"Post by: {author}")
-        date_text = tr.select_one('.td_headerandpost .smalltext').text.strip()
+        
 
-        # Extract the actual date part from the string
-        if 'Last edit:' in date_text:
-            date_text = date_text.split('Last edit:')[-1].strip()
-
-        date_parts = date_text.split('by')[0].strip()
-
-        if 'Today at' in date_parts:
-            date_parts = date_parts.replace('Today at', datetime.now().strftime('%B %d, %Y,'))
-
-        date = datetime.strptime(date_parts, '%B %d, %Y, %I:%M:%S %p')
-        post_url = tr.select_one('.td_headerandpost .subject > a').get('href')
-        title = tr.select_one('.td_headerandpost .subject > a').text
+        if not post_url : 
+            post_url = tr.select_one('.td_headerandpost .subject > a').get('href')
+        if not title : 
+            title = tr.select_one('.td_headerandpost .subject > a').text
+            
         body = tr.select_one('.td_headerandpost .post')
-        message_number = tr.select_one('.td_headerandpost .message_number').text
 
         for tag in body.select('.quoteheader, .quote'):
             tag.decompose()
 
-        body = body.text.strip()
-        indexed_at = datetime.now().isoformat()
-        _id = post_url[post_url.index('#msg') + 4:]
+        body_text += f"\n\nAuthor : {author}\n"
+        body_text += body.text.strip()
+        
+        if not _id :
+            _id = post_url[post_url.index('#msg') + 4:]
 
-        document = {
-            'authors': [author],
-            'body': body,
-            'body_type': 'raw',
-            'domain': 'https://bitcointalk.org/',
-            'url': post_url,
-            'title': title,
-            'id': f'bitcointalk-{_id}',
-            'created_at': date.isoformat(),
-            'indexed_at': indexed_at,
-            'type': 'topic' if message_number == "#1" else "post"
-        }
-        documents.append(document)
+    document = {
+        'body': body_text,
+        'domain': 'https://bitcointalk.org/',
+        'title': title,
+        'id': f'bitcointalk-{_id}',
+    }
+    documents = [document]
 
     logger.info(f"Filtered {len(documents)} posts in {url}")
     return {'documents': documents, 'urls': urls}
@@ -137,6 +133,23 @@ def fetch_posts(url: str):
         time.sleep(1)
     return documents
 
+def fetch_post(url: str):
+    resp = get_documents_from_post(url)
+    document = resp['documents']
+    urls = resp['urls']
+
+    documents = []
+    for url in urls:
+        logger.info(f"Downloading {url}...")
+        resp = get_documents_from_post(url)
+        documents.extend(resp['documents'])
+        time.sleep(1)
+    
+    for item in documents:
+        document[0]["body"] += item["body"]
+    
+    return document
+
 def main() -> None:
     filename = os.path.join(DATA_DIR, 'bitcointalk', 'topics.json')
     topics = []
@@ -150,17 +163,16 @@ def main() -> None:
             topics = json.load(f)
 
     logger.info(f"Found {len(topics)} topics")
-    start_index = int(START_INDEX)
+    start_index = 0
     docs  = []
     
     for i in range(start_index, len(topics)):
         topic = topics[i]
         logger.info(f"Processing {i + 1}/{len(topics)}")
-        documents = fetch_posts(topic)
+        documents = fetch_post(topic)
         docs.extend(documents)
     
-    
-    with open("bitcointalk.json", "w") as f:
+    with open("./data/bitcointalk.json", "w") as f:
         json.dump(docs, f, indent=4)
 
 if __name__ == "__main__":

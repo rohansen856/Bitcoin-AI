@@ -52,7 +52,7 @@ if __name__ == "__main__":
         documents.append(document)
     print("Number of documents: " + str(len(documents)))
 
-    with open("bitcoinbook.json", "w") as f:
+    with open("./data/bitcoinbook.json", "w") as f:
         json.dump(documents, f, indent=4)
 
     # Close the file

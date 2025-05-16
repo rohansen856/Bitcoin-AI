@@ -73,7 +73,7 @@ def download_dumps(path, page_visited_count, max_page_count=1):
                 continue
         logger.info('----------------------------------------------------------\n')
         if next_page_link:
-            download_dumps(next_page_link, page_visited_count)
+            download_dumps(next_page_link, page_visited_count, max_page_count)
 
 def get_thread_urls_with_date(pre_tags):
     urls_dates = []
@@ -141,6 +141,9 @@ def parse_dumps():
                 title = soup.find_all('b')[1].text
                 title = title.replace("[Bitcoin-development] ", "").replace("[bitcoin-dev] ", "").replace(
                     "[bitcoindev] ", "").replace("\t", "").strip()
+                body_text = title
+                authors = []
+                id_doc = f"mailing-list-{u}"
 
                 urls_with_date = get_thread_urls_with_date(soup.find_all('pre'))
                 for index, (url, date) in enumerate(urls_with_date):
@@ -169,43 +172,34 @@ def parse_dumps():
                         # for c in content.find_all(lambda tag: tag.name in {'b', 'u'} or any(
                         #         href_contains_text(tag, text) for text in [href.replace("#", "")[1:],u])):
                         #     c.decompose()
-                        body_text = preprocess_body_text(content.text)
+                        body_text += f"\n{preprocess_body_text(content.text)}"
 
                         # Scraping author
-                        author = get_author(body_text)
+                        authors.append(get_author(body_text))
 
                         doc_id = f"mailing-list-{year}-{month:02d}-{href.replace('#', '')}"
-                        document = {
-                            "id": doc_id,
-                            "authors": [author],
-                            "title": title,
-                            "body": body_text,
-                            "body_type": "raw",
-                            "created_at": date,
-                            "domain": CUSTOM_URL,
-                            "thread_url": main_url,
-                            "url": f"{main_url}{href}"
-                        }
-
-                        if index == 0:
-                            document['type'] = "original_post"
-                        else:
-                            document['type'] = "reply"
-                        doc.append(document)
                     except Exception as e:
                         logger.info(f"{e} \nORIGINAL_URL: {main_url}\n{traceback.format_exc()}")
                         continue
+                    
+                document = {
+                    "id": id_doc,
+                    "authors": authors,
+                    "title": title,
+                    "body": body_text,
+                    "body_type": "raw",
+                    "domain": CUSTOM_URL,
+                    "thread_url": main_url
+                }
+
+                # if index == 0:
+                #     document['type'] = "original_post"
+                # else:
+                #     document['type'] = "reply"
+                
+                doc.append(document)
+            
     return doc
-
-def index_documents(docs):
-    for doc in docs:
-
-        resp = document_view(index_name=INDEX_NAME, doc_id=doc['id'])
-        if not resp:
-            _ = document_add(index_name=INDEX_NAME, doc=doc, doc_id=doc['id'])
-            logger.success(f'Successfully added! ID: {doc["id"]}')
-        else:
-            logger.info(f"Document already exist! ID: {doc['id']}")
 
 
 if __name__ == "__main__":
@@ -216,5 +210,5 @@ if __name__ == "__main__":
     documents = parse_dumps()
     
     # Save to a file
-    with open('mailing_list.json', 'w', encoding='utf-8') as f:
+    with open('./data/mailing_list.json', 'w', encoding='utf-8') as f:
         json.dump(documents, f, ensure_ascii=False, indent=2)

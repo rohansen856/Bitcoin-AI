@@ -3,6 +3,7 @@ import json
 import os
 import sys
 from datetime import datetime
+import charset_normalizer
 
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
@@ -16,7 +17,7 @@ load_dotenv(dotenv_path)
 
 # Get environment variables for path and index name
 ARCHIVE = "archive"
-SUB_ARCHIVE = "posts"
+SUB_ARCHIVE = "rendered-topics"
 
 # Specify the path to the folder containing JSON files
 folder_path = os.path.join(os.getcwd(), ARCHIVE, SUB_ARCHIVE)
@@ -48,7 +49,6 @@ def strip_attributes_but_urls(html):
                 if attr not in ['href', 'src']:
                     del tag.attrs[attr]
     return str(soup)
-
 
 def index_documents(files_path):
     docs = []
@@ -92,7 +92,43 @@ def index_documents(files_path):
                     
                 docs.append(doc)
                 
-    with open("delvingbitcoinn.json", "w") as f:
+    with open("./data/delvingbitcoinn.json", "w") as f:
+        json.dump(docs, f, indent=4)
+    f.close()
+
+def process_topic(files_path):
+    docs = []
+    
+    # Iterate through files in the specified path
+    for root, dirs, files in os.walk(files_path):
+        for file in files:
+            if file.endswith('.md'):
+                file_path = os.path.join(root, file)
+                log.info(f'Fetching document from file: {file_path}')
+                
+                id = file_path.split("-")[-1]
+                id = id.split(".")[0][2:]
+                title = file_path.split("\\")[-1][11:].split(f"id{id}")[0]
+                
+
+                # Load JSON data from file
+                import chardet
+                with open(file_path, 'rb') as f:
+                    document = f.read()
+                    result = chardet.detect(document)
+                    encoding = result['encoding']
+                    document = document.decode(encoding, errors="ignore")
+                
+                doc = {
+                    'id': id,
+                    'title': title,
+                    'source' : "devlingbitcoin",
+                    'body': document
+                }
+                    
+                docs.append(doc)
+                
+    with open("./data/delvingbitcoinn.json", "w") as f:
         json.dump(docs, f, indent=4)
     f.close()
 
@@ -100,5 +136,6 @@ def index_documents(files_path):
 if __name__ == "__main__":
     download_dumps()
     log.info(f"Looking data in folder path: {folder_path}")
-    index_documents(folder_path)
+    # index_documents(folder_path)
+    process_topic(folder_path)
     log.info(f'{("-" * 20)}DONE{("-" * 20)}')

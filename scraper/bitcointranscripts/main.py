@@ -103,7 +103,7 @@ async def main():
     documents = parse_posts(GLOBAL_URL_VARIABLE)
     logger.info(f"Filtering existing {len(documents)} documents... please wait...")
 
-    with open("bitcointranscripts.json", "w") as f:
+    with open("./data/bitcointranscripts.json", "w") as f:
         json.dump(documents, f, indent=4)
 
 if __name__ == '__main__':

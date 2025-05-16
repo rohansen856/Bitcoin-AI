@@ -2,6 +2,12 @@
 __pycache__/
 *.py[cod]
 *$py.class
+data/
+bitcoinops_dir/
+bitcointranscripts/
+mailing-list/
+archive/
+bitcointalk/
 
 # C extensions
 *.so

@@ -1,7 +1,7 @@
 import os
 import shutil
 from loguru import logger
-from scraper.btc_stack_exchange.utils import download_dump, extract_dump
+from utils import download_dump, extract_dump
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 os.makedirs(DATA_DIR, exist_ok=True)

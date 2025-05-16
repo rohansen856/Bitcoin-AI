@@ -100,7 +100,7 @@ async def main():
     all_topics = dir_walk(os.path.join(DIR_PATH, TOPIC_DIR), "topic")
     all_posts.extend(all_topics)
     
-    with open("bitcoinops.json", "w") as f:
+    with open("./data/bitcoinops.json", "w") as f:
         json.dump(all_posts, f, indent=4)
 
 

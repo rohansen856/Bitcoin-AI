@@ -113,6 +113,7 @@ class Topic:
 
     def save_rendered(self, dir: Path):
         """Write the rendered (.md) topic to disk."""
+        
         date = str(self.get_created_at().date())
         filename = f"{date}-{self.slug}-id{self.id}.md"
         folder_name = self.get_created_at().strftime('%Y-%m-%B')
@@ -120,7 +121,8 @@ class Topic:
         full_path.parent.mkdir(parents=True, exist_ok=True)
         log.info(f"saving topic markdown {self.id} to {full_path}")
         markdown = f"# {self.raw['title']}\n\n{self.markdown}"
-        full_path.write_text(markdown)
+        
+        full_path.write_text(markdown, encoding="utf-8")
 
     def get_topic(self) -> PostTopic:
         return PostTopic(
@@ -146,7 +148,7 @@ def download_dumps() -> None:
     target_dir = args().target_dir
     target_dir = Path(target_dir) if not isinstance(target_dir, Path) else target_dir
 
-    (posts_dir := target_dir / 'posts').mkdir(parents=True, exist_ok=True)
+    # (posts_dir := target_dir / 'posts').mkdir(parents=True, exist_ok=True)
     (topics_dir := target_dir / 'rendered-topics').mkdir(parents=True, exist_ok=True)
 
     metadata_file = target_dir / '.metadata.json'
@@ -186,7 +188,7 @@ def download_dumps() -> None:
                 if no_new_posts:
                     break
 
-            post.save(posts_dir)
+            # post.save(posts_dir)
 
             if not max_created_at:
                 # Set in this way because the first /post.json result returned will be
@@ -225,14 +227,11 @@ def download_dumps() -> None:
         try:
             data = http_get_json(f"/t/{topic.id}.json")
             body = http_get(f"/raw/{topic.id}")
-            page_num = 2
 
             if not body:
                 log.warning(f"could not retrieve topic {topic.id} markdown")
                 continue
-
-            while more_body := http_get(f"/raw/{topic.id}?page={page_num}"):
-                body += f"\n{more_body}"
+    
 
             t = Topic.from_json(data, body)
             t.save_rendered(topics_dir)
@@ -241,7 +240,6 @@ def download_dumps() -> None:
             time.sleep(0.3)
         except:
             pass
-
 
 if __name__ == "__main__":
     download_dumps()
