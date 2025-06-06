@@ -1,0 +1,2230 @@
+so started first adjustability right so
+here's the actual first commit colony
+goes October 27th 2015 and this is
+basically like when I was in school
+still finishing up school and this is
+basically mostly doing my winter break
+crank so those kind of like the first
+like major spring that we had in terms
+of my code we talked about like you know
+like wearable ended we're using as far
+the mice insane coming architecture of
+the daemon and so on and some fun facts
+like there was something with melanie
+was like to call the plasma right but
+before we made about open source that
+goes like a degenerate places to rename
+it to LMD because I was like you know we
+used to be the core kind of like you
+know good to CTE on me being my never
+caiman so yeah I was cops that came out
+you know afterwards but I was first
+denied anything starting to work on LME
+full-time in 16 yeah quite some time now
+and at that point like if you look at
+the kind of like contributor history
+okay you see like a big spot afterwards
+basically it was like to divert a break
+and then nothing
+you know school finals ta you know
+invading and the boo seriously as far as
+the police timeline we had on video not
+one initially in general points home
+team and that was basically oh we have a
+thing it mostly works I think by it by
+that you could basically you can set
+payments you couldn't connect appears
+there was no multi how there wasn't a
+finding the panel of indications then we
+had about to put on so you had a little
+more in commitments you know we could do
+things like I said payments over there
+then there's one up to me like most
+recently before this recent one now it's
+kind of going for like really flaky more
+payments we have you know so but not all
+of the
+counter peddling we didn't have we have
+every first-time conservation system
+will they know indeed to change channels
+and then now we're here because on the
+own up for but that's obviously the
+centimeter list and I haven't even our
+four members because this actually the
+first released that supports payment
+right so beforehand we have only tested
+Senate support people got really really
+excited at that anyway so we can let
+this crew school from updating because
+you know we had planned vacations in the
+future so we knew that if you had
+channels you have to close them all down
+and there was a little mishap some
+people you're not gonna communicated
+right what was the work with it I know
+we often are forbade was no sneaking
+around like security and fault tolerance
+so before you could they were their
+backups of all you know the thing like
+if you like crash then with everything
+was memory would forgot I can't afford a
+show sees you couldn't resume any kind
+of like multi-step you know contract
+handles like that but all that's been
+taken care of it's now released and you
+knows the person is gonna be kind of a
+couple people were not made it right
+before otherwise I can't be like okay we
+don't have pretty good degree of
+confidence that people will that things
+go down Helen do you want to print
+itself and also if it ever crashes
+that's able to resume where it was
+actually continued that's that stickers
+like a pretty big monster order to make
+example alright so on the LEDs like it's
+kind of the first class style you know
+it depends if you're good right
+they don't have several advantages you
+know meeting about like you know I think
+it's a pretty good kind of a choice for
+like creating two printer software in
+general and usually the Grateful guess I
+could write years ago when I don't like
+to see you look less Russell never else
+and I think these are some of the
+reasons why we use it
+and
+I think we've had pretty good developer
+uptake people you know typically find
+that equipment is pretty easy to jump
+into
+because the way I'm just like kind of
+familiar right if you don't see you know
+Python you kind of know go it looks the
+same maybe there's a word to you or the
+most part before right so one good thing
+let go and has a very very big country
+support right so he'll Indian some is
+very very good current pathology to my
+native the architecture itself and are
+the main things that we use though then
+go to you this are a challenging origin
+right so good needs basic have like a
+lightweight thread it's like a green
+thread that's my part of me looks and
+then it has these things called check
+out right so you have these know yeah
+these threads are they communicate with
+each other using channels so I can like
+send message back before pretty easily
+if you think about this this makes it
+pretty easy to kind of a quick these
+kind of like concurrent Arctic right so
+maybe how it gets pretty service takes
+the thing to be a producer
+but you were and they go down and you
+pretend my case because it easily
+excuse me heavily it's like I think the
+tunes maybe what makes the tools like
+this is perfect right so we're good was
+very very easy to do like CPU innkeeper
+mileage like I always we can type
+robotic curveball
+you know big memory you know I'm using
+time I see if you program like makes it
+very easy with us we call people you can
+also actually république hit a server to
+get like a goroutine dumb things like
+that like that actually has a resident
+detector right so if you ever done to
+curb every the residents would suck you
+super hard to find and like you know
+they're kind of a fan of but you get
+over okay right but go ahead with the
+claw resident expert slow zone career
+maybe local context unless you kind of
+catch all these issues right so we
+always run our tests with this new
+people running develop local so if the
+casual basically just stop everything
+and then don't be that you know the
+staffers Oh concurrent right on map or
+go like me to read after write
+dependence each other thing and they're
+the cool thing it may just have
+something going empty and then they put
+brought in to you that everyone to code
+it looks the same right so is that this
+matters will be more my Clark
+we don't have to worry about oh do we do
+a semicolon that the brace or a
+compressor thought you know what the
+space do we do look over you like this
+right you're clear you to go to you then
+boom everything was the same
+this is good because you can you know
+kind of get to know everyone support
+everyone's cool it's the same sure
+there's no kind of argument code review
+about like oh what's the proper cosign
+when a girl's dog loans in our mentally
+everything is a library is super super
+expensive are they similar we have
+everything you need as networking you
+know it has like its own destination
+you're guilty of us has based you have
+to do every need in order to the later
+constants the cool thing they basically
+produced these technical you like
+binaries by default and this is nice
+because I can just take it in there the
+cool thing about this cycle Costco
+college super should be used for any
+platform at all and usually never gonna
+be monitored code basically if you write
+it in kampala relevant on the system the
+time to have things around maybe looking
+at 32% permit with those really want
+that potential and it's like you know I
+like this group that you know compiles
+were like you know like MIPS like power
+BCE like PST just everything pretty
+easily which is nice
+no you know my probably think more think
+what go is that it's a very very simple
+language practice it was like let me
+just I was very very simple personalized
+wouldn't even need a table to actually
+parse it and resolve you can kind of
+like focus on the puppet hand we're
+adding like Oh am I using the public you
+know like sealed class trade like bow
+net there's nothing right write your
+code as marriage that woman that you
+folks are pad the final thing that we
+like about goods is the really concerned
+about is called HTC suite right so this
+is ready to go as well and they're
+basically anything you need a bit quick
+this library has so it seems like you
+know tech protections parsing things
+addresses on a pier great network you
+know so that one D is mostly composed of
+libraries in ecstasy sweet pad company
+to actually write a chain we're calling
+out to because we see with yourself
+right
+so I've like this this set of kind of
+abilities made go and also go in Bitcoin
+like a very good choice for everyone say
+hi today with Valentina
+alright so now there are particular
+melody so like any kind is a very
+particular architecture we try to like
+maintain this wherever we're doing and
+things like a review or a new substance
+to the track so for the most part like
+LEDs compose of a set of common
+independent substances right and these
+stuffs threat when concurrently
+microscopic before they use dirty put
+the code base itself to write an
+isolation it right in parallel but they
+usually have to make it with each other
+by this is pretty good because when
+you're reading and you are these
+subsystems you know that only it can
+mutate its own state right there's no
+other thing we have a resolution so in
+the graph you technical stuff like you
+know the state to the existent instead
+in order for me about my own stick and
+you get a better spy ups again a message
+to a car semester I finds my state and
+then maybe I sent a reply back at law
+so this is really cool because now you
+basically have a conditioner system
+within the actual prosthetics off right
+so we you know time we have to do things
+to have like you need to be able to
+ensure that can handle come back
+duplicate message delivery as well
+because if something like you know
+resource that comes back up you need to
+be able to him that message
+you know being received and do get
+manicures the cows much away people my
+message to use regular servers little
+things like that back and the main thing
+is kinda like this like main tenant like
+a problem would go if you don't
+communicate by sharing memory
+essentially everybody to be kidding
+right
+for this me don't have a single shared
+like map that one has a law to and that
+one weekend ago right instead maybe you
+have that map inside was gone goroutine
+people send it your serialize mr. TECA
+modify the state of it and then you can
+actually maybe some of them the message
+like to read the current state of it
+itself and that by itself makes it
+weaker program very good easy to reason
+about right good otherwise kinda like
+okay did I have like the main lock and
+like you know the other lock on the
+entries I haven't watched
+never worry about that business 10
+message to come back and to get much we
+can go on and then do things the other
+cool thing about this is that like we
+can craft for every person pacifically
+between each subsystem by itself
+legislation right so he subsystem
+basically knows that maybe has like a
+particular law or has kind of like you
+know so my last question is you can
+ascend or things that we're going
+together
+get back so we start we can as well we
+can make ski test you know fault
+tolerance their age specifically in a
+particular sound something using unit
+test right
+rather there's kind of hoping you know
+hey hopefully at all our track but focus
+and no you know what muscles we need
+right but the cool thing it's like each
+subsection you have its own longer right
+and this is really really good for
+debugging because you're like oh what
+happens my channel let me like look at
+these subsystems that just does pin on
+the tail updates right or like what
+mentions caming okay now can I crank up
+just like the Peter be messaging a lot
+of things like that
+this is really cool because you know I
+can meet myself I have like a pair
+particularly like a lot and so I think
+that I know understand me I turn this
+off other things that maybe you know
+more importance I think is around like
+you know handling states or message
+about coming in from the other important
+part nominees that anything that
+actually change specific is all the
+factor the way right and then this is
+good because this is how I would support
+things like so right now I need support
+to be TCP
+they couldn't be and entry no as a
+backhand right but you know something
+right now if you have a company you
+basically have like your own API you
+miss to plug into that back if you want
+to write this is but it's pretty easy
+because these are like the main basis we
+have personal is changing a fiber to
+your firebase speed does things that we
+do all the time up you know let me know
+most it's making fruit let me know we're
+not has been spent and then also let me
+know what a new block comes in right and
+if you know things about the couch and
+ways to use those three things all the
+time
+next thing is the signer animation behan
+knows well you know signing so it needs
+to know how to do things like I know say
+the segue I say caches know how to deal
+improperly
+that's cool because he puts that fact of
+the way Randall's other than the crossed
+up with you later on maybe unit like an
+own dedicated hardware device right
+we could even be in like a remote server
+which has other contacts control policy
+to prevent you know people just like
+doing kind of like interweb and stuff
+rather than hold the key to integrity
+changing those themselves and you're
+basically driving to Quito particular
+matter
+so basically we can even have this like
+be Van Horn's a minute something
+activist like give us some dresses and
+keys public keys from using me with the
+chocolate melting prior to signing them
+and in fact we have watched by L which
+basically you can read the blonde chain
+what's the block you know given the
+transaction ursday on the sponsor things
+like that right
+Kumar publishing peace walk about
+very very easily because of the
+attraction we have on here to have set
+up in the deviation test we just know
+that we come and assert the equivalent
+of all of these in therapies together
+ensure a big windy works as well as
+every just even other things but as
+always do education go from maybe like
+two years ago and it wasn't like even
+close to this
+maybe I can point but hope you guys so
+the way it is like anytime there's an
+arrow that either means is come at the
+direct dependency force like passing a
+message to another cell system itself
+right very more than we have why do
+people work right then that we have seen
+Club Ron time brought tide is basically
+this eye cream basically that we have
+top of
+reason with the piping it was in the
+cold nose made by Trevor Carney works
+I'm like signal and like what's
+happening like that favorite kind of
+mastic not very message protocol with
+you very model crypto has some cool
+things around the camp chicks to ensure
+that like you know we have two
+properties but identity hiding like not
+replay it loves your times like that
+then you're right above that we have
+Elmira which does all the framing so
+I've encoding/decoding any messages the
+cool part about the way this is set up
+is that like if you want to just like
+take our code base because everything
+here is like its own individual package
+and just connect to the network and
+listen to you know what's going on you
+can do that right because everything at
+the fair you know - where they're
+tracking away and that actually has two
+unit tests as well right above the we
+have appears that this base you know
+reading writing lesson is different
+peers then we have a server which itself
+it's kind of like handling the estate of
+all computers itself then we have the
+rst server so obviously purposes servers
+be just a part of led itself and that's
+where anytime you're in any application
+they're going to their PCs are correct
+so every server uses something called
+not read well in case they'll get to
+look at later so anytime you know a
+Samaritan basically this kind of error
+potential right so typically you have
+maybe how about usually when password
+you basic have these maybe you look up
+to Kevin you know welcome it before
+looks like massive list come access
+control list instead we do something
+called Elliott it's a we have to have a
+credential system right so I can give
+you a credential essays you can only
+make you address this right and I'd give
+us there are certain state so you try to
+make a channel no that's about right
+then I can make this address I can take
+this dog you know you address Mac
+Wednesday you can only make you pure you
+know segments like what addresses right
+and then you can't make you know Nessa P
+to escape everything else like that so
+those are those capabilities that you
+can basically delegate back room then
+also kind of attenuate it down and this
+is nice because if your basic
+navigational technology you can kind of
+a partition all your boxes and give them
+only there's one Billy that they need
+right so you big challenge you can
+listen to brain voices and you can send
+payments and that that's pretty good
+because from
+like you know harmonization and like
+having kind of like a separate
+responsibility to a bunch all the
+concessions of itself
+we have charity which we use for our
+peace or itself we have RESP epoxy which
+is basically what Boyce you I can make
+it with on the daily itself and then if
+you move right a little bit
+we have the Gospel writers the rank of a
+server so this Vicki you know dealing
+with kind of like change a facebook for
+the viewers I like seeing what's going
+on as far as like you know each channel
+things like that but that you have the
+router to the router you know Huck's
+directly into the gospel could maybe
+it's getting committed to this they try
+to tell me be let me have a show since
+which was kinda like the fabric of L&D
+right - this is like oh like no papers
+package thing whereas basically like has
+served by channels which are all links
+this makes me handling the capabilities
+for a minute now kind of gets that
+little bit later and the movie number
+two we have a sign of the cube right
+right above that who better manager
+right
+so again triangles basically how do we
+do having make new channels right so
+basically watch the stick machine like
+okay I signed you know the ferry
+production so the Commission's action or
+get some broadcast what goes along with
+that and that hooks into above the main
+like three defaces wall controller
+terrifying the bottom bottom I know
+there's a lot that we have few tension
+there speak so this never this goes into
+place where you have coming at my
+confident right so where does it base
+the baby sixties opposite opportunity
+once they return you know CSP was MTV
+most adoptions time walk and if you
+bendin like those back into the law so
+as we saw because we have that kind of
+usable can put ability would use plenty
+of recover in the future we have the
+contract quark record great
+disputes happen right so then any case
+were like somebody stole a kiss upon
+your state or we better change like time
+about something else
+contact court handles that the basically
+communicate initially you know it's like
+it may be the case that though I haven't
+hdl-c and timed out so now I need to
+broadcast and I give that to you shake
+if you take generally the nurse to be
+like you don't want to sort on school
+your maturity maybe it'll kind of blocks
+then perhaps the back
+to the wall and then I don't think of
+the priests sharpener the beachcombers
+come by his own section this space deep
+where that you know justice gets
+dispatched at times and I just I mean
+you know because the contract basically
+has to have like these stipulations
+where here we do this I get all the
+money if that happened the breach our
+biggest notified by TN fire you know
+broadcast transaction the rice discs and
+then he gives a nurse ready maybe to
+print some time logs but that's product
+in architecture everything's right now
+and this is a lot simpler in the past
+maybe like a few of these subsystems
+came up in you know the past year or so
+which we kind of a retractable been
+realized
+we want a little more flexibility in
+certain areas I think I think there may
+be a dozen out and the nice thing how
+there was no test fix things do you
+reason about alright so let's talk about
+I think it's not like navigation
+platform we're just so you know have
+some recently including my lighting is
+basically that's gonna like this new
+developer pumping room right before
+maybe as developer you need to know
+about like oh you know hi guys have you
+TX so what's the sequence value you know
+what's like how do I actually even do
+signature supposed to say calves things
+like that and that can really kind of
+get intense right and then that kind of
+you know hande quite as though because
+maybe people that were document but also
+it just kind of seemed like a reward on
+yourself right and they've been thinking
+that was lightning and so now because we
+have this like you know much more you
+might maybe I was like another layer
+because we have that other way we can
+track the weight and everyone else right
+what I don't get a channel like really
+more no all this does below that right
+there's like a bunch of things going on
+Mikey's sign in a generation sees
+everything else go if you you for the
+channel and I could be it's much much
+simpler API just those little things
+kind of likely to do doing things like
+you don't be doing for services it may
+be like I'm paying you know I'm like
+walking somewhere else Diane I've been
+hooking someone's like you around I
+would pay them via VPN servers actually
+I connect to the router and maybe like
+you know
+like that I knew things like impassable
+party transactions so we did like a demo
+demo of this like maybe like last
+October we should Billy needs like
+Swampert to pay for my current events
+right it's a pretty cool use case
+because otherwise I you know trust
+exchange we get to another chain that I
+think 30 minute 20 minutes is it that
+going against it itself and it's when
+we've been calling these like well house
+it's kind of like a play on my words but
+I think actually on the house themselves
+to melody itself like if you like
+architect this make you know development
+will be like easier right so we wanted
+to become a composite of people make a
+chinois where people will you integrate
+I never changes in my birds and other
+things so we can look like that's what
+the final design of its off so one of
+the main things that we use is GRC so
+every see if you guys don't know is
+basically something I don't turn with a
+Google called study but then they open
+source they can trace your steps like
+anything that with the Google basically
+uses something that's very small you
+ever seen the use of heard of most if
+you all know no risky it's like find
+your solution from apps you can
+basically have like that I get a
+definition of a message and that
+composites like any of mindless right
+now well most any of those languages you
+can use that same you know struck or
+like dictionary of rails in that
+language and the cool thing about this
+or we use this page to be two so this is
+less efficient you don't have one single
+connection that multiple punches a bunch
+of other different messages to between
+themselves and this is cool because now
+that you know you don't have to
+basically you might quit use like a
+specialized decay or hit like a rest
+thing you've basically like you know
+code in your own language right so
+you're in Python like you know you
+basically have a generator in reading
+all this stuff you know send messages or
+you know maybe it's cool if you know
+what you do this by less because that
+you kind of like focus and integrate
+this like very deeply into business
+logic grab might have it okay I'm
+talking led I'm doing my record program
+they kind of look more integrated
+together and then the building rather
+has like three purposes so I can
+basically that you have low to no
+connection to get notifications like
+okay let me know every single time the
+team itself
+and I have a callback that maybe like
+piss off some WebSockets like Jasmine
+kind of the exceptions together I can do
+things like you know notify I'm going to
+tell to become close but generally you
+see my people in your many applications
+on this like you know people bill are
+explorers you know different dogs
+actually
+maybe do any charity maybe I supported
+village come on you know you like typing
+like mortgage to aquarium at one is
+telling that you can use this instead
+right so basically all this apart is
+over to Graz server instead using JSON
+it's pretty easy to like here is that
+with me I'm creating for the bounce of
+my channels right so using either of
+these poets paying the application wait
+before application when to use either
+one of these once again you have my
+runes it's not bro this little bit
+forward like because you have this bear
+content rules so right now we basically
+have like 1000 that basically doesn't
+know we we have a we don't in that room
+so any things out so on the import
+scales let me have an invoice background
+today boy spectrum is cool because not
+even have like a survey that accepts
+payments on lightning and can't do
+anything else right so we may even have
+even if that server is compromised what
+they can do is like making voices make
+addresses right and like it'll cause you
+know a boy situation or something or
+separately but so the winds with a cool
+piece remember that we have it right so
+we have what we call a bakery plant so
+what the people are just going to say
+here's my moon it can only make channels
+below two PTC on ones right and there's
+also you make an apology be to see
+Wednesday can find you basically take
+that down like a very very fine grain on
+education three applications and that's
+gonna be coming soon in our views
+versatility alright so we also have this
+pretty cool developer site made by max
+in Terraria was last summer
+oh there's cool that's what this pretty
+cool site you can actually see you know
+every single RPC that melanie has and if
+you look on the top right we show
+example coordination of the command line
+unpack and also one is the cooling what
+this is like aren't likely generated so
+anytime you have taper totals will also
+get their 12 and that's API down like a
+community I did the wrong except
+afterwards but yeah and then we also
+have this developer set for LOD I was a
+pretty cool itself I get name of Max
+last summer and this is kind of a target
+a definite one like your boat and Gandhi
+so everybody could or if you section
+that kind of like get you in the proper
+like mindset my application why I said
+you know how do I think about letting
+application time I think about lightning
+how do I think about it what's going on
+the hood
+come I walked you through me to make me
+like the technology even television is
+like that and also has like a directory
+of all about the cool we even have a
+tutorial club like cornets evasion takes
+you to kind of like how do they coin
+desk but I have a cable turn right so we
+have become very like hands up to Torrez
+recovers X into the development things
+like that and the silence that was open
+source and anything's how to date you
+can basically you make a pull request
+method of things site you want to have a
+new example the maybe these total
+different languages itself you can do
+that as well
+alright now we're getting into more a
+little bit except like what works or as
+safety you know 1d itself so we have
+this thing called Cypress the first
+version is called AZ so one thing with
+my name is that unlike a regular wallet
+we basically have a mini mini secret key
+when you drive for a while it may be you
+just have like you know I'm using bit 44
+so like I have my counts make it like a
+partition them and that's it
+before our also letting you know for
+every single contact we have we maybe
+need like five or six different keys
+like right now even get more than okay
+the future right to Rizzo we're gonna
+thing like highly make sure it actually
+works how can we make it determines they
+can react to pack things up properly
+then we look at these as big distance II
+for a mess right so everyone knows you
+know good 39 and as
+wasn't out there Wow the other thing is
+that like you know there's 39 then
+there's other grips like for three and
+why 49 and 44th talk about key
+derivation literally like very very
+simple and not mind specific so we're
+like well I guess we got the girl so we
+added that but we can you know go
+through kind of like just creation like
+why we did so because yeah it's kind of
+you can see it's like pretty big
+departure away from the regular industry
+a bunch of uh 39y would make our own
+teeth on that so one of the common 139th
+that had no birthday so you know this
+maybe works for you like an api like you
+know like maybe in the inside where else
+detects do see step if I'm on my phone I
+want to start my Genesis right you know
+I could be like the first people doctor
+I could be you know the California's the
+future so right so we want to make sure
+they didn't have to like go all the way
+back into the chain I think it has no
+version right which means that again I
+have to see how do I know how do I Drive
+- Drive on your keys right I could have
+electro you know 2.0 in 10 years we've
+used like Python 3.7 version the other
+thing is that the way they do the
+password it actually just like loss of
+funds right because you'll actually know
+the correct password when they have a
+feature there they turn that basically
+how claimed how many hit wallets which I
+think maybe depending these kids never
+be actually be they're useful residents
+own if I have my seat was probably
+productive I put in and another password
+doesn't tell me no that's wrong he just
+says okay here's your wallet it could be
+five dollars it could be 20 but now I
+don't really know woman or my pastor who
+was the other thing has that basically
+definitely do anything in the parameters
+day and maybe didn't really give you
+much in the past and does really tell
+you how to are the keys right so now I
+mean maybe like have you know you know
+my wallet and the backup like together
+and then hope in the future that did I
+guess we'll use Python support for what
+along like on fire so instead we grade
+something called AZ these come at the
+first instantiation so they can recall
+like the sex I proceed
+it's all right so if you look on the
+right top right way to kinda like see
+what the foreigner that looks like so
+first thing is we have extraversion
+right and then we have a ciphertext and
+it checks them over that side vertex
+they telomers basically tells you kind
+of like how to parse everything else so
+I didn't write that with is basically
+like one bike right now and you know we
+can viciously bump it up in the future
+especially cool things like let's say we
+change the KDF in the future or we
+change our the different gravity you
+know take an existing CD off my program
+and then basically we convert it back to
+a new format then we have a cipher text
+right so some types actually in an
+encryption of its payload above which is
+the internet version which basically
+tells wallet how to drive the keys so
+you know this could be like you know 2 5
+sec we're never almost knows basically I
+was using set with you know 2018 and I
+use Windows key hash I knew that's a big
+laser space that's it we have the
+birthday and the birthday is I used
+something called we call a bit Bitcoin
+days Genesis right so we realized that
+we didn't really need like a fool you
+know 8 by 8 before by x have been 17 say
+ok you know because period in 2009
+nothing goes back before them let's just
+like count every single day beyond that
+the cool thing about this begin keys to
+buy sandals like 2088 so in the future
+[Music]
+yeah so there's also password then how
+many we have following the tech stuff
+so again just an interest rates about
+this is that like from the get-go the if
+you have a password the seed itself is
+actually encrypted right so I can maybe
+potentially a clean sound plaintext and
+don't even know anything up from that
+because actually couldn't they need the
+passphrase
+random talk about we have a passphrase
+we've read that through a kid yeah and
+apply salt which to coated with
+everything else and then finally we have
+the checks on the outside so when you're
+decrypting you can first verify that
+this is the correct of words but then
+even beyond that because the Sun
+protects use this AAT within and we use
+something called a Z which is our
+greater signs block cipher which means
+that we can encrypt like a very small
+amount of data and control exactly what
+without the Mac which has become a god
+other than we can you know have like
+twenty minutes turns to read my track
+because it might actually fix we can
+adjust the internal mechanism summation
+in size they put itself and then finally
+because it's actually more like a ad it
+has a tag inside of it right so this
+movie call subject subject expansion
+factor where we can control how many
+additional bytes to add onto which
+controls basically that's the strength
+of the tag itself and this is cool
+because now once I actually you know
+notice the correct words if I put in the
+password I know what's wrong I don't
+have to use that now for now at that
+point I don't be worried about you know
+kind of maybe you like finding out that
+like I thought was right past whatever
+reason memory a that my clothes were
+there but now this basically the seed
+for that we L&D and as more people
+support of course it was a little bit
+different then there will be we're used
+to because there's longer may be used to
+use twelve words you know su recommend
+that you add the the pacification as
+well but more or less the base the
+inputs are all feet that we needed has a
+version so we basically know how far as
+they are a part of it in the future
+would be decide we want to configure
+checksum or when you took a criticism we
+can basically have a tool to update the
+version they give uh someone else has
+internally to tell you how you want how
+you like to drive the keys and the time
+has a birthday so I can do with lifetime
+how far back to start with and then talk
+about back outside so we talked about
+you know so the secret is about like how
+do we drive all the key to be happen you
+know in the past now this base once I
+have all the keys what kind of deal with
+them right or even now what I'm actually
+live actually of the question
+how have you done what have they to
+recover the way so you know one thing to
+know is that Landon knows that here a
+little more stable right we don't just
+have the keys we also have the current
+tastic right that basically tells you
+what's what stay no more Leon you know
+what crap you were using was my balance
+was your balance and whereas these are
+active itself and as a result you
+basically need the current state and
+yourself keys by the light you can
+update right if you have your keys you
+don't know the state you can't really
+have a state and you're the keys you can
+turn it as well so instead we're going
+to have a two-phase approach the first
+stage basically it dynamic town backup
+and you gotta learn about this but we
+have this thing called a quash knowledge
+right so that dear is that in
+technically or maybe getting back
+together you can export this like space
+actually do the different versions
+normalize like the important part of the
+watchtower doesn't know which team else
+is being one fight
+you can even though you encrypt that
+data so doesn't know you know exactly
+you know that were there was things like
+that I send that state to the private
+house person right and it's resolved now
+I can just know that like okay if I have
+attendees in the world may be headed in
+the role only one of these exit right
+no remember to be integrated into L&T
+we're gonna actually add them in
+sclerotic note itself so basically if
+you're running around any one of the
+watchtowers here's a little easier to
+like discovery to how many participants
+but also now you can say if I'm a
+watchtower than I can reckon I can also
+run into it you're gonna I'm pretty
+closer together the other thing we'll
+adds but you'll be able to point them at
+a girl with instance right so let's say
+I have my know and not have like it a
+computer at home I'll be able to back up
+those days to my computer as well it can
+get to thing or even like you have it
+you do some I quorum like 35 machine
+like the trial or something like that
+the other thing is that we may add
+something to a queue like aunt like
+batch the updates together otherwise I
+think imagine like kind like a prom
+steroids like someone rush are globally
+because everyone's updated obviously has
+like a mastitis I attack
+right there was taken at the time we're
+going to add it's kind of a staggering
+process in it to basically ensure that
+we're giving away like you know timing
+of it us like this we'll probably
+integrated that today jewelry this
+voluntee we're gonna kind of like devote
+on it first and then likely create the
+standardized bulb for it in the end
+cause it'd be nice to erase we all know
+is you know they've already been
+squashed ourself right they have the
+exact same messaging kind of trimming
+treachery that now it's very easy for
+you know just like no you know spin up
+Texan channels and also ensure that
+you're safe like someone like you know
+they have their national on Frank that
+stays like channel state number twenty
+with live broadcasts you know revoke
+state twenty was broadcast remote
+security but you're doing something
+sketchy exhibition marks and then
+basically once that's done it says
+you're waiting for a confirmation then
+justice will be served right and the
+right you can see the other note that
+says I know just said served we get our
+money back
+the question is like you know exactly
+what happened in this case what happened
+was that like a user had a notification
+right and certain reason they went to
+like some issue they know how to get
+past it
+so they share things that they can they
+restored with a prior backup right they
+basically just got the CP the copy that
+you know state as a result when they
+came back up they wrote one like no
+state twenty five but really they were
+they only had there was a 22 is result
+if they actually broadcast their
+transaction they violated the contract
+right which means the be sharper degrees
+on the other we this you know dispatched
+justice on to the individual rate so the
+questions like how do you avoid this
+pathway so if you have your dynamic
+states how do you ensure that if I
+the backup of a static state actually
+works properly right so I'm gonna
+explain that maybe have something call
+its death and about that right so what
+we can do is we would next over Lu the
+watchtower with some static allocation
+right and this is FHP be basically per
+state I say it's data cuz you only need
+this for like web team was created you
+create wannabes when it's closed we
+believe it at the end right and because
+it's static combined with the seed
+format basically the backup tells you
+what keys were used nothing not the
+exact keys like a keypad using the
+computer vision that protocol using the
+C format itself it also tells you
+information around you're kind of like
+the the no other things like that so
+they stay given your standing back up
+and your C you can read arrived all of
+the keys you actually need and then in
+the hands of basic apart they don't want
+you can follow this curve on here right
+so first you first back up in your
+basically alright make sure it's you
+know maybe have a magnet for collecting
+crap things like that
+I use my seen the back to we drive all
+the keys actually have I can connect
+back to the nose on my channels with and
+when when they see in this particular
+state they'll activate something we call
+that data protection in the paragraph
+itself right so they'll give you some
+information needed to actually excrete
+my funds they click on the channel on
+chain and then I can sleep mind directly
+them enough to without any delay I said
+this kind of emergency scenario thing
+where if this had boolean Clinton you
+know the priority would have been
+prevented because once I realized okay
+hey coach can walk they like she lost
+some data and we have this plan that way
+to really spell Indy as well because now
+it's the state where if I have my C and
+I have where these matchups any work I
+could get that money back on right so I
+can use my seat for my on to
+introductions with my top chain pen even
+if I happen
+Angeles and in a world we played a
+basically have so much degrees likes to
+party see so every single time from the
+channel you may see grab none of these
+points taken off stock ever drop my
+forever else to ensure that you have all
+the restate properly this is people
+safely back on lacking right if you ever
+do you think naive is how much like
+hockey and hoping that I have the
+correct version unless you're doing some
+very you know complicated university
+system yourself this is what you should
+be doing and will be implementing this
+side a very severe with indeed know if
+they don't make it double standards
+because it'd be cool or can you know if
+they're using the same scene have a
+stadium back to format they can
+implement other new and actually we
+derived and keys and get all everybody
+back we want you know we wanted my
+closet oh she's because in the future
+very long you know supposed to maybe the
+important percent final thing we have in
+these we have so perform at the partners
+ability you have to connect family to
+other peers it's kind of like it was was
+was a big other the event was cuz if I
+if I don't I'm on IRC how many one I
+wouldn't be able to actually connect
+down to anyone else so we basically out
+of this thing called an activity shuttle
+right
+so I wasn't that funny minutes like it
+was in the code itself we can see like
+this interview stuff right we have to
+call it repeatedly shop right and this
+mysterious manner which he just takes
+different justice knows I shouldn't
+connect to in the return addresses
+connect to itself and then using this we
+can compose this for the multi switch
+which trapped to basically ensure that
+we get a number of new peers from set of
+distinct you know we start right we want
+to see whose members because they keep
+me the case like someone's DNS server
+goes down also the entire number can
+actually connect to each other right so
+the current to reach a victim have good
+base push me up DNS the boat 10 this
+very similar to the way and India's
+Bitcoin works is a bit peckish
+decorative also we run too much of you
+know Bitcoin idea now stuff and we have
+one of those
+or testing at Bitcoin maintenance I
+would get one for like point to point
+and then also we have terribly Shepard
+right so you only need DNS we actually
+connect appear for the first time after
+you connect you basically have the cell
+type of authenticated sign announcements
+the other thing is you only yourself
+announced individuals that can prove
+they have a channel open right
+this avoids kind of symbol Wilson error
+whether it's like in flood you can maybe
+do it in close time basically you forced
+them to don't have some skin in the game
+you didn't have one when you take
+certain channels and otherwise I want to
+check your announcement true so when you
+come up you you can connect to the DNS
+resolver you can get their units will
+set up ears but after that because you
+have this data you can you're really in
+trying to have a show in the future but
+you know what they were probably to do
+the future as well as Pat there's no
+versions of which traffic because
+otherwise we basically want as many
+pretenders person as possible
+and for several reason the DNS server is
+down you may have issue that's
+connecting one thing we see in the water
+that's you sure DNS was already you know
+closer on our larger SRB records which
+you know because maybe they don't
+support like you know one more UDP or
+they don't see a resolution there maple
+is actually connects maybe well you know
+unless you smother you know the choices
+of how we to be with trapping in 80
+seconds behind a final thing that we
+have here was pretty cool was I got the
+talk line but I know in the past you
+basically didn't really know what you
+did was doing right you can look look at
+the log but you wouldn't know if you
+have supported transactions or things
+like that so in this one we basically
+have like a time series data baseball
+completed payment service write the
+complete payment circuit is basically my
+get like an ad and you know I forward
+out in a DC and I get my settlement them
+you know I get some V itself so there's
+we basically store all is persisting on
+density may want that you know for
+several reasons as far as like a friend
+let's record keeping and also know the
+different analysis the cool thing now is
+like I'd like to look at
+no because it's like time series
+database and query like though between
+2:00 and 3:00 p.m. you know there was
+that lunch up Westco sounds like a spike
+in my activities block that I can look
+at that maybe turn an elastic what's
+going on now so I can actually see if my
+neighbors running properly right so if
+you look on the the top right you see
+that the viewport command Square desert
+shows you the fees of all's been
+channels that you have you can see like
+I of P over like one bass booster she
+and I think was like 0.001 percent and
+it really has to also break down like
+the date so I made that day this is like
+on the test on faucet and no good past
+when I've had under 45 so she's you know
+sorry place right now because these are
+going very low on testing particularly
+in Oswego is not like that much traffic
+going on right now in testing to be able
+unlike movers manager Park let me also
+have before teenage free command 140
+history does by the fortunes you the
+last 24 hours reporting right so you can
+see you know I had two pigments in
+metric for our period one is 2 K
+satoshis the other one was empty Petra
+so she's had one so she's right
+this is pretty cool because now what
+people can do is they can like actually
+do rose announces to author challenge
+right so as we go on Paulo in the David
+right now right now when we blow to
+combat the static information static
+graphics see where she should connect an
+expectation as to when the future we can
+basically look at the rules of
+information of all on scholars coming in
+and the decide I want to close out
+Channel V because check out a you know
+is uh getting more revenue it's almost
+depleted so I can close out when they
+experience my sentence warm here I can
+do things like you know ensure that I
+have a compartment properly weave down
+some schedule to ensure that you know I
+kept any available flow any given time
+maybe it's the case that like I'm doing
+one on like answers over here telling me
+I can ramp up my fees to only like have
+you know things I can go in so we can do
+locked into the future look into this
+people can you know make like very cool
+come back in the middle who have each
+PLC switch which is the middle and sort
+of manages all of the surrounding links
+the link is like a connection between
+myself and the person who have a channel
+with and so when I'm actually forwarding
+payments and I send the onion packets
+they actually go through these links so
+there's a job you'll see switch to sort
+of be sort of like this financial router
+that is accepting payments and deciding
+that afford them out so the life cycle
+this hdl-c will start on the only on
+your left with the blue line to follow
+all the way through the red line sort of
+indicate where a packet can fail
+internally and it'll just sort of
+setback and fail to the person like
+upstream of where it came from and the
+green is actually like a successful
+response or settled you see a green line
+over there that's when we actually
+receive a payment locally so as soon as
+you receive it we check like oh you have
+an invoice cool so go back over here
+we're actually getting like a response
+from Herveaux pier and then fording back
+through the key components here are the
+circuit map and the 40
+those are the primary things that were
+added here for tea packages are mainly
+reliable with our mainly responsible for
+ensuring reliable forwarding of all the
+packets internally within the switch so
+if we a sulli like right everything
+immediately to disk and then we come
+back out we can always know how to sort
+of resume our state and it'll sort of
+aggressively make sure that these are
+pushed through and get to the other
+links the circuit match job is a little
+different it sorta sits in the middle
+and what its job is is to make sure that
+this we never send the packet through
+the switch more than once within a
+particular length sort of looks like and
+so it's it has to basically handle like
+this job of like managing broadcasting
+messages between like ham of M different
+Pierce like this is huge like
+communication bottleneck problem and so
+getting like a lot of efficient so there
+was pretty critical so start here at the
+circuit map so whenever we get a circuit
+very stark never gates you'll see it's a
+it's a sinus surgery key which is a
+tuple of the channel and the HDL chto
+CNU sort of autoincrement
+for each channel so they'll just like
+ratchet up and we'll get them in order
+and there's sort of like me when you're
+fourteen payment there's sort of an
+incoming key so the person reported to
+me will assign like some HDL cid tied to
+this channel and then i will sort of go
+through the circuit map and then
+assigned in an outgoing key and I almost
+signed it sort of hdl-c on my outgoing
+channel that they're gonna peel them and
+so the job circumvent primarily is to
+line up those two incoming outgoing keys
+the proper reason is that when the
+payment comes back across the back
+across from the Rope here then I have to
+look up like by the Adelphi key where do
+I actually send this or which channel to
+actually send this back along right who
+was
+originally send it to me and that whole
+process needs to be persistent because
+if it doesn't do we might receive it
+would be like oh well I don't know draw
+and that's like the worst case that
+could possibly happen here because black
+holing a payment is basically the worst
+case if I set the payment and it just
+gets lost by the network that you know
+goes beyond restarts and doesn't know
+how to handle anything it doesn't
+realize it already having received this
+payment and just doesn't it just drops
+it then that's just going to sit there
+and try not to the steel TV expires so
+that's not that's not too great now some
+of the big challenges here is that like
+some of the lakes may not be online at
+the time I'm actually trying to make
+this payment right so the semantics of
+like an ad which is when you're going
+out and blow the diagram this way are
+different than when you're going
+backwards so when you're going out of
+town like a best case or best effort
+forwarding all right if I if I'm sending
+a payment and the road peers amount of
+line I'll just be like go get on a line
+I'll send the bill back and so like
+that's a little bit easier but with the
+response right I need to make sure that
+always gets back if I committed to
+forwarding state you'll see and infected
+then when I get a response I need to
+make sure it gets back otherwise that
+person is gonna be sitting there waiting
+for okay so that's one of the big
+challenges is also in between this whole
+process the links can flap so they might
+come up come on come online go down and
+repeat this process and we've seen this
+online on up you guys with my test led
+you see you like this I know it'll come
+up set in there go down come up send an
+A or go down like and there a lot of
+using that so making sure that like all
+of this state stays consistent when that
+process is happening is a big challenge
+and really the big things here like I
+said are linked reliable clearly and at
+most one semantics and we have to do all
+this while at the same time avoiding a
+right for every single hdl-c
+because I can assure you and it was
+tested if you do it once per each you'll
+see you'll get it like it throughput of
+about ten transaction per se
+and that's actually a probably best case
+there's about three sub system
+like they all had to be kind of joined
+in concert to do this and you're just
+putting one of them with like a singular
+right career we're putting was like a
+singular right for subsystem or great so
+seen drop it's like performance
+dramatically so doing all this and like
+a matched man it was hugely critical
+like I said and then forty packages so
+going back to our diagram so the forty
+packages are internal to every link as
+soon as we receive packets from the
+outgoing world we sort of write them to
+disk and like I said that star is the
+sort of przemek primary statement which
+will like read on reading and on startup
+to make sure that we reform these
+internally like I said they all they're
+all batched because and they're batch at
+the level of the channel updates so when
+I do like a commits a receive provoke
+enact all these TLC's that are done or
+handled in that in those batches are all
+sort of across atomically and the reason
+is it kind of like simplify is actually
+a recovery logic when you think about it
+if you actually receive a batch of HDL
+C's but then actually cross them
+individually let's say I get it back to
+ten and I start processing the first
+three and then I go down right when I
+come back up how do I know where I
+thought it could have been the complaint
+for example especially with something
+that needs to be like a replay
+protection right if I if I process three
+and I say oh those were good the first
+time when I've written that to this that
+they were good then I come back up and
+then I check again and it's like I've
+replayed myself so actually by doing
+everything in a batch making sure that
+are like persistence logic is back to
+the same level was at the actual
+technological atomicity of the channels
+it was like a huge like safety feature
+in my opinion and it was also like kind
+of necessary for the performance per
+second so basically like went with these
+40 magnificent we only ever write to
+disk with these 40 packages in the best
+case so during normal operation always
+like write to disk
+everything's buffer it in memory through
+entire switch and then only they like me
+crash we have to I feel like reading
+sort of Reconstructor in memory state
+they're kind of a few niche cases here
+because like I said this is just kind of
+the flow of a payment in memory this
+doesn't include like all the actual like
+persistent restarts and stuff so he's
+sort of like some has a bunch of like
+internal like recovery procedures and
+stuff like that and so one of the cool
+things about this design is that because
+everything's only written to this when
+we come up or they in the process of
+like when we when we are done actually
+with these forty packages we can garbage
+collect them totally you seriously just
+by reading to this we read their discs
+be like ok this one's done like remove
+it and we kind of be like once a minute
+and that doesn't like interfere at all
+of the channels that can be done kind of
+on a table of passive levels so
+basically the win here is that we're
+able to batch things it heavily and that
+is a big win for performance so moving
+on to multi chain stuff we in this
+latest version of a loadout forward beta
+we restructure the data directory
+entirely we now segregate segregated
+directories we know we now separate like
+graph and chain data so led like right
+now can support bitcoin and litecoin
+that's what it's gonna be good for we
+just said in like my ISA for it which
+builds on you it's almost entirely the
+same components as big pointy back-end
+but you know each each chain sort of has
+chained into that needs might be heavier
+is more and if you use neutrino maybe
+compact filters and then additionally
+each one is a wallet so in the chain
+data as you see we we sort of store them
+by like a big point like whatever test
+Senate main it sitting that you're on
+and then the actual data entirely and
+then the difference between that and
+grafting is that graph data sort of
+share across all all like all possible
+taint you listening on so like it for
+example if you guys saw the swaps demo
+all the graph data for Bitcoin
+my clan was all in the in the graft
+directory whereas like they would
+actually have separate humane that or
+not meaning that testing a BBC and LTC
+directories and wallets so this is like
+a nice separation of like just
+directories and concerns I hopefully
+that gives you sort of interview like
+where or introductory look ahead as to
+where this will go when we actually
+incorporate like the phone will teach a
+multi-chain name and support so the
+medical thing isn't getting prepped and
+preparing for that we implemented
+deterministic curtayne key derivation so
+if you guys are familiar with the bit
+32t derivation path you know that goes
+hard to purpose heartache when type or
+an account change like next story - Lord
+child you that's what's up oh yeah and
+then yeah so we so a couple changes that
+we made to support like the
+configuration schemes of all I was
+talking about we played purpose of 101
+seven shutouts Brick Squad waka waka we
+use slip or 4450 derivation so you know
+Bitcoin 0 it's not one like - - and then
+for all the key derivation because we
+have different types of accounts like
+you know the standard wallet - use like
+a default account of 0 but like
+following that and all this stuff to do
+like you know the multi-state Keys
+reputation based points payment base
+points all these things so if we
+actually just talk about the account for
+this key family sort of notion and so
+this is nice because in the world seems
+I think we can set the different types
+and we initialize one wall entertain you
+know so we each one of those get placed
+in its own chain directory if you're
+using led in that setting those walls
+can either penalty be rescanned and
+recovered so I'm currently working on
+all like the rescale logic so that
+you'll be able to just say like oh
+restarting L&D pop it will look ahead of
+a thousand or five thousand twenty
+whatever it is and it will just sort of
+drag key scan forward looking for them
+and update your
+as it goes and finally the biggest
+benefits of all this is that you can use
+180 seats I proceed and be able to like
+manage funds on all different chains
+finally getting some more Onion Routing
+packet construction so in this last
+version we sort of optimize the actual
+construction process so before we had
+sort of a quadratic algorithm that when
+you're processing like a path line 220
+hops but basically this of N squared
+algorithm to actually derive all the
+ephemeral private keys and blinded
+puppies here are the you can see the
+equations right here basically you can
+see that like you know you go from 0 to
+I and then actually the Kalani factor is
+also exempt from certify but because
+they were like share across all then we
+can cash them all and the effects of
+this are pretty immense we saw an 8x
+feed up dropping this time from roughly
+down the for NAB milliseconds on my
+machine like 75-65 less memory 77
+percent fewer allocations and the
+shuttle to Jimbo is he here well he he
+read this up and then it was accepted to
+the bolt L inspect so now it's like the
+reference implementation for how you
+drive it any packets or at least like
+these keys and then we have some
+benchmarks at the bottom and then
+finally like just a comparison of the
+number of total like scaler and base
+motivations that you use computing so
+pretty big savings and finally now a
+part of this holding hdl-c switchboard
+across there if you'll see packet
+forwarding is the ability to detect
+replay the Sphynx onion packets so if I
+just take a so the packets over the
+network they come over in list 13 1366
+byte onion blob and I received it off
+the network that I'm able to process it
+and get things like the would top
+according to the amount the time out
+steal TV stuff like that and if someone
+were to actually just intercept those
+packets and start
+playing that to me it's sort of like a
+privacy lady we could determine like you
+can see my actions based off the actions
+I take based off of crossing that packet
+as well as like you know someone might
+just cross it again or whatever so we
+want to permit that as much as possible
+and this operation has to be has to
+survive restarts so if I like if I send
+you much stuff make you crash or DDoS
+you come back up try to send you the
+same things you know you shouldn't be
+able to accept that or you should at
+least detect it so the way we implement
+this to be able in a decaying log which
+when I received this money Bob in parson
+I am actually able to generate a shared
+secret one of the ones that's a well the
+equation isn't here but yeah but and
+then we have to take about the first 20
+bytes and store is sort of like a on
+disk table of all those then when when
+these packets come in I actually just
+compare against all the ones that I know
+and if any are like found to be
+duplicates we reject them and and then
+so so and then in that process we we
+actually record in that batch which ones
+were actually marked as replays because
+going back to this sort of example of
+when we're crossing it back to 10 HD LCS
+and we get down in the first three if we
+restart and then come up again we might
+actually be replaying ourselves and not
+actually know the difference so to
+prevent against that we use this a batch
+identify its ID which is the short chain
+ID commit height and we use that as like
+an identifier when we pass that in if
+the batch has already been sort of
+tested for replays we just return the
+actual like set replayed indexes of
+those packets and we know off the bat
+that like we don't think anymore
+processing that was just like a decision
+before we're gonna determine this it
+could be play that and yeah like I said
+this is primarily a protection against
+rejecting packets against ourselves
+after
+just a quick question about the wallet
+architecture the wallet that like
+address that you said to start or when
+they would you speak a channel or those
+in the regular 44th yes for those we
+used before t9 I was like before if
+we're based that's before the kind is
+basically SP to us age but we modify it
+to use a witness for the address then we
+use I think is called bit 84 which is
+basically just pure that's much so you
+bears like the priests calculus would
+you have to see if everything else in
+your teeth derivation purposes he
+listened to sick purpose is not just for
+the channel yes for the funny but it's
+all you get with them that you screw
+something burning
+so that you're using the same recovery
+letters you're using the same recovery
+words as is traditional at this point
+correct
+Oh currently yes but what the way the
+scheme is like the actual and ciphering
+assisting from the encoding to making
+swap-out recovery words in fuchsia so I
+look at narrative I have a libraries
+where we went through a hundred thousand
+words to find the most memorable most
+international words and the only thing
+that's left in the thing is I need to do
+hand in distance so if somebody is
+interested we can come from I've got my
+eighty percent of what's necessary for a
+much better word yeah so that's firstly
+so we get the future of my worthless or
+any other parameters and to add onto
+that we can also do different languages
+as well so you can translate the same
+sort of raw encoded cycle text into you
+know Japanese can you just talk and
+we're in the early days of whitening can
+you talk about how you guys see the
+network growing you know that being
+adopted I think the court very rarely
+did whenever we basically have like a
+duty to look very excited maybe aren't
+really useful when it kind of like
+they're in facing services like Oh
+someone's like you to do in a TCP have
+open attack what do I do
+I think you know which would give us the
+initial facial work appropriately
+ourselves with my pops it's kind of
+different people with the educational
+screw start operated knew it right so
+like you know what should you be sitting
+as far as if your kernel settings you
+know how do you want to like actually
+connect other peer
+expand your connections you know it's
+part of accountability so we're gonna do
+a lot of work to actually get you know
+the education with known operators base
+if you know what they're doing cuz I
+can't be a little more aware of network
+doesn't happen I am this UI when you're
+operators of code like people look at
+their new Odin like you look at me now
+so what's going on as far as like a no
+cables coming in things like that and
+then as far as merchants and attainment
+things like that I think we're in a
+phase where they start experimenting
+with it because I think one thing thing
+was to see kind of like actually like
+live on their work beyond the testament
+well nobody breakfast season people were
+ignorant in Italy alright now if ever
+like bit me feels like the major you
+know kind of original Network people
+kind like organizing oh I connect to
+them like an eyebrow at Ross I think
+walls will see different birds to come
+up and kind of like you know went to
+that one thing was even possible people
+covering like discount account creation
+it's like Oh opening channels me and
+I'll be like you've been piercing like
+that right maybe Cooper will be
+attentive eyes have like different lower
+fees from the get-go but so I think it's
+come in a phase where people will you
+know come like know Jeff Brown are
+leading or they do this but now it's
+early in the beyond that what you
+actually see you think you mature a
+little more I think you know more
+obscene - oh come on because we've
+pretty cool thing to be with exchanges
+as far as that maybe them that well les
+gustó do they don't have time then also
+maybe you know do like cross state
+arbitrage I'm gonna count on to exchange
+seconds yeah
+tech factors include you know taking
+down don't I guess which is why you want
+to you know like have all the knows
+we're particular surgeries to ensure
+that you have availability of your users
+other thing you can do was far Michael
+but yep ohright that like your
+necessarily needs to be advertisement
+that work you only need to do so if you
+actually
+the running right so me halliburton
+service packet-based which is be on edge
+not even advertised know they're on
+there no one who the excellent McGraw
+tours HR actually do different payments
+can do that
+other things include maybe trying like
+spam endowed with like very small
+channels oh my god
+you can basically hide from that policy
+there your idea channel above you know
+have a big corner right click on an ad
+that cost barrier to actually you know
+spamming with all the state other things
+include I guess doing things on the
+chain you know if you can kind of like
+to make the chain like super for attacks
+then we have other defenses advantage
+we've kind of like do come underscore
+the earth approach or if you trying to
+cheat me
+well I'll just have all your money to -
+right in the meta so they do I'm the
+cure I just want to basically happened
+to be at the strong turn 32 years things
+like setting Couture no space BTW I can
+be connected I can connect you know
+using tor events the network later on an
+upper berth we're gonna add hidden
+servers support as well it's not gonna
+be CPU riding it but not give away my IP
+address right - maybe that's any better
+now because they don't know you know
+that like I'm using Comcast in Mike's
+everywhere in the world
+it's like inconvenience yeah I guess the
+students that you know have really
+emergency it may be kind of likes my
+active privacy attacks you know people
+kind of like doing things like actively
+on the network Marlins like to turn the
+key my seizures then I become about I
+can use Internet cards in that super so
+we'll see what that comes
+I I'm curious how watchtowers are gonna
+work for more intermediate nodes like
+people who have notes on their cell
+phones that aren't specifically rocking
+24/7 well they're you know they wouldn't
+be accepting States from individuals but
+you know they would be exporting those
+states themselves but also I guess
+there's a question kinda like the
+compensation in a structure there's a
+few that the ones you get a however
+doesn't were freaky they're all twisted
+my fantasy
+they can't extend on the stage we can do
+something else where maybe you may know
+behave like some like small most
+socially not for a state itself but then
+also they could be a thing weighs like a
+bonus where if you actually can act and
+serve justice then you get what the
+other 10% or something like that so well
+you know ideally once we're all like
+boom platforms it's going to be all in
+the background so you know maybe like so
+ideally just does it for the nose
+automatically maybe if I'm a power user
+active basically I was getting for our
+code and make sure he's back there might
+be quite do it as well just keep it more
+constant remember oh yeah ideally you
+might have like one or two or three so
+you can like also cross-reference them
+like can you come up make sure that
+they're all consistent like your state
+when you went down or if you lost
+something you kind of recover them like
+they're all telling you the same thing
+[Music]
+redundant initiated basically because
+then it's a comical one event thing but
+then like you know one thing to do
+within the commitments we have to scale
+UCSD guy according to the TV channel
+size so maybe he's like a $10 child you
+know one day that's like in 20 kids like
+give me a few weeks picture things yeah
+but I think when you're getting and also
+is that once we have like more effective
+watchtowers stuff like that like no the
+middle Duty isn't like as much of an
+attack vector like stealing your funds
+then we can actually reduce those
+timeouts and then like all the other
+like inconvenience is about my funds
+like about the two weeks as some
+timeouts are coming on the higher side
+that's because like it's news we won't
+which like it would be a little more
+cautious
+that much more so probably in a big
+Crapo excuse is a small detail the
+macaroons Kitty speak a bit more about
+them and kind of what's me whose faces
+are they a feature for known operators
+or these Ray's sure yeah I think so like
+they're very simple basic is just a
+German race an h-back like a root key
+and then maybe some often you can't get
+along with them right so because of this
+you can't actually forwards backwards
+right so you're able to like attenuate
+it may be that you don't add on like it
+was channel for what be teased on Monday
+I kind of like hashing that down and
+then I can still verify the moon chain
+itself right so basically has this like
+final digest but then also you know kind
+of like information kind of reconstruct
+that die just run through macaroni these
+are typically used you know I think
+Google usually pretty extensively now
+anytime you take that your headers maybe
+have my backwards they're being used for
+them and in terms of a conduit operators
+you can you can have a set or maybe your
+back weren't even on your note at all
+right like instead you can make it down
+I believe you have as much back room for
+other particular purpose right but then
+there beyond that you can have time like
+monitoring show this may be some idea
+there something like that together we
+took the ones to see you know what's
+going on smart they're operators you can
+give them that backward to only you know
+collect that data itself right then I
+think the other cooler aspect your or
+your base you do have my cursor versus I
+reckon have you know different distinct
+button since this to only do what they
+need to do in nothing else right isolate
+so you know if they break into this box
+they could only you know list my
+channels and maybe not actually many
+things like that so right now ever taken
+we have it admin which basically all
+purposes whoever we don't they can only
+do read only and we have a very specific
+addresses most invoices
+well everyone are gonna add two links
+basically you know very custom
+occurrence and this we call diffusion
+because you could say be more on the
+core operating system and the intense I
+can pass back room
+you know to maybe like to send a payment
+every day to someone okay
+video gaming right and then I'm only
+using the back burner be an antenna
+patch back to LM t LD next a picture
+gone there to pitch PQRS determine that
+you have anchors oh you mean that they
+just like made a bunch of channels or
+spamming channel anchors with additional
+YouTube service what they can be lost or
+do you mean like making a bunch of very
+small channels for third parties family
+takes us to channel anchors oh I see
+what you're saying I mean they would be
+a party original funding output right to
+the same address so like you the county
+may later add like kind of like
+constraints like what channels you
+accepted come in click just RDP to come
+tell us free the code to me like that's
+fine maybe you don't want like a ten
+cents outlet because maybe that's gonna
+be decimal future right so you can kind
+of like it's not present yet but the
+issue on the github most beginner issues
+whether you want Mike to do development
+knowing you that basically what that we
+have more policy like what time do I
+accept
+maybe someone don't need a lot of money
+lose required another question about the
+watchtowers two little questions is it
+are they necessarily trusting is there
+any way to like outsourced trust asleep
+and then secondly is there anything
+about it that's deterministic
+deterministic wallet structure can you
+like harden the keys that a use of
+relocation and then give like a X pub or
+the next private I guess the watchtower
+that kind of thing or do you need to get
+them a key every time your channel
+updates but they - Restless oh yes like
+you can see the trusses because like
+huge basically have them like do a
+particular action then they don't with
+whether you have like one or the other
+they can do that that's maybe the
+watchtower like instead of returning the
+funds to you so we go - oh no because
+you know I give my signature and if they
+create another signal transaction it's
+in down right so you can say you know I
+tell them what rejected should look like
+and if you know we use that go 69 twisty
+ensure that was that was oriented
+mystically my goodness signature biscuit
+Mouse creation they can only do that
+right so if we said okay you can take
+50% on I know like justice enforcement
+they said that you need to set that up
+in advance the watchtower speed say you
+would sign that exactly so spell like we
+said we do negotiation okay you know
+here 20% you know do you know the most
+associated state then that one they
+could only get a lecture so what they
+can do is just like not act put them in
+that case you know you want to have
+these are being redundant other place
+doesn't like you know it takes like one
+ouch was so you secure bunch of things
+people like bitcoins and the second
+question there was about you don't even
+have to update every with every channel
+update that's a tough watchtower what
+the news
+yeah but soon has already turned they
+stick like you know there's like a
+revocation scheme which you know can let
+the compress the spaces like log in red
+like having one for every the middle one
+but there's this beautiful Persian
+system involved kind of like you know
+using these blinded keys to ensure they
+don't know what to watch the other ones
+which may go with Jill board chairs
+kinda like you haven't been cryptid blog
+and I encrypt the blob and stuff with
+half the TX ID right what you don't know
+but if you see this part have to takes
+any on the chain you have the fourth you
+can decrypt an act another wise we have
+to brute force it you know a yes to a
+traversal
+thanks fair presentation so what problem
+I've had anticipating a play is figuring
+out where to connect to and show to open
+channels with go and especially if
+you're trying to receive payments
+getting somebody who's willing to open a
+channel with ones on their side so GFE
+potential solutions or do you envision
+like how this problem will be solved in
+the future and like allowing people to
+figure out who to connect it sure yeah
+yeah sure I think one of the things that
+will be like kind of undergo them in a
+lot this year and in the future will be
+like further work on autopilot
+if you can imagine I think is like a
+couple different use cases that users
+might have you know you might be like
+specifically of routing though you might
+be like person just trying to pay you
+might be a merchant you might may be an
+exchange or like whatever there might be
+different sort of use cases so you can
+sort of think of optimizing the select
+like the attachment profile autopilot
+based on like whatever use cases right
+or what you try to optimize for there
+might be different fitness models for
+which you are trying to look at yeah
+autopilot is something long bill it's
+basically like an automated channel
+maker so they will look at it continue
+like certain inputs like oh did your
+wallet balance change if you connect
+somebody and stuff like that and then
+it'll try to like look and see like oh
+what's a good channel to make so like
+you can use different heuristics a guide
+that attachment and so in the feature I
+think like or that the same time there
+could be like more like matchmaking
+services like people say like hey I'm
+trying to like me like maybe we can link
+up and like there's nothing exchanged
+really making a channel or something and
+like that's another we're going to
+but in general I think like if you have
+a more with a more informed and like
+more optimized autopilot then like a lot
+of these problems might go away is like
+oh please make channels to like a better
+portion of like the network that you
+transfer you yeah it's like you know
+then cool is that you kind of like put
+money in a box that just does it there's
+more traffic when I cut there yep look
+we're making I swear it's that Kenya the
+current water doesn't test met and maybe
+people would remain it kind of like
+tends to like minimize the average
+distance like you tend towards FSK with
+retail network that's we're on go on
+test net now we're going to be doing a
+lot more traditional that's right back
+even the code base itself everything's
+coming attractive like an innovation
+level so you can basically add what's
+called a contagion aristocrat which has
+been forgiven do I have more channels
+the news reckoning to do that because if
+you're right so if you could even like
+compute you know rows are property to
+monitor their peers like okay every
+single time is NH you'll see it doesn't
+get cancelled so there's every some sort
+of common metrics like robustness you
+don't want to connect a couple also get
+only a joke might ask like you know what
+Justin is into the performance yeah so
+actually that's actually works so I
+didn't really get to where the actual
+switch replay protection was actually
+put in that diagram but it actually
+happens in the league level at the outer
+edges
+almost almost all logic in the switch
+was actually pushed out of the interior
+as much as possible sort of enabled like
+the performance as you're saying the
+only even like when we're actually
+adding to the circuit map because of the
+nature the way like incoming channels
+work like when I'm a sea bean hdl-c and
+like I submit a batch like the switch
+like the only person will ever submit
+those
+two channel IDs is that way so as long
+as it itself isn't replaying them it's
+like there's gonna be no contention
+there so those are actually all done in
+parallel and then the only thing that
+goes through the actual center of the
+switch is just all Helen memory-wiping D
+and then I was running and I was trying
+to just grab the graph and compute the
+number of note and it didn't match I run
+them against the same Bitcoin node and
+consistently light indeed this first
+implementation was giving me about like
+recently it was about 800 nodes and LTC
+T was giving all about 480 or something
+like that is this both so there might be
+a couple of reasons for that
+I mean one is just that you know there's
+no guarantee that you will end up seeing
+the same actual graph it kind of depends
+on who those nodes are connected to and
+what actual gossip information you're
+getting from them like it you know it's
+sort of like an eventually consistent
+hopefully it's like a hopefully
+eventually consistent system but like
+but the guy like so there's no guarantee
+that you will actually get all routing
+updates and it just sort of like um it's
+a best-effort thing the other reason
+that there might be differences like
+depending on level of validation that
+the different implications are applying
+you might actually be storing invalid
+valid claim announcements or whatever on
+one well one is actually doing more
+heavy heavy filtering which I would
+guess the primaries Helen the only
+accept nodes that have channels going
+but if no invitation is over lacks a
+validation then you can see that the
+analogy
+but also dividend was used to have
+different no policies I'm kind of like
+when they like parse the channel so it
+could be okay though they've been there
+for like a year and like nothing would
+happen with it will forget that look
+when Jase you may not forget that but
+they should be around the same size but
+also oh I put it on like you know your
+knowledge of private channels you could
+have a compare graphics almost no you
+know of the extent of what now there
+could be some other channel that no one
+knows about because I can use YouTube
+forever right now and to come back this
+bridge to be in the public numbers well
+stuff you know the ability to link
+garbage collect those all nodes is
+actually really beneficial to like your
+routing performance and usability
+because I mean you're spending time
+trying to wrap your dead notes that's
+just gonna like increase the time length
+the number of trials it takes actually
+make a payment go through so I see and
+the second question of boobage is my
+ignorance is it possible so when you
+open them know up when when you open the
+channel you commit some funds the
+channel and is it possible to observe
+those funds being depleted gradually at
+the level of network or not or you just
+see the vendor closing the channel
+network is my car PC or like period or
+let's say our PC oh yeah you can like
+for PC you can like just pull the ears
+like we have that for any events that
+now is vegetables
+boarding event in the channel so you
+know you can use that to see kind of
+like what's happening there's not going
+to speed purpose okay we won the future
+and there's also this challenge you can
+use poet to see what balancer or
+everybody modified
+okay so say I think you mentioned this a
+little bit earlier when you had that
+dust in the transaction so a transaction
+that's super small and then you're going
+through intermediary note and say what
+if he goes in cooperative or you go
+silent and then the channel is like
+hdl-c so you'd have that outlook for
+that law but it's super small and have
+an output so would it be stuck there
+like that so I you're saying like like a
+desk hoc never gets fully completed yeah
+so we don't record that in the law like
+we only record things that you know
+actually get extended comebacker costs
+but then also you have no type of
+dynamic desk um and so I can say okay I
+only accept you know a COC but like to
+use tissues so I would yeah and then we
+do things around but you know ensuring
+that you know our productions logo is
+always about my consensus or like to my
+policy up there it's also right now
+basically yeah so you kind of mentioned
+that you would have like a minimum
+transaction that you would have to have
+like you couldn't have like a makeover
+like okay me well it depends if certain
+notes will say maybe like I'm a high
+validated oh so I don't have other one
+goes they want that cuz I'm on fees
+don't want the even the frequency of
+payments okay cuz like I wasn't sure
+like lending them was supposed to handle
+like very very large transactions versus
+like maybe smaller and faster daily
+transactions ever was kind of like let's
+you spill our documents like what duplex
+market maybe people have like small
+channels you can still do like hundred
+off payment through much time

@@ -1,0 +1,1484 @@
+my name is Lulu oh sure Doku and I work
+with lightning guys and you know me
+maybe you're a sweet home the internet
+on github Twitter everything else I'm
+gonna recipe for the past eight years
+and I'm still roast beef that's how it
+works and I'm gonna give you a deep dive
+into the Lightning Network you know I
+remember like maybe like two years ago
+when I with myself was learning about
+Bitcoin initially and I went to the you
+know Bitcoin meetups the dev meetups at
+20th mission and there's also like you
+know the deep deep dive and Tariq was
+like the emcee they're like super funny
+guy so I'm like happy to Dave to like
+you know give back to the community now
+with my own talk and you know it's full
+circle at this point all right
+I just quick outline on the talk first
+I'll kind of like get like a high-level
+review of like network I won't be kind
+of like you know going lightning 101
+because this kind of like meant to be
+like a deep dive talk have like more
+into the you know the corn and things
+the technology then I'll be going over
+some updates you've made to kind of like
+our scripts and the reification protocol
+within it and then I'll be going over
+something I call LLC P or the light and
+commitment protocol which is kind of
+like exactly how to nodes and the light
+you network update the commitment per
+transaction and you basically have like
+htl sees flying you know back and forth
+and it moves like you know super fast
+and stuff and then I'll also talk about
+riding for a little bit you know it's
+kind of a hot topic and we recently
+collaborated with bitfury
+on a paper where we you know presented a
+possible solution to routing and I'll
+talk about you know that paper in detail
+a bit and then also kind of like what we
+may be doing initially it's kind of like
+a stopgap before we starts like use some
+more advanced stuff alright so lightning
+from 10,000 feet you know bi-directional
+channels I said you know this should
+give the regular payment channel you
+kind of have like a two of two
+multistage escrow right where Alice and
+Bob get together they put you know one
+Bitcoin H or maybe like you know Bob has
+one Alice has zero and they put that
+into escrow itself and in order to do
+this protocol safely because we have
+nasa transactions with the funding
+transaction and the quitman transaction
+we require some sort of like
+malleability fix and the one we
+currently use within our software is a
+segment or say greater witness and in
+ if you don't have this
+malleability fix you can kind of went
+you know went into some odd areas or
+maybe like Bob you know malleus the
+transaction and houses funds are stuck
+and then Bob kind of just like random
+thing and basically says okay like if
+you want your money you don't give me a
+little bit more and you know with the
+memo Billy fix we can we can avoid that
+and then you know another thing is with
+CLTV and CSV and you know CLTV being
+meaning an absolute timeout and CSV use
+like a relative time time walk itself
+using these two together we can
+basically have channel to have an
+unbounded lifetime meaning they never
+need to close right so we open a channel
+and we can leave it open you know for a
+year or two you know at the best-case if
+you really want to otherwise you know
+maybe we have like a CL TV timeout which
+means like we have antennae open for one
+or two days and then we have to close it
+out and then that's you know that's the
+extent of the channel but you know using
+this new design and we can basically
+have channels open indefinitely and you
+know so balance updates themselves are
+basic you like a to party like iterated
+protocol where we you know try to do all
+the updates in an atomic manner for the
+most part where I push Alice money and
+you know she accepts this new state and
+then revokes the old state it's
+important that Alice revokes the prior
+state because otherwise you know Alice
+can go back to the state where she has
+the most money and in order to do that
+revocation we basically rip up all the
+prior states in itself such that if
+Alice tries to broadcast this prior
+state then I can assure essentially
+right and the way I punish Alice is I
+use the you know the Bitcoin blockchain
+itself as what I call I mean well
+there's a paper by up McCauley it's
+called an invisible trusted third party
+and you can say oh yeah TTP's are bad
+right you know we want to avoid that in
+Bitcoin right we can view you know the
+Bitcoin blockchain as an invisible
+trusted third-party meaning that
+actually only steps in when it's needed
+right if Alice tries to cheat me in
+broadcast you know state one and we're
+just a - I go to the Bitcoin blockchain
+you know this invisible third party and
+it acts as the judge right and with this
+a connect the judge the judge basically
+enforces fairness for us and then the
+judge also adds kind of a clause within
+the spareness
+protocol which allows either side you
+know some sort of period where they can
+that test you know to the current
+balance so you know if I'm Bob and I
+want to be like sneaky and we're like
+state five and I try to broadcast state
+to you know I can't immediately sweep
+all the money I may have to wait like
+some sort of delay period maybe like a
+day or two maybe it's a week and this
+delay period allows Alice to basically
+come you know to present to the judge
+the the blockchain itself a better proof
+of the current state of the channel and
+because every single time we step
+forward I revoke her prior state if I
+ever go backwards that Alice or Bob or
+you know whoever is my counterparty can
+then present this proof to the judge
+that shows that I you know find it at
+the contract and Alice can move forward
+and actually continue the balance and
+she gets all the money essentially so
+it's kind of you know this
+where both sides always move forward and
+if you ever try to move backwards you
+basically get punished and you like
+money and then you know so that's how we
+actually handle the bi-directional
+payment channel aspect which allows both
+sides set money back and forward but you
+know one of the main things was the
+concept of the hdl-c
+right the hashed time lock contract and
+what hdl-c say is is basically you know
+I'll pay you to Bitcoin
+you know insert you know whatever are
+the dominant denomination there if you
+can open this commitment within one day
+and if we're just doing like a single
+hop then you know bob has the commitment
+which basically I mean you can open the
+commitment which means you have
+premature to that commitment and it gets
+opened and then I pay out to Bob right
+so this basically like a time lock
+commitment scheme and you know
+previously the way people try to sell
+this before is they assume the existence
+of what they call like time mark
+encryption where Alice would basically
+you know have the preimage and encrypt
+it in such a way that Bob you know if
+he's like grinding you know and all four
+cores you know for like two days
+actually decrypt that commitment and
+then you know can I get its money back
+but with Bitcoin we have cool things
+like you know time-based op codes and
+with those off codes we can actually
+just use that directly in the system we
+don't need we don't need to rely on some
+kind of like dubious time encryption
+that may not actually exist at all and
+you know so if we just do a one hop
+that's cool but you know we can do you
+know multiple hops across the network
+and when we do multiple how trust
+network we use these HDFC's in a chained
+manner where every single hop decrements
+the time lock and as you're decker with
+the time lock that gives each party you
+know a window of opportunity in which
+once they get the preimage they can then
+settle all the way backwards so
+initially we clear the HDFC's meaning
+that everyone updates the balances you
+know everyone has like one Bitcoin less
+all the way to Charlie and at that point
+Charlie settles the hdl-c by actually
+revealing as preimage and that gets
+routed all way back to Alice everyone
+pulls the money and everything's fine
+and you know we can do this with you
+know arbitrary path lengths essentially
+obviously if you have a longer path
+length maybe there's some issues with
+like like the time value of money how
+long do I want my money locked up and
+you have any fees do I pay but you know
+using this you can have end-to-end
+security with HT LCS meaning that you
+know Bob can't get paid for you know
+Charlie gets paid and so on and that's
+how we do these change woman's actually
+have the network part of the lighting
+network
+and you know just a little bit thing
+about equipment schemes you know for
+lighting itself we require a secure
+commitment schemes right and a secure
+commitment scheme has basically two
+traits the first one is called hiding
+and the next one is called binding and
+what hiding means is that you know
+giving to commitments you can't tell
+exactly what was committed to you and if
+you guys are familiar with like
+randomized encryption like you know
+counterman a yes or like the IND CPA
+security definition there's the exact
+same thing so basically you know me
+extending the commitment towards bob bob
+should have no idea exactly what was
+committed to you because if he knew what
+he what it was committed to he could
+make he just take that money and Alice
+never gets the money is herself right
+and the next one is we want binding
+meaning that you know once you actually
+commit to a certain value you shouldn't
+be able to open that commitment with two
+distinct values and you know if you can
+do that you can basically have a clinton
+on the hash function that we use and if
+you can collide then you know you can
+present to me multiple input values and
+i can like basically be I can pull the
+money twice or you can pull the money
+twice and you're currently in the scheme
+we use on 256 and you can use any other
+commitment scheme that satisfies these
+two properties of hiding and binding and
+if you seem like a random Oracle which
+means you assume that a hash function
+gives you like a perfectly random value
+every single time you can use that to
+construct the scheme and it's perfectly
+hiding and computationally binding
+meaning you know you can do collisions
+if you can you know do like we went to
+the 128 work or so but we assume that's
+computationally infeasible all right and
+so one thing I mentioned before is the
+revocation scheme right so for every
+single state you move forward you need
+to provide me a revocation of that prior
+state meaning if you ever go back to you
+know state a state 1 and we're on state
+2 I can take re money but you know as
+you can see this kind of grows linearly
+right we're if we're doing like a
+billion updates I just like a billion
+you know values essentially and that can
+be limiting because I need a lot of
+storage actually do you do this so the
+way we solve this we solve this with a
+compact revocation scheme and you know
+the goals here is at the client I'm
+sorry the the sender meaning the person
+that's actually doing the updates should
+only have to store a constant amount of
+information that information is
+essentially that the root of a special
+tree and the current of the account and
+then yet the receiver just only stores
+log n so you know if we're doing like a
+million updates the only source
+super-efficient right and the way we do
+this we use something I call like not
+the authenticated PRF meaning it's
+pseudo-random function yeah when you
+give me all the outputs of the PRF I can
+be sure that it came from the PRF that
+you've created with a particular seat so
+every single you know every single
+outfit I get I'm like okay I checked the
+proof and this is a correct output and
+we can keep moving before and what we do
+this is something we call algorithm and
+it's basically like a reverse Merkle
+tree right so you know typically in a
+Merkle tree you have the leaves at the
+bottom and you hash all the leaves
+upwards right and then finally you have
+the root and you know I can prove to you
+that any of the leaves a part of this
+tree in log n space right but instead we
+go the other direction we start with the
+root you know Alice has a certain secret
+and a hash you know a key derivation
+function in the current we use the hash
+key derivation function or sorry H Mack
+key derivation function and the way you
+do this it's a recursive structure right
+so you have the root at the top and when
+if you want to go down to the left node
+you hash the root and zero right and
+then if we got it down to the right node
+I hashed food and one so if we're saying
+the treat is a high two then I basically
+hash it twice and now I give you that
+that first node and then as we continue
+I give you the second node I give you
+the third node you can check the proof
+and now you can basically only store the
+third node and you can derive the first
+or the second you know based on this
+commitment scheme it's I mean based on
+the hashing scheme itself and you know
+when these are maintained both for the
+sender and the receiver so the sender is
+sending out values the receiver gets the
+hash value checks is properly in the
+tree if you can't rent get is storage
+because now has a parent node of some
+leaves and it can truncate that and we
+keep going so now with this if you know
+I go back and I brought case i broadcast
+eight nine thousand you can get state
+nine thousand basically in like login
+hashes right because you have you know
+one of the intermediate knows new hash a
+left right and then finally you have a
+proper note and you broadcast that out
+you take my money and everything is fine
+and then additionally one another update
+we've made is in the replication team
+itself so I can issue the revocation the
+scheme kind of use like a chain big
+thirty-two hierarchy and then they kind
+of like went to a cache based
+revocations I think it's by like Adam
+back and rusty but now we're kind of
+commanded combining those two and we're
+using revocation keys themselves right
+so revocation keys it's coming an
+optimization we realize that in the
+square
+this allows us to you know compress the
+script sig meaning what we use to redeem
+the script itself and also the the the
+length of the of the output script and
+then we can also save like an extra hash
+on vacation essentially right
+so rather than Bob presenting like a
+secret premiums value in order to do
+replication Bob presents a key right and
+this key is derived in the certain way
+such that I can give Bob a key and he
+can be sure that if I give him a secret
+value then he can get the private key to
+that corresponding public key right so
+instead we now use revocation keys so if
+we're looking at this if we say see is
+Bob's commitment key and P is like my
+preimage for that particular state for
+Bob to create this next date I give him
+this verification key what I do is I add
+his point yeah you know his public key
+to the channel and then I add I create a
+point with the preimage and then I add
+that together with the with Bob's point
+right and what Bob gets is Bob gets the
+revocation key and he uses that and
+everything's fine but when I go to the
+next date what I do is I give him this
+p-value right and once he has P he could
+actually derive the private key which
+corresponds to the revocation key and
+this kind of like uses a trick in you
+know elliptic curve is basically the
+addition operation is commutative so we
+can see initially like you know C plus G
+times P goes down to C G times little C
+which is my own private key and then
+because you can then you know
+redistribute the math there you get G
+times E Plus P and which is some R value
+so now when I give Bob the preimage all
+Bob does it you know he takes his
+regular private key for his commitment
+key take the preimage adds it together
+and then he gets the revocation key and
+as you can see you know it simplifies
+down to that the exact same solution and
+with this we get a little more compact
+scripts and everything's slightly more
+efficient and a few familiar words like
+paid a contract hash this is what they
+use we're basically like you can say
+that emergen wants to buy something they
+have an initial hash and use this to
+drive a payment address for the merchant
+and you can say in court oh the merchant
+you know knew about our contract because
+they can derive the private key if they
+didn't have the the contract itself and
+it's also used in like like vanity
+address generation where you can give
+you know vanity address generator like a
+single key and they can just add points
+together because you know point addition
+is much faster than like it elliptic
+curve scalar multiplication and you can
+also do like a trick called double scan
+multiplication to like speed that up or
+you basically calculate G times C at
+plus G times P in a single step
+rad and to do it individually that's
+like another optimization you cannot
+exploit there all right so the next
+thing we're going over now is called the
+lightning kaminin protocol and it's like
+what this is essentially the lightning
+competitive commitment commitment a call
+is the like link layer protocol between
+two nodes itself and you know this is
+the protocol that the nodes used to
+actually update the equipment
+transaction in efficient manner so you
+know we have like htlv splitting across
+we're sending HT LCS and they get locked
+with the camus transaction and
+eventually Bob settles the Colombo
+transaction and you know right at the
+bat we want to make this extremely fast
+right because if you make the link layer
+protocol you know optimize and such that
+you optimize throughput then the network
+as a whole in aggregate if all the links
+are optimized the network itself will be
+will be optimized as a whole in terms of
+the third looper to the network and you
+know we have a few goals that we set out
+when we're designing this protocol one
+thing is we want to batch updates right
+if I have like you know 10 H TLC's I
+want to send I don't want to wait you
+know for like 10 different updates right
+I want to say I'm putting all 10 of
+these H TLC's on to commit transaction
+at once you act those changes and we
+move forward right another thing is I
+want to be able to pipeline new changes
+you know a scenario where we have
+basically very high throughput
+bi-directionally I want to be able to
+queue up new changes before you even get
+back to me because otherwise you know I
+have to stop and wait and if I'm waiting
+I could before and HDFC's I could be
+making more money we could be you know
+helping out the network better and
+another things you want to DC critize
+updates
+meaning that you know Alice and Bob be
+connected to each other we don't want to
+like you know only have Alice to do an
+update only up after an update right if
+you imagine the network that's you know
+well connected and there's updates going
+in both directions they be able to
+basically create updates independent of
+one another and you know if you can have
+the d synchronization then for the most
+part when they brought blocking and if
+you eliminate blocking and your d
+synchronize and you can allow that and
+pipelined updates you basically have
+very very high bi-directional throughput
+and you know Elsa LCP in a nutshell is
+basically tell like I thought model oh
+I'm using right now I think of like
+lightning as basically like shadow
+shapes meaning they're kind of like
+block chains right we're with lightning
+you know there's like a symmetric state
+meaning I have a clue in transaction and
+you have a clue in transaction right and
+then you can imagine I can add updates
+to the
+to the state and that's basically like
+the mental right so like I'm adding okay
+add this hdl-c
+add this one to this one and that's in
+the mempool and then when I actually
+want to commit to the you know extend
+the chain one to move to a new state I
+referenced the mempool I say okay you
+know get those 5h TLC's I added and this
+is the new state itself right so this
+allows me to basically keep adding you
+changed it in DC critize matter and we
+have something else we call like the
+replication window and what the
+revocation window is it's kind of like
+like a sliding window in TCP right where
+I can keep you know adding new updates
+until I exhaust your window and this
+lets me basically you know Inadi
+synchronized manner add new updates
+before you even reply to me and if i get
+to the end the end of the window you
+know i wait and you act those changes
+and I can I can continue for it and it
+looks like a timer there and maybe I can
+also like batch these updates and once
+and the replication window also kind of
+asked as flow control where if I'm you
+know doing updates fashion you can
+actually keep up I stop for a second you
+know I wait I let you hack those new
+things and we can move forward
+oh you know in the current protocol the
+replication window is like fixed it's
+maybe like 4 or 16 but you can imagine
+maybe we can do you know more advanced
+things we're like ok I'm moving faster
+so you can like let me extend the
+revocation window by 2 and maybe we can
+shrink it and so on but we keep it
+simple for now all right so I have a
+quick demo I mean demo sorry a diagram
+to kind of show the way the protocol
+works itself right so at the top of the
+screen we have Bob's you know like
+commitment chain where he's only at
+state 0 and at the bottom we have
+Alice's chain and in the middle we have
+like this shared log right and the log
+is even 3 to a cement pool and the log
+is for those fries append-only
+and it can be compacted once we know
+that those entries are no longer no
+wonder it needed and in this example we
+have a revocation window of size 2
+meaning Bob can create two new updates
+with that aleck act without Alice acting
+those updates essentially right so
+initially you know Alice's adding some
+agencies she has another one and another
+ones now we have 3 H TLC's you know in
+the log right and they're uncommitted
+yeah so it means this means that both
+sides basically have this in their log
+but they haven't yet reflect them yet
+updated the new states with like the HDL
+sees itself so now what Alice does is
+Alice creates a new
+in the commitment right so Alice creates
+a new update and what when Alice sends
+over the update she sent over a
+signature right but then she also sends
+over a log index which indexes into
+Alice's vlog and saves you know this
+commitment signature includes every
+single hdl-c or every single update you
+know below this log in Detroit and what
+this lets bob say okay i have your index
+i it then the bodman constructs the
+proper view and a view is essentially
+like you know a community is acting with
+the proper HT LCS and the balance of
+reflected as so so because we have you
+know add a 1 a 2 a 0 Alison gets her
+balance decremented by that amount for
+each of the HDL sees and we have three
+pending HDL sees on this on Bob's commit
+transaction right so at this point Bob
+has the new update right because Alice
+signed the updates at Bob Bob can
+broadcast if if he wants you you know
+and that everything's okay but what Bob
+does now is Barbara books the prior
+state boom and that basically you know
+he said okay I like state one I don't
+need state zero when Bob revoked the
+prior state Bob sends over the preimage
+for that prior state to Alice and you
+also notice that when Alice sent over
+that new commitment update Alice
+consumed when a Bob's revocation you
+know one item for modification window so
+boom you know a revocation window
+decremented by one
+bob has this new state Bob provokes the
+prior state and when Bob revoked the
+prior state he also adds on to the end
+of our vacation window so now Alice can
+you know now do two more updates without
+Bob responding in a decentralized manner
+so now Alice has Bob's revocation house
+revocation hash and now at this point
+Bob sends over to Alice okay I like that
+update here's your version and then
+again house revoke sit and then Bob gets
+this new revocation apps right so what
+we did here is like Bob basically you
+know pipelined or batch 3 updates he
+added 3 h DLCs at once in a single comin
+transaction rad and basically doing
+three individual updates so with this
+you can basically you know bash up this
+and get very very high throughput up to
+a certain amount you know one thing you
+have to be careful about into in terms
+of batching is needed to ensure that
+these transact the transaction connects
+to get onto the blockchain and you know
+because you can create something that
+has to be like 10000 outputs right and
+that's going to basically violate the
+the cost or the weight limit in terms of
+a maximum size and Sega office of
+transactions but if you stay below that
+you can Akif acnes update
+do it a single one so now you know Alice
+has these three H TLC's and Alice Lee
+gonna send these H TLC's to Bob
+so now Bob's turn right let's say Bob
+after some period of time Bob gets the
+cream inches once Bob gets the preimage
+is Bob consent of all three H TLC's in a
+single transaction right so what Bob
+does is you know oh that was animated
+what's not Bob sends three settle
+messages and add them to log and that
+basically says you know a 0 a 1 and a 2
+and then Bob also adds to H TLC's of his
+own you know going in the other
+direction so with a single update you
+know there's a brand new set of htlv sin
+the commit transaction we didn't need a
+wait and you know do 6 or you know three
+updates Bob says okay settling all those
+are the adding my owners my adding my
+own age TLC's and then at that point Bob
+can now create a new update for Alice
+and you know Alice's update references
+you know everything that Alice has done
+which her you know her age TLC's and
+then also references Bob's HT LCS
+meaning Bob settles and then the new ACL
+sees that he adds himself and then at
+this point by Alice now says you know I
+like that state update revokes your
+prior state and Bob now gets a new
+revocation half-ounce so at this point
+if Alice tries to broadcast a zero or a
+one bob has the preimage and then Bob
+can punish can find shallots so at this
+point Alice then replies back to Bob
+gives him macroon transaction which
+references again into the secured log
+and then Bob's like okay I like that too
+and then that's done itself so you know
+this illustrates the concept of LCP
+where basically both adjectives lead to
+synchronize you can batch and pipeline
+updates within a certification window
+and for the most part things are
+non-blocking
+if at some point bob is moving too fast
+for Alice and you know Bob's you know
+keeps extending new hdl-c s in new
+commitment update Bob stops for a second
+there's a time to write out period and
+then eventually alice act one of the old
+changes and Bob can continue and move
+forward all right now to L n D so L n D
+is the Lightning Network daemon the name
+might change but this were calling for
+now the language of choices go if you
+guys don't know go it's a systems
+language you know crated by Google and
+about like oh eight oh nine or so
+initially it wasn't very popular but now
+it's getting more and more ground it was
+created by the guys who need to work on
+you know plan
+and see and they kind of had a few
+principles in mind one thing is goes
+very very simple like the syntax is
+extremely simple it doesn't have a lot
+of like line noise like West or C++ or
+anything like that there's also kind of
+like a de-facto formatting in the
+language so it's very easy to work in
+like large code base because everyone
+else codes looks the same you know the
+styles enforced by this particularly
+tool though also has like first-class
+with currency support it has these like
+lightweight threads and also primitives
+to do message passing between the
+threads and that comes in handy you know
+in several places in LND because you
+want this to be as current as possible
+we want to basically optimize the daemon
+itself such that I can handle like
+separate htl sees at once and then house
+it also has a pretty expensive standard
+library meaning a lot of things like you
+know TLS or like certain cryptographic
+operations all on the Santa library and
+you also get like a single statically
+linked binary which is very easy to
+cross compile between you know various
+object isms and we use a particularly
+big word library called BTC suite
+these are the guys who like make BD CD
+you got heard btcd is another
+alternative no implementation which I
+continue to myself and you know I think
+it's a great library it has a very good
+documentation very good testing I
+actually think it's a pretty good
+resource you know for newcomers to come
+and learn into Bitcoin right you can
+basically just jump right into the code
+the code is pretty well documented is
+pretty well commented and from the most
+part they're you know very helpful you
+can jump on IRC will help you out and we
+use a series of libraries from these
+guys I mean from this github repo itself
+and that includes things like handing
+like scripts you know create
+transactions validating transactions
+doing things with 32 in HD keychain some
+blue filter stuff or everybody RSVP
+nodes and so on and then the daemon also
+has an RPC server and initially we have
+two versions you see the only ones that
+much right now but in the final version
+you'll be able to pick between two RPC
+servers and the first one is HTTP rest
+as you guys know it's you know HTTP base
+you do get in post and various other
+verbs and you can basically use that in
+terms of like a JavaScript library or be
+like a regular command line is JSON or
+we can also have an option for eg RPC
+and what G RPC is based on protocol
+right if you guys know prior law if it's
+a message serialization layer created by
+Google and it basically lets you have
+this kind of declarative language where
+you declare it in a file this is my
+message these are the fields and you
+compile that twenty language right once
+you compile that to a language you
+basically get free civilization and the
+civilization is optimized to a degree it
+handles thing
+like variable like integers and try to
+keep things compact for the most part
+but G RPC is an extension of that we're
+in the same configuration followed was
+declared a file you can then define an
+RPC service right and the RPC service
+saves okay this is foo foo takes the
+message bar and the returns passed and
+then you can pop that and that generates
+like the entire server view and then
+also client binding for that server and
+the cool thing about G RPC it's based on
+HTTP 2 which is kinda like you know the
+next generation HTTP 2 I mean an extra
+nation of HTTP which actually adds
+things like binary sellers agent flow
+control and multiplexing and so on and
+the cool fact is that HTTP 2 is actually
+created or in this part the main
+co-author was Mike Bell shape of bit bit
+go you know fun fact for you guys and
+another cool thing about your PC is
+support bi-directional shaping our pcs
+meaning that we can have like a stream
+reaching the client and server and the
+server and client can communicate by
+directly without having to create a new
+you know TCP connection and so forth for
+every single every single request itself
+and then this is the architecture of the
+day so the things the two things in
+italics the wallet controller and the
+tea notifier actually interfaces and the
+wallet controller is basically like a
+bare-bones interface for a kind of like
+a basic Bitcoin wallet right this wallet
+doesn't understand lightning or anything
+yet but if it can basically just you
+know give it trends give us outputs give
+us keys and then do the basic things for
+that right and then around that we have
+the Ellen wallet and the Ellen wall is
+the version of the wallet which in
+counts the wallet controller in
+interface and that can actually drive
+the daemon because it knows what
+channels are there's how to do planning
+and so forth and then we have something
+called you know the funding reservations
+within the within the the wallet and
+what this does is it allows the wallets
+basically handle concurrent funding
+reservations right because you can
+imagine there's like a race condition
+where like oh this guy wants you know
+this one BTC output right and then that
+needs to be locked up for the duration
+of that funding because otherwise you
+have like a double spend if you have you
+know two funds transacted that reference
+the same output and the fundraiser the
+funding reservation helps to you know
+make sure that doesn't happen and then
+we have the chain refiner so you know
+with lightning it's a bit important you
+know depending on your contract and
+putting on the time locks that you watch
+the blockchain
+right so the chain of I kind of Express
+abstract that away and this is also an
+interface and this is responsible for
+things like you know letting me know
+where the new block comes in letting me
+know what something
+you know let me know when I have for you
+know confirmations in my funding
+transaction and this is also abstracted
+away you know so you can implement this
+with things like an API
+you know Bitcoin DB GCD and so forth and
+then also with the wallet controller
+itself we have some default limitations
+in the daemon which include BTC wallet
+which is a wallet iconic created by the
+same guys btcd
+and we're also working on some SVP
+support so you can drop that right in
+and any other wallet and as you just
+worker flee and then you know continuing
+there we have the funding manager and
+the funding manager kind of bridges the
+wallets reservation protocol and the PDP
+protocol itself so you know these were
+designed to be relatively decoupled
+meaning we can take the same wallet and
+use them some other application
+independent of what we designed for
+appeared for protocol and then we have
+the boat DVD boat DB is a pure go and
+metadata base it's a pretty simple key
+value store this is what we use
+currently to store things like you know
+the state of the channel where my
+current identification is things like
+the routing table and and so on and next
+we have the network router the network
+router communication directly with the
+server and this is kind of you know this
+incorporates what it learned from
+network in terms of the current graph so
+the network router knows about all the
+channels currently opened on the network
+it knows about you know what my current
+like neighborhood sizes and then you
+know that handles like the layer
+throughout it so once a user wants to
+set of payment they go through the
+network router and then goes to the HT
+LC switch which is connected to our
+peers and the switch is just concerned
+with helping multi out forwarding so you
+know it treats all the peers and open
+channels as interfaces when a payment
+comes in and those who just have to next
+and the poor is on the correct interface
+and then finally we have the RPC server
+which lets the user you know control and
+drive all those aspects and I guess I'm
+gonna do demo now so the server I have
+right now I have to VPS is right now one
+is in New York the other one is in San
+Francisco and actually with the seven
+now we have a bit of a little freer
+latency so we can actually see some real
+what scenarios here on the top right
+screen here I have a BT to denote
+wedding of seven that mode and you know
+with sim that basically I can create
+blocks and stain easily and I don't have
+to wait for you know a block to come
+every 10 to 20 minutes or so like it
+would be untouched map so
+here's the note right here do a get info
+and everything's fine alright so I'm
+gonna start up the two lnd notes here's
+the first one comes up and then also
+here is the second one here so both
+nodes are up there currently connected
+to btcd
+so right now for to control L on D we
+have a CLI called btc-e I mean called a
+LM CLI this is similar to the Quincy Li
+or B TT BTCC TL and basically you know
+this lesson to do our players are busy
+commands so first one we have to get
+info and that's like the lighting ID and
+the identity address the IDS may should
+be in just a charge of this hash of the
+node public key and this we're currently
+using right now turn and find nodes
+within the network so got both nodes up
+right now and you know one thing I'll do
+real quick I'll connect with the notes
+so like that both nodes are connected
+now and right now as we can do list
+appears and we see that we have a node
+that's a light an ID and there's nothing
+else really to report because we don't
+have a channel with it yet so to get
+around that we can now open a channel
+take off that block parameter actually
+had that on there before but now we say
+ok we're going to channel pr1 we have
+100 million Satoshi's or one Bitcoin and
+we want to wait exactly for one
+confirmation before we consider the
+channel open so there we go the channel
+is open now and both sides are now
+currently waiting for the channel to
+finish right so one thing we can do here
+so basically we they wet food initial
+funding workflow where basically this
+node right here the demo1 node basically
+said hey own open channel with you and
+then they went through the workflow
+currently you know Damon we only have
+single funder channels open and this is
+just basically just for simplicity of
+the implement of the implementation and
+the network itself and also because if
+you want to do a dual front Ana or
+basically maybe we can book put in a 5
+Bitcoin each
+you might require you know possibly like
+a little more trust because you know at
+that point you're working with some
+stranger and they have your money tied
+up and if they go away then well you
+need to wait a week or so so you can get
+inconvenience so one thing here is on
+the left hand we have some logs I'm
+running in verbose mode so you guys can
+see you know all the logs that are
+actually there right now and initially
+you see we have the running request you
+send it over it gets a response and this
+is basically just giving you parameters
+to open the channel such as various keys
+we need parameters like how long do we
+need a way for the CSV delay and you
+know goes through both sides and then
+finally the originating node broadcast
+the transaction right so now at this
+point both nodes are waiting for a
+single confirmation and we can give them
+at that confirmation real quick by
+having btcd generate a single block so
+boom the blocks been generated now and
+now both sides are ready to rock
+essentially so if we come over this guy
+the node who was connected to and we do
+list peers then we see you know we have
+a channel open the other guy that's one
+Bitcoin and they have all the money and
+then if you go over this guy again we
+have you know one decline channel with
+the other person and local balance is
+one Bitcoin so I have all the money
+right and you know so we see some log
+messages over here on the left hand side
+and what they're doing here is they're
+filling up at initial revocation window
+right and both sides basically just
+fills up by sending revocations with
+these replications have basically a nil
+preimage meaning they don't actually do
+anything and these are just meant to
+populate the inertia revocation window
+so you know one thing I want to show
+here I want to show you know just kind
+of setting some payments and some of the
+api's the beteen the RPC server and the
+client itself so I have this little
+small go for call go program over here
+right and what this program does it
+first creates a client and then creating
+that client base users connecting over
+local host to the to the daemon itself
+and once we have this client we
+basically had a stub of the G RPC server
+itself so using a stub we can
+send payments around as we want to and
+we work with native objects and
+whichever language we're working it
+right so basically what anything is G
+RPC have is it has bi-directional
+streams we're going to be using
+utilizing that here so what the client
+does it creates a stream initially and
+the stream is basically just opens a new
+session between itself and the RPC
+server and with the stream making them
+send and receive you know a non-blocking
+manner across this tree and the server
+can do the same also so we're going to
+show basically here like a burst of a
+PLC going across or you know some micro
+payments so we want to send 2002 oh
+she's right but we're gonna send the
+2000 we're gonna send 2,000 species one
+fishy at a time meaning we're gonna
+complete 2,000 total payments and the
+way the loop works here is basically
+just you know keeps going it like a
+wallet potentially if you go until all
+the stories are set and then for each
+send attempt it launches a new girl
+routine and these are basically like a
+lightweight threads and go and you can
+want to come out of them and you know
+there's really not much overhead and
+they're very small stack and the runtime
+scheduler handle handles them rather
+efficiently so you know after each of
+the teams have been completed
+we're gonna basically push it down in
+the Sun before and then print out the
+number and then finally at the end I'll
+be printing out the elapsed time and
+then kind of like a rough you know GPS
+much of track and then so if we come
+over here to the server this is
+basically the way the server code is set
+up and then the path through it
+so initially on the right here we have
+the RPC server and this is the method
+where it's handling the send payment
+command right and with that it basically
+reads in from the client and once it
+once it reason from the client launches
+a new girl routine and that guy routine
+sends the new payment request over to
+the hdl-c switch right and then finally
+respond back to the client once that's
+been completed and then over here on the
+left this is the switch itself it gets
+the packet and then checks if it has the
+proper interface or not and it has the
+proper interface then it finally goes
+through in attempts to to send a payment
+out if it has sufficient capacity so
+that's how the devil is going to be and
+we have right here a prequel binary so I
+can't enter and the demo or run and as
+you see we're done here and you know
+we're a little bit left but
+just just these log messages because
+they they take more time to actually
+like flush to the buffer but it's
+actually done at this point
+and you see it took about well you know
+1.8 seconds we sent 2,000 individual
+updates and that ended up taking and we
+did that 120 seconds so we have about a
+thousand TPS that means you know with
+micropayments we can just keep doing
+this and know that this is only on one
+channel it is single direction so you
+can assume if we do this by
+directionally we can you know please
+increase the throughput by twofold and
+per channel and per node and so on this
+can really just scale on horizontally
+and generally totally dependent on
+latency and that also the hardware of
+the node itself currently within the
+codes pretty much IO bound just because
+we're doing using like a kind of an
+inefficient manage to record the states
+but that could be improved and said to
+be like an append-only log and you know
+can make things much more efficient so
+if we do list peers here then we see
+that you know the mobile test has 200
+I'm sorry 2000 and we have now 2000 less
+than one Bitcoin and we took 13 updates
+right and this guys ready don't over
+here because he had like less log
+messages as the receiver as you can see
+finally it extends the local chain and
+we see that this is the final
+transaction here and this commitment
+transaction has 2000
+Toshi's to us you know we have this
+delay output showing that it's a witness
+crypt hash and then you know the other
+side gets the rest and they can you know
+spend their money immediately because
+this is our version of the commitment
+transaction and okay it's still settling
+over there but yeah so that was like it
+was a quick demo and at this point some
+remaining steps to do with the
+commitment vertical LCP is I'm gonna be
+looking into doing some form of
+verification in the form of Telia plus
+or plus cow which is a borrowing
+framework created by Leslie Lamport used
+to you know check the correctness of
+concurrent protocols that we just create
+a concurrent protocol we'd like to have
+some assurance as to exactly the
+qualities you know make sure that we
+have liveliness meaning we you know
+don't result and deadlock throughout and
+that we have safety that you know will
+always end up at the same state and like
+and
+and things of that nature and you know
+if we wanted to like send you know
+another quick payment we could do one
+okay I'm sending it you know hundreds of
+Toshi's and that's for this now right so
+now finally we'd like to close out the
+channel right so let me pull it up the
+channel as we get the channel point we
+get the channel point and then now we're
+gonna quit at the cutter alright should
+be closed channel funding chicks ID
+equals they're not letting me copy
+please alright there it is and then our
+index is equal to zero so just like that
+now this this side the initiator sends
+the cloak and requests the other guy
+that accepts it and broadcast the
+channel so as you can see here in the
+left hand side the channels in broadcast
+this is the witness spending from the
+multi-sig and we have our we have our
+two keys and then we also have the
+redeem script itself and you know both
+side to get their money this guy gets
+his 2100 satoshis and the other guy gets
+the remainder and we pay basically a
+small fee so now finally in order to
+close everything else out we need to
+generate another block so blocks been
+generated both sides have closed the
+channel and then finally everything is
+good right so now if we go back on this
+guy or either one of them we do list
+appears we see we still have a pier but
+there aren't any more channel remaining
+and both sides have now started their
+balances on the blockchain so just a
+recap this demo we basically bribe two
+nodes we open a channel between them and
+we sent 2,000 Satoshi's across as you
+know individual one-story payments and
+the micro payment scenario it took about
+a second or so and we achieved around
+1,000 a transaction per second if
+zooming you know each a CEO sees it in
+time of transaction and there's about
+like 70 milliseconds of latency between
+them but basically an optimizer at all
+and this is kind of just showing a demo
+of what we work on so far yeah so that's
+out of the demo back to the presentation
+yeah and you guys can cool down the repo
+and that works now on tessitura simnet
+but you know obviously I tested over
+segments by the 7i here just eat you
+know control block creation myself
+alright so now some things about routing
+right so like what issue we run into
+with lightning is basically path
+authentication right if I'm in a network
+and any node you can basically you know
+there's no curation no one tells me this
+is the graph and you know we can feed me
+basically an invalid
+you know path right and you can imagine
+that me use node I get isolated and then
+someone gives you know feeds me this you
+know parallel network that doesn't
+actually exist and I said oh I'm gonna
+write all my payments do this I round
+all my payments and then he comes stuck
+and I you know just have to wait the
+entire time because there's an attacker
+to prevent this we basically all ten
+Takei tall any path advertisements right
+so meaning you know when you tell me
+there's a path between Bob and Charlie
+you also gave me a proof of that path
+right and the proof basically consists
+of two different things the first part
+of the proof is SPB proof of the funding
+transaction meaning you know you treat
+me as a light client and you give me a
+proof showing you know that at some time
+this output you know this app was
+created in the blockchain you show me
+sufficient work and I say okay this
+channel was there at some point but then
+now I want to know that you actually
+control you know the two you're actually
+you have you have a connection in the
+network between these two peers and
+those two peers actually know the
+private keys of the funding transaction
+which is the two of to multi-state so to
+do this we use an accurate signature of
+the four pseudonyms right so you can
+imagine if a1 and a2 or the two
+identities on the network let's say they
+you know they have public keys four
+identities and b1 and b2 or the channel
+public keys I mean these are the public
+keys within the blockchain itself in the
+two of Tim once you say both sides they
+add those two points together their
+public keys and they get c1 and c2 and
+then they take c1 and c2 and then they
+add that together itself and you know c2
+is basically kind of like the group can
+of public key and in order for us to
+link all four identities what they do is
+they use they generate a signature over
+you know some details of the transaction
+hashed and that signature is a group
+signature using issues nor meaning
+rather than you know doing like for
+individual signatures we do one you know
+single signature which authenticates all
+the parties and you know you can do two
+signatures but then that would basically
+allow you know two that would allow
+multiple peers in the network to
+basically a test to a single channel and
+that would give you basically like a not
+canonical view of the network but we
+want to say you know every single Pierce
+connected only you know with his
+pairwise connected both in the network
+and from the block yet itself so you
+know if you send this to me I'm like
+okay you know I'll add this because you
+did some work meaning you did work to
+you know pay the transaction fees try to
+create a channel and he also did work in
+order to actually lock up some amount of
+funds and the channel itself and then
+Blair so you know I collaborated with
+the theory on a paper macarthur flair it
+was kind of like an initial approach to
+some things that we would like to see in
+terms of like routing with the network
+it's like the layer kind of borrows
+heavily from existing literature and
+like what they call like mad nets or
+like mobile ad hoc networks and these
+bases you know these are mesh networks
+because the scenario lighting is very
+similar to a mesh network meaning you
+know there's no central provider no one
+gives around IP addresses it should be
+self configure in knows may come and
+leave at any time because they going
+offline or not so we thought that we
+could basically learn a lot from you
+know the literature and writing
+protocols in minutes and it's a hybrid
+writing vertical meaning it combines two
+Vedas right typically you have is
+proactive routing and then you already
+have reactive running and with proactive
+routing typically you basically you have
+like a link state or a distance vector
+meaning you collect all the information
+proactively and then once you actually
+want to send you have all the
+information right that comes at a cost
+that comes at you know a storage cost
+but then also that comes at a bandwidth
+cost basically handle all the updates
+for everybody else so then reactive
+routing basically says okay you know
+I'll won't keep the entire state and
+when I actually want to send a payment I
+may have to like consult the network
+which basically adds latency into my
+into my connection establishment and
+then the network knows my path they send
+it back to me and then I can actually
+route and then send packets around and
+this is reactive because it you know at
+the point actually wants to send then is
+it actually going to the network so
+player is a hybrid driving protocol
+which combines these two approaches
+right so first there is a reactive state
+and in the reactive state you have as a
+node you have an initial kind of
+neighborhood radius right and this is
+like maybe like you know five hops or
+opposite max and within this
+neighborhood radius you basically you
+know handle all the updates essentially
+you handle all the obvious with people
+opening closing channels and you handle
+people opening and leaving and because
+this is only like you know a subset of
+the entire network you have saving the
+both bandwidth and storage because
+rather than worrying about you know 100
+million
+I only worry about maybe you know this
+five in this distance which is maybe
+like 100 or so right and then we have
+this thing called beacons right and you
+know beacons kind of borrow from Kat
+Amelia where they add this like extra
+distance meaning you know you might be a
+possible beacon candidate for myself if
+our address distance is close right and
+that dress distance is basically I have
+you know my address a and you were
+dressed B and react sure that's right
+and once we exert those if you're a
+possible beacon then I will you know add
+me you to my table and I'll you know get
+your other routes from I'll get here
+about trouble you and you know each
+these are parameters the neighborhood
+size and also like the number of beacons
+and what happens initially you know you
+connect to the network you have finished
+neighborhood size and then from there
+you do the beacon search right so you
+can salt you know all your current
+neighbors like you know who is close to
+me such that I can you know get a better
+view of the network essentially and
+because of the way the addresses are
+generated to be a hash function and then
+also the XOR this basically allows me to
+get you know some random feeler
+connection down to the network so I
+basically have a very very immuno well
+illuminated view of the like
+neighborhood and then also in addition I
+have kind of some feeler connections out
+into the network which are farther away
+and you know randomly distributed and
+you know this basically resembles a part
+of work where I initially have a very
+good view of my local and then beyond
+that to look more froggy and then we
+have a reactive aspect of it so reactive
+comes out when I actually want to send a
+payment itself right and because this is
+lightning and we imagine that maybe like
+you know fee updates are very very fast
+we could we could flood all those
+updates and all the few schedules but
+that may be you know that may consume a
+large amount of bandwidth and they may
+change very rapidly so instead we knew
+our candidate paths and we basically
+established a hornet onion circuit
+through this candidate path and then as
+were establishing the circuit with each
+node within the path we collect
+additional payment information and this
+payment information is in the form of
+fees so you know initially I have I have
+this path discovery and then I have you
+know onion circus every single one of
+the candidate routes I pick the one
+maybe maybe I pick two for we doesn't
+see well it has the least amount of fees
+and then I can actually use that route
+to send payments exchange possible
+there's no hashes between me and the
+other person but in the case that you
+know let's say the my beacons were
+insufficient meaning with my local
+neighborhood and my beacons I wasn't
+even if I
+proper path what I can do now is I know
+you know your address and I can use the
+beacons basically do like a DFS search
+using these this addressed distance and
+then eventually get to you right so this
+is a it's simply to basically I can
+iterate it I mean like DHT look up
+rather a recursive one and using this I
+we have to find a path for high
+probability you know there's a drawback
+meaning that we don't get optimal
+rounding distance because we're using
+this like probabilistic structure and we
+may basically you know do something
+necessary hops on the way but what this
+allows us to do is allows us to
+basically only have a very very small
+amount of client state gets don't reach
+yet still be able to route with high
+probability you know so like initially
+we won't you know be implementing ala
+cleric or maybe in it full at all
+because some of the optimizations are
+unnecessary you know in the initial
+stage right maybe we have like a
+thousand notes and that's good for us
+right flare is kind of if you have like
+you know hundreds of millions and you
+want to store all the information but if
+you only have a thousand knows and every
+note has maybe like ten channels or so
+that's not much state right and everyone
+can just kind of keep that state
+initially and we use counter proof again
+you know in order to think it all the
+past itself and because we have the
+global state we have all the information
+we can retreat we can you know achieve
+the optimal path length and find a node
+in time and yep so by the way I work
+with lightning labs and we're also
+hiring you know it to add to our team
+we're hiring you know engineers for
+engineers systems engineers protocol
+engineers and you can find our code the
+daemon with I showed light network / L&D
+and some of the underground code I
+mentioned which is Hornet instincts to
+add privacy to the network at lighting
+onion and yeah
