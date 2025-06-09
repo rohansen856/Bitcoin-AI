@@ -1,0 +1,26 @@
+Summary of "The Examiner" Monero Tracing Tool (Second Transcript)
+Super Testnet presents "The Examiner" (also called Snooper Testnet), a tool for analyzing the Monero blockchain to trace transactions to their origin and destination.
+Core Functionality & Information Displayed:
+When a transaction is selected, The Examiner provides:
+Transaction Identifier: The unique ID of the transaction.
+Possible Senders (Ring Members): A list of all potential senders for every input. Monero transactions broadcast this list, with a proof that the real sender is among them.
+Recipients: The individuals who received funds in the transaction.
+Fee and Amount Information: The transaction fee, a lower bound approximation for output amounts (and thus input amounts, which must be greater).
+Timing Info: Information related to the transaction's block.
+Tracing Mechanisms & Heuristics:
+Manual Decoy Elimination:
+Users can mark possible senders as decoys. For instance, if a user identifies their own pub key (verifiable with their view key) and knows they didn't initiate the transaction, they can eliminate themselves.
+An investigator can eliminate a known entity (e.g., an output from a seized darknet market whose Monero address is known) if it's confirmed they didn't make the transaction.
+Automated Decoy Elimination (Heuristics):
+Recency Bias: Monero wallets tend to select recent outputs as decoys. The Examiner can automatically flag possible senders if their input is significantly older (e.g., a million blocks) than all other more recent inputs in the ring (e.g., within 10,000 blocks of the current block, or 200,000 in the demo mode). Such an old input "sticks out like a sore thumb" and is likely the true spend.
+Multi-Input Transaction Timing Analysis: For transactions with multiple inputs, Monero uses a decaying gamma function for input selection. It is statistically rare for a wallet to pick two old UTXOs (Unspent Transaction Outputs) that were created in blocks very close to each other (e.g., within five blocks) unless the sender received those funds close together (e.g., a donation campaign) and needed to merge them. This timing pattern can indicate the true inputs. (The speaker mentions using demo=true mode, which modifies parameters to highlight these cases, and that recent inputs are excluded from this heuristic as close timing is common for them).
+Recipient Analysis & Data Handling:
+Recipients are listed in plaintext on Monero, allowing users to label them.
+The tool tracks other transactions recipients appear in. Since the Blockchair API (used for Monero blockchain data) does not offer the same output cross-referencing feature as some Bitcoin block explorers, The Examiner saves a local record of every transaction an output is seen in.
+Future Heuristics Planned:
+Identifying transactions potentially from an exchange or a bot by looking for characteristics like consolidating inputs or sending to a large group of people in a single transaction (uncommon for regular users). This could also help identify change addresses by observing if an output later appears in another multi-output transaction.
+Motivation & Availability:
+The tool was inspired by a proprietary visual Monero tracing tool from CypherTrace, a blockchain analysis company, whose screenshot was shared on Reddit.
+Super Testnet's goal was to create a free and open-source alternative to encourage community contributions and improvements, as CypherTrace does not reveal its source code.
+The Examiner will be released on Super Testnet's GitHub.
+The tool aims to help users build a "tree of statistical analysis" by systematically eliminating decoys from Monero transactions, thereby increasing the probability of identifying the true sender.

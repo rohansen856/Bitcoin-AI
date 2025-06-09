@@ -1,0 +1,25 @@
+Summary of "The Examiner" Monero Tracing Tool (Corrected Transcript)
+Super Testnet introduces his latest invention, the "<u>Examiner</u>" (also called Snooper Testnet), a tool designed for examining the <u>Monero</u> blockchain to trace transactions.
+Core Functionality & Information Displayed:
+For a given <u>Monero</u> transaction, the <u>Examiner</u> displays:
+Transaction identifier.
+All <u>possible senders</u> (ring members) for each input. <u>Monero</u> transactions broadcast this list with a proof that the real sender is within the group.
+Information about transaction fees and amounts (lower bounds for outputs, thus inputs).
+Timing information.
+Tracing Mechanisms & Heuristics:
+Manual Decoy Elimination:
+Users can mark a <u>possible sender</u> as a decoy if they know it's not the true sender. For example, if a user identifies their own <u>public key</u> (using their view key) and knows they didn't make the transaction.
+Investigators can eliminate outputs known to belong to a specific entity (e.g., a seized darknet market whose <u>Monero</u> address and outputs are known) if that entity couldn't have made the transaction.
+Automated Decoy Elimination (Heuristics):
+<u>Recency Bias</u>: <u>Monero</u> wallets tend to pick recent outputs as decoys. The tool can flag a <u>possible sender</u> if their input is significantly older than all other recent inputs in the ring (e.g., a million blocks old vs. others within 10,000 blocks, or 200,000 in demo mode). This outlier is likely the true spend. The speaker notes that a specific transaction example shown does not actually exhibit <u>recency bias</u> without the demo mode adjustments.
+Multi-Input Transaction Timing Analysis: In multi-input transactions, <u>Monero</u> uses a decaying gamma function for input selection. It's statistically rare for a wallet to merge two old <u>UTXOs</u> created in blocks very close to each other (e.g., within five blocks) unless the sender specifically received those funds close together. The tool uses this to identify likely true senders (e.g., <u>possible sender</u> 10 and 11 in an example). Demo mode parameters were adjusted for illustration.
+Recipient Analysis & Data Handling:
+Regarding recipients, the transcript states they are "<u>not</u> just listed in plain text on <u>Monero</u>," implying their identities are protected on the blockchain itself. However, the tool allows users to label recipients, suggesting it provides mechanisms to identify or link them, perhaps through view keys or other analytical methods.
+The tool tracks other transactions recipients appear in. Since <u>Blockchair's API</u> (used to get <u>Monero</u> blockchain data) doesn't provide output cross-referencing like some Bitcoin explorers, <u>Blockchair</u> (the service) doesn't allow this directly. The <u>Examiner</u> saves its own record of transaction appearances.
+Future Heuristics Planned:
+Identifying transactions from exchanges or bots by looking for patterns like sending to many outputs in one transaction, which could help identify change addresses.
+Motivation & Availability:
+The tool was inspired by a proprietary visual <u>Monero</u> tracing tool from <u>CipherTrace</u>, a blockchain analysis company.
+Super Testnet created the <u>Examiner</u> as a free and open-source alternative because with closed-source tools like <u>CipherTrace</u>'s, "<u>we can't help contribute and improve it</u>."
+The <u>Examiner</u> will be released on GitHub.
+The tool aims to build a statistical analysis record to help deduce the probable sender in <u>Monero</u> transactions by eliminating decoys.
