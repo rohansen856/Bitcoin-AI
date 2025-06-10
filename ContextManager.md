@@ -4,7 +4,8 @@ The ContextManager is a class that manages the context of a model that's working
 in a given repository. This is inspired by the ring buffer used by
 [llama.vim](https://github.com/ggml-org/llama.vim) along with the [back-end
 support provided by llama.cpp](https://github.com/ggml-org/llama.cpp/pull/9866):
-`--cache-reuse` and `"cache_prompt": true`
+`--cache-reuse` and `"cache_prompt": true`. It's also inspired by [Paged
+Attention](https://arxiv.org/abs/2309.06180) implemented in SGLang and vLLM.
 
 We assume the user has a GPU always at the ready within their own laptop or
 desktop, that the ContextManager has exclusive use of and control over. We
@@ -23,6 +24,37 @@ prompt.
 
 Context will be delimited by XML tags (assuming the code being edited is not
 itself XML).
+
+## Backend Support
+
+We will need the backend LLM server to support explicit context management
+through the following API. The point is that context chunks can be selectively
+enabled, disabled, moved to unused VRAM, or moved to system RAM. This saves us
+from having to re-tokenize and re-process the entire prompt. In the FIM of
+llama.cpp this works *extremely* well and is very fast.
+
+```
+GET /context                Retrieve a list of all the contexts in the current prompt by id.
+                            Contexts are identified by sha256 hash and have
+                            attributes such as "active" and "location" (ordering
+                            in KV cache)
+POST /context               Add a new context to the current prompt
+                            (returns id=sha256(content))
+GET /context/{id}           Retrieve the un-tokenized context by id and metadata
+POST /context/load/{id}     Mark a context chunk as active (paged-in to the KV cache
+                            for the next user query)
+POST /context/unload/{id}   Mark a context chunk as inactive (paged-out of the
+                            KV cache and won't be present in the next user query)
+DELETE /context/{id}        Remove a context chunk from VRAM or system RAM
+```
+
+Memory management of these chunks must be handled by the backend LLM server. The
+Paged Attention mechanism allows portions of the KV cache to be selectively
+disabled and re-enabled. We may also move context sections of the KV cache to
+unused areas of VRAM, system RAM, or even disk.
+
+By using content-based addressing using a hash, we also automatically achieve
+deduplication of context chunks.
 
 ## Context Types
 
@@ -163,9 +195,9 @@ LLM](https://chatgpt.com/share/6842a722-a6dc-800f-ade6-8ccb5b489bc0) was to
 number lines, sometimes called "ln-diff". Consider:
 ```
 <editing type="function" file="foo/__init__.py" name="baz">
-L1 def baz(s: str):
-L2    <|FIM_MIDDLE|>
-L3    return bool(re.match('bar', s)
+1 def baz(s: str):
+2    <|FIM_MIDDLE|>
+3    return bool(re.match('bar', s)
 </editing>
 ```
 an instruction can be given:
@@ -176,7 +208,7 @@ must be preceded by its line number.
 which might result in a suggestion:
 ```
 <suggestion type="function" file="foo/__init__.py" name="baz">
-L2    logger.log(f"baz({s})")
+2    logger.log(f"baz({s})")
 </suggestion>
 ```
 This minimizes the output length and will result in faster responses. However we
