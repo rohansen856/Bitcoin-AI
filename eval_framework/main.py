@@ -10,8 +10,6 @@ valid_metrics = [m for m in metrics if m is not None]
 
 results = evaluate(test_cases=test_cases, metrics=valid_metrics)
 
-import matplotlib.pyplot as plt
-
 metric_scores = {
     result.metrics_data[0].name: result.metrics_data[0].score for result in results.test_results
 }
