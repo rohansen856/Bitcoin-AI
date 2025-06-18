@@ -137,7 +137,7 @@ Choose one or both transcription options.
     ```bash
     python 01_download_videos.py
     python 02_extract_audio.py
-    python 03_preprocess_audio.py
+    python 03_preprocess_audio.py #This is optional and can be skipped now, added post_processing with models only.
 
     # Choose one or both transcription scripts:
     # python 04a_transcribe_nemo.py
