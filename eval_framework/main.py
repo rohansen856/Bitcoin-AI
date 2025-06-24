@@ -1,14 +1,12 @@
 from deepeval import evaluate
-from modules.test_cases import get_test_cases
+from modules.test_cases import test_cases
 from modules.eval import answer_relevancy_metric, faithfulness_metric, contextual_relevancy_metric, contextual_precision_metric, contextual_recall_metric, tool_correctness_metric, task_completion_metric, json_correctness_metric, hallucination_metric, toxicity_metric, bias_metric, summarization_metric
 import matplotlib.pyplot as plt
 
 # metrics = [answer_relevancy_metric, faithfulness_metric, contextual_relevancy_metric, contextual_precision_metric, contextual_recall_metric, tool_correctness_metric, task_completion_metric, json_correctness_metric, hallucination_metric, toxicity_metric, bias_metric, summarization_metric]
-metrics = [answer_relevancy_metric, tool_correctness_metric]
+metrics = [answer_relevancy_metric, tool_correctness_metric, contextual_relevancy_metric, task_completion_metric, toxicity_metric, hallucination_metric]
 # Removing any `None` values
 valid_metrics = [m for m in metrics if m is not None]
-
-test_cases = get_test_cases()
 
 results = evaluate(test_cases=test_cases, metrics=valid_metrics)
 print(results)
