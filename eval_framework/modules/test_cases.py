@@ -17,17 +17,12 @@ def load_test_cases_from_json(file_path):
 questions_data = load_test_cases_from_json('qna.json')
 
 # Create test cases dynamically
-test_cases = []
-
-def get_test_cases():    
-    # Add test cases from JSON data
-    for item in questions_data:
-        test_cases.append(
-            LLMTestCase(
-                input=item["prompt"],
-                expected_output=item["expected"],
-                actual_output=llama31.generate(item["prompt"]),
-            )
-        )
-    
-    return test_cases
+test_cases = [
+    LLMTestCase(
+        input=item["prompt"],
+        expected_output=item["expected"],
+        actual_output=llama31.generate(item["prompt"]),
+        context=item.get("context", None),
+    )
+    for item in questions_data
+]
