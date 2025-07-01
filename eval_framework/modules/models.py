@@ -49,38 +49,5 @@ class LLaMA32Evaluator(DeepEvalBaseLLM):
     def get_model_name(self):
         return self.model_name
 
-from deepeval.test_case import LLMTestCase
-
 llama31 = LLaMA31Model()
-
-test_cases = [
-    LLMTestCase(
-        input="What is the capital of France?",
-        expected_output="Paris",
-        actual_output=llama31.generate("What is the capital of France?")
-    ),
-    LLMTestCase(
-        input="Who wrote 'Pride and Prejudice'?",
-        expected_output="Jane Austen",
-        actual_output=llama31.generate("Who wrote 'Pride and Prejudice'?")
-    ),
-]
-
-from deepeval.metrics import GEval
-from deepeval.test_case import LLMTestCaseParams
-
 llama32_evaluator = LLaMA32Evaluator()
-
-answer_relevancy_metric = GEval(
-    name="Answer Relevancy",
-    criteria="Does the answer directly address the question?",
-    model=llama32_evaluator,
-    evaluation_params=[LLMTestCaseParams.INPUT, LLMTestCaseParams.ACTUAL_OUTPUT]
-)
-
-from deepeval import evaluate
-
-evaluate(
-    test_cases=test_cases,
-    metrics=[answer_relevancy_metric]
-)

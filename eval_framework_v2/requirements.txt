@@ -1,0 +1,10 @@
+deepeval
+pandas
+matplotlib
+seaborn
+requests
+openai
+anthropic
+asyncio
+numpy
+pathlib

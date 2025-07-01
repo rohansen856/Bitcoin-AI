@@ -1,0 +1,11 @@
+[
+    {"prompt": "What is the capital of France?", "expected": "Paris"},
+    {"prompt": "What is the largest planet in our solar system?", "expected": "Jupiter"},
+    {"prompt": "Who painted the Mona Lisa?", "expected": "Leonardo da Vinci"},
+    {"prompt": "What is the boiling point of water in Celsius?", "expected": "100"},
+    {"prompt": "Who wrote 'To Kill a Mockingbird'?", "expected": "Harper Lee"},
+    {"prompt": "What is the chemical symbol for gold?", "expected": "Au"},
+    {"prompt": "What is the main ingredient in guacamole?", "expected": "Avocado"},
+    {"prompt": "Who discovered penicillin?", "expected": "Alexander Fleming"},
+    {"prompt": "Who wrote 'Pride and Prejudice'?", "expected": "Jane Austen"}
+]
