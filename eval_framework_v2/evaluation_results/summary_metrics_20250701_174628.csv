@@ -1,0 +1,6 @@
+Model,Provider,Category,Difficulty,Relevancy Score,Faithfulness Score,Response Time (s),Token Count,Has Error
+ollama/llama3.2,ollama,explanation,medium,0.0,0.0,30.031756162643433,0,True
+ollama/llama3.2,ollama,coding,easy,0.74,0.0,12.550824165344238,82,False
+ollama/llama3.2,ollama,analysis,hard,0.0,0.0,30.031699180603027,0,True
+ollama/llama3.2,ollama,math,easy,1.0,0.0,1.2400593757629395,8,False
+ollama/llama3.2,ollama,summarization,easy,0.8333333333333334,0.0,10.93403959274292,122,False
