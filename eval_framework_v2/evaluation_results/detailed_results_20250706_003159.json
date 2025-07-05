@@ -1,0 +1,182 @@
+[
+  {
+    "model_name": "ollama/llama3.2",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Explain quantum computing in simple terms.",
+      "expected_output": null,
+      "context": null,
+      "category": "explanation",
+      "difficulty": "medium"
+    },
+    "actual_output": "Quantum computing is a new way of processing information that's different from the way our regular computers work.\n\n**Classical Computing**\n\nImagine you have a huge library with an infinite number of books, each representing a possible solution to a problem. A classical computer would look at each book one by one, check if it's the right answer, and then move on to the next one. This process is like searching for a specific book in the library, one by one.\n\n**Quantum Computing**\n\nA quantum computer is like a magical librarian who can look at ALL the books at the same time! It uses special tiny particles called qubits (quantum bits) that can exist in many states simultaneously, like being both 0 and 1 at the same time. This means it can explore ALL possible solutions to a problem at the same time.\n\nImagine you're trying to find a specific book in the library, but instead of looking one by one, you use a special tool that shows you all the books that could possibly be on your shelf, including some you might not have even considered before. That's basically what quantum computing does!\n\n**The Magic of Quantum Computing**\n\nQuantum computers have several advantages over classical computers:\n\n1. **Speed**: Quantum computers can solve certain problems much faster than classical computers.\n2. **Complexity**: Quantum computers can handle complex calculations that would be impossible for regular computers.\n\nHowever, quantum computing is still a relatively new field, and we're just beginning to understand its full potential.\n\n**What does this mean for us?**\n\nQuantum computing has the potential to revolutionize many areas of science, engineering, and technology, such as:\n\n1. **Cryptography**: Quantum computers can break certain types of encryption, but they also have the power to create unbreakable codes.\n2. **Optimization**: Quantum computers can solve complex optimization problems, like finding the most efficient way to move goods or supply chains.\n3. **Medicine**: Quantum computers can help simulate complex biological systems, leading to new discoveries and treatments for diseases.\n\nIn summary, quantum computing is a new way of processing information that uses special particles called qubits to explore many possibilities at once, making it potentially faster and more powerful than classical computers.",
+    "relevancy_score": 0.74,
+    "faithfulness_score": 0.0,
+    "response_time": 6.9852821826934814,
+    "token_count": 366,
+    "error": null,
+    "timestamp": "2025-07-06T00:29:24.045405"
+  },
+  {
+    "model_name": "ollama/llama3.2",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Write a Python function to calculate fibonacci numbers.",
+      "expected_output": null,
+      "context": null,
+      "category": "coding",
+      "difficulty": "easy"
+    },
+    "actual_output": "def fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number.\n\n    Args:\n        n (int): The position of the Fibonacci number to calculate.\n\n    Returns:\n        int: The nth Fibonacci number.\n    \"\"\"\n\n    # Base cases\n    if n <= 0:\n        return \"Input should be a positive integer\"\n    elif n == 1:\n        return 0\n    elif n == 2:\n        return 1\n\n    # Initialize variables for memoization\n    memo = [0, 1]\n\n    # Calculate Fibonacci numbers up to the nth number\n    for i in range(2, n):\n        # Calculate the next Fibonacci number using the previous two numbers\n        next_number = memo[i - 1] + memo[i - 2]\n        \n        # Store the result in the memo dictionary\n        memo.append(next_number)\n\n    # Return the nth Fibonacci number\n    return memo[-1]\n\n# Example usage:\nprint(fibonacci(10))  # Output: 55",
+    "relevancy_score": 0.74,
+    "faithfulness_score": 0.0,
+    "response_time": 3.0871400833129883,
+    "token_count": 119,
+    "error": null,
+    "timestamp": "2025-07-06T00:29:30.350181"
+  },
+  {
+    "model_name": "ollama/llama3.2",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Analyze the geopolitical implications of renewable energy adoption.",
+      "expected_output": null,
+      "context": null,
+      "category": "analysis",
+      "difficulty": "hard"
+    },
+    "actual_output": "The adoption of renewable energy has significant geopolitical implications that can shape global politics, economies, and societies. Here are some key aspects to consider:\n\n1. **Energy Security:** Renewable energy can reduce dependence on imported fossil fuels, enhancing national energy security and reducing vulnerability to price fluctuations. This can lead to increased political stability and improved relationships with energy suppliers.\n2. **Global Power Dynamics:** The transition to renewable energy can alter global power dynamics, as countries with significant renewable energy resources (e.g., Norway, Denmark) may gain more influence in international energy markets. Conversely, countries reliant on fossil fuels may experience declining influence.\n3. **Economic Impact:** Renewable energy adoption can create new economic opportunities, such as job creation and investment in clean technologies. However, it can also lead to job losses in traditional energy sectors, particularly if they are unable to adapt to changing market conditions.\n4. **International Cooperation:** The global transition to renewable energy requires international cooperation, which can foster new forms of diplomacy and collaboration. Countries may work together to share knowledge, technologies, and best practices, promoting peaceful resolution of conflicts over resources.\n5. **Climate Change Mitigation:** Renewable energy plays a critical role in mitigating climate change by reducing greenhouse gas emissions. The global community's success in transitioning to renewable energy can enhance its credibility on the international stage and reinforce its commitment to addressing this pressing global challenge.\n6. **Competition for Resources:** As countries pursue renewable energy, they may compete for access to resources like solar panels, wind turbines, or lithium-ion batteries. This competition can lead to tensions between nations, particularly if they are not willing to share or cooperate on resource extraction and trade.\n7. **Innovation and Technological Advancements:** The rapid development of new renewable energy technologies can create opportunities for countries to leapfrog traditional energy systems and gain a competitive edge in the global economy.\n8. **Energy Diplomacy:** Renewable energy adoption can become a key aspect of energy diplomacy, as countries use their clean energy capabilities to build relationships and secure strategic partnerships with other nations.\n\n**Country-Specific Implications:**\n\n1. **United States:** As a leader in renewable energy technology, the United States has significant influence over global policy discussions. However, its withdrawal from international climate agreements (e.g., Paris Agreement) has raised concerns among allies and sparked debates about its commitment to clean energy.\n2. **China:** China's rapid transition to renewable energy has transformed its economy and become a key player in the global energy market. Its leadership on clean energy issues has earned it significant influence, but also raised concerns about intellectual property theft and competition for resources.\n3. **European Union:** The EU's commitment to renewable energy has made it a pioneer in this field, driving innovation and policy coherence among member states. However, its reliance on imported energy sources highlights the need for greater regional cooperation and security measures.\n4. **India:** India's ambitious plans for renewable energy growth are expected to transform its economy and improve energy security. Its growing partnership with China has raised concerns about its dependence on Chinese technology and expertise.\n\n**Conclusion:**\n\nThe adoption of renewable energy has far-reaching geopolitical implications that can shape global politics, economies, and societies. As countries transition to clean energy sources, they will face new opportunities and challenges, from competition for resources to cooperation and diplomacy. Understanding these implications is crucial for policymakers, business leaders, and civil society to navigate the complex web of international relations and ensure a sustainable future for all.",
+    "relevancy_score": 0.8400000000000001,
+    "faithfulness_score": 0.0,
+    "response_time": 10.87775206565857,
+    "token_count": 574,
+    "error": null,
+    "timestamp": "2025-07-06T00:29:45.540956"
+  },
+  {
+    "model_name": "ollama/llama3.2",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "What is 15 * 23?",
+      "expected_output": null,
+      "context": null,
+      "category": "math",
+      "difficulty": "easy"
+    },
+    "actual_output": "15 * 23 = 345",
+    "relevancy_score": 1.0,
+    "faithfulness_score": 0.0,
+    "response_time": 0.14480304718017578,
+    "token_count": 5,
+    "error": null,
+    "timestamp": "2025-07-06T00:29:54.844016"
+  },
+  {
+    "model_name": "ollama/llama3.2",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Summarize the key points of machine learning in 3 bullet points.",
+      "expected_output": null,
+      "context": null,
+      "category": "summarization",
+      "difficulty": "easy"
+    },
+    "actual_output": "Here are three key points about machine learning:\n\n\u2022 **Supervised Learning**: Machine learning involves training algorithms on labeled data to learn patterns and relationships. The algorithm is trained on a dataset with input features and corresponding output labels, allowing it to make predictions or decisions on new, unseen data.\n\n\u2022 **Unsupervised Learning** and **Semi-supervised Learning**: In addition to supervised learning, machine learning also includes unsupervised learning (where the algorithm identifies patterns without prior knowledge) and semi-supervised learning (where the algorithm is trained on both labeled and unlabeled data). These techniques are useful for discovering hidden structures or relationships in data.\n\n\u2022 **Self-Supervised Learning** and **Reinforcement Learning**: Self-supervised learning involves training algorithms to perform tasks independently, often through self-supervised objectives, while reinforcement learning involves training algorithms to maximize rewards or penalties for their actions. Both of these techniques enable machines to learn from experience and adapt to new situations without human intervention.",
+    "relevancy_score": 0.7945454545454546,
+    "faithfulness_score": 0.0,
+    "response_time": 2.958181381225586,
+    "token_count": 151,
+    "error": null,
+    "timestamp": "2025-07-06T00:30:00.816677"
+  },
+  {
+    "model_name": "ollama/llama3.1",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Explain quantum computing in simple terms.",
+      "expected_output": null,
+      "context": null,
+      "category": "explanation",
+      "difficulty": "medium"
+    },
+    "actual_output": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+    "relevancy_score": 0.0,
+    "faithfulness_score": 0.0,
+    "response_time": 30.030846118927002,
+    "token_count": 0,
+    "error": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+    "timestamp": "2025-07-06T00:30:30.847609"
+  },
+  {
+    "model_name": "ollama/llama3.1",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Write a Python function to calculate fibonacci numbers.",
+      "expected_output": null,
+      "context": null,
+      "category": "coding",
+      "difficulty": "easy"
+    },
+    "actual_output": "**Fibonacci Function**\n======================\n\nHere's a simple and efficient way to calculate Fibonacci numbers in Python using recursion:\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number.\n\n    Args:\n        n (int): The index of the desired Fibonacci number.\n\n    Returns:\n        int: The nth Fibonacci number.\n    \"\"\"\n    if n <= 1:\n        return n\n    else:\n        return fibonacci(n-1) + fibonacci(n-2)\n```\n\n**Example Use Cases**\n--------------------\n\nTo use this function, simply call it with an integer representing the index of the desired Fibonacci number:\n\n```python\nprint(fibonacci(0))   # Output: 0\nprint(fibonacci(1))   # Output: 1\nprint(fibonacci(5))   # Output: 5\nprint(fibonacci(10))  # Output: 55\n```\n\n**Optimization (Optional)**\n---------------------------\n\nNote that this recursive approach has an exponential time complexity of O(2^n), which makes it inefficient for large values of n. For better performance, consider using a dynamic programming approach with memoization:\n\n```python\ndef fibonacci(n):\n    memo = {0: 0, 1: 1}\n    for i in range(2, n+1):\n        memo[i] = memo[i-1] + memo[i-2]\n    return memo[n]\n```\n\nThis iterative solution has a linear time complexity of O(n), making it much faster and more suitable for large values of n.",
+    "relevancy_score": 0.79,
+    "faithfulness_score": 0.0,
+    "response_time": 25.812288761138916,
+    "token_count": 174,
+    "error": null,
+    "timestamp": "2025-07-06T00:30:59.991983"
+  },
+  {
+    "model_name": "ollama/llama3.1",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Analyze the geopolitical implications of renewable energy adoption.",
+      "expected_output": null,
+      "context": null,
+      "category": "analysis",
+      "difficulty": "hard"
+    },
+    "actual_output": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+    "relevancy_score": 0.0,
+    "faithfulness_score": 0.0,
+    "response_time": 30.030816078186035,
+    "token_count": 0,
+    "error": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+    "timestamp": "2025-07-06T00:31:30.022884"
+  },
+  {
+    "model_name": "ollama/llama3.1",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "What is 15 * 23?",
+      "expected_output": null,
+      "context": null,
+      "category": "math",
+      "difficulty": "easy"
+    },
+    "actual_output": "15 * 23 = 345.",
+    "relevancy_score": 1.0,
+    "faithfulness_score": 0.0,
+    "response_time": 0.904141902923584,
+    "token_count": 5,
+    "error": null,
+    "timestamp": "2025-07-06T00:31:40.308983"
+  },
+  {
+    "model_name": "ollama/llama3.1",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Summarize the key points of machine learning in 3 bullet points.",
+      "expected_output": null,
+      "context": null,
+      "category": "summarization",
+      "difficulty": "easy"
+    },
+    "actual_output": "Here are three key points summarizing the concept of machine learning:\n\n\u2022 **Pattern recognition and prediction**: Machine learning involves training algorithms to recognize patterns in data, allowing them to make predictions or decisions based on that data. This can be as simple as recognizing images of cats versus dogs, or as complex as predicting stock prices.\n\n\u2022 **Learning from experience**: Machine learning models learn from examples (training data) and improve their performance over time through a process called \"supervised\" or \"unsupervised\" learning. The model is updated based on feedback, such as correct labels for images, to refine its predictions and accuracy.\n\n\u2022 **Autonomous decision-making**: Once trained, machine learning models can operate independently, making decisions or taking actions without human intervention. This has far-reaching implications in various fields, including healthcare, finance, transportation, and customer service, where machines can provide personalized recommendations, diagnose issues, or even control physical systems.",
+    "relevancy_score": 0.7945454545454546,
+    "faithfulness_score": 0.0,
+    "response_time": 15.251057386398315,
+    "token_count": 147,
+    "error": null,
+    "timestamp": "2025-07-06T00:31:58.953173"
+  }
+]

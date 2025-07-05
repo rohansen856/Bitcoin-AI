@@ -1,0 +1,11 @@
+Model,Provider,Category,Difficulty,Relevancy Score,Faithfulness Score,Response Time (s),Token Count,Has Error
+ollama/llama3.2,ollama,explanation,medium,1.0,0.0,7.094599485397339,233,False
+ollama/llama3.2,ollama,coding,easy,0.74,0.0,1.8343076705932617,69,False
+ollama/llama3.2,ollama,analysis,hard,0.875,0.0,10.579935073852539,532,False
+ollama/llama3.2,ollama,math,easy,1.0,0.0,0.21233773231506348,8,False
+ollama/llama3.2,ollama,summarization,easy,0.8571428571428571,0.0,2.4240736961364746,122,False
+ollama/llama3.1,ollama,explanation,medium,0.0,0.0,30.03194761276245,0,True
+ollama/llama3.1,ollama,coding,easy,0.79,0.0,18.282696962356567,131,False
+ollama/llama3.1,ollama,analysis,hard,0.0,0.0,30.03100061416626,0,True
+ollama/llama3.1,ollama,math,easy,1.0,0.0,1.058403730392456,5,False
+ollama/llama3.1,ollama,summarization,easy,1.0,0.0,17.466633081436157,171,False
