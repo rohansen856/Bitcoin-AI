@@ -12,7 +12,7 @@ from typing import Dict, List
 from .config import EvaluationConfig
 from .test_case import TestCase
 from .evaluation_result import EvaluationResult
-from .providers import OllamaProvider, ClaudeProvider, OpenAIProvider
+from .providers import OllamaProvider, ClaudeProvider, OpenAIProvider, CustomLLMProvider
 from .custom_deepeval_model import CustomDeepEvalModel
 from deepeval import evaluate
 from deepeval.metrics import AnswerRelevancyMetric, FaithfulnessMetric
@@ -27,7 +27,8 @@ class LLMEvaluationFramework:
         self.providers = {
             'ollama': OllamaProvider(config),
             'claude': ClaudeProvider(config),
-            'openai': OpenAIProvider(config)
+            'openai': OpenAIProvider(config),
+            'custom': CustomLLMProvider(config)
         }
         self.results: List[EvaluationResult] = []
         Path(config.output_dir).mkdir(parents=True, exist_ok=True)
@@ -86,12 +87,19 @@ class LLMEvaluationFramework:
                         if evaluator_model_name.startswith('gpt') and self.config.openai_api_key:
                             assert self.config.openai_api_key.startswith('sk-'), "Invalid OpenAI key format"
                             evaluator_provider = self.providers['openai']
+                            print(f"Using openai LLM provider: {evaluator_model_name}")
                         elif evaluator_model_name.startswith('claude') and self.config.anthropic_api_key:
                             assert self.config.anthropic_api_key.startswith('sk-ant-'), "Invalid Anthropic key format"
                             evaluator_provider = self.providers['claude']
+                            print(f"Using claude LLM provider: {evaluator_model_name}")
+                        elif evaluator_model_name.startswith('custom') and self.config.custom_llm_base_url:
+                            assert self.config.custom_llm_api_key.startswith('sk-'), "Invalid custom API key format"
+                            evaluator_provider = self.providers['custom']
+                            print(f"Using custom LLM provider: {evaluator_model_name}")
                         elif 'ollama' in self.providers:
                             evaluator_provider = self.providers['ollama']
                             evaluator_model_name = 'llama3.2'  # Default Ollama model
+                            print(f"Using ollama LLM provider: {evaluator_model_name}")
                         
                         if evaluator_provider:
                             evaluator_model = CustomDeepEvalModel(evaluator_provider, evaluator_model_name)
@@ -174,7 +182,7 @@ class LLMEvaluationFramework:
         """Run evaluation on multiple models
         Args:
             models: Dict mapping provider names to list of model names
-            e.g., {'ollama': ['llama2', 'mistral'], 'openai': ['gpt-3.5-turbo']}
+            e.g., {'ollama': ['llama2', 'mistral'], 'openai': ['gpt-3.5-turbo'], 'custom': ['custom']}
         """
         logger.info("Starting LLM evaluation framework")
         
