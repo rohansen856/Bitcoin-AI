@@ -1,0 +1,182 @@
+[
+  {
+    "model_name": "ollama/llama3.2",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Explain quantum computing in simple terms.",
+      "expected_output": null,
+      "context": null,
+      "category": "explanation",
+      "difficulty": "medium"
+    },
+    "actual_output": "Quantum computing is a new way of processing information that's different from the way our regular computers work.\n\nRegular computers use something called \"bits\" to store and process information. Bits are either 0 or 1, like a coin that's either heads or tails. This type of processing is called classical computing.\n\nBut quantum computers use something called \"qubits\" (quantum bits) instead. Qubits can be both 0 AND 1 at the same time! It's like a special kind of coin that can be both heads AND tails simultaneously.\n\nThis means that qubits can process many possibilities all at once, way faster than classical computers. Imagine having a huge box full of different colored balls. A regular computer would have to look through each ball one by one to find the correct color. But a quantum computer could use a qubit to see all the colors at the same time and pick out the correct one instantly!\n\nThis is because of something called \"superposition\" (when a qubit can be both 0 AND 1), \"entanglement\" (when qubits are connected in such a way that what happens to one affects the other), and \"quantum gates\" (the quantum equivalent of logic gates).\n\nQuantum computing has many potential applications, like:\n\n* Breaking complex codes\n* Simulating complex systems\n* Optimizing large datasets\n\nBut it's still a relatively new field, and scientists are working hard to develop more efficient algorithms and hardware.\n\nThe goal is to harness the power of quantum mechanics to create computers that can solve problems much faster than classical computers. It's an exciting time for quantum computing!",
+    "relevancy_score": 0.74,
+    "faithfulness_score": 0.0,
+    "response_time": 24.80317258834839,
+    "token_count": 264,
+    "error": null,
+    "timestamp": "2025-07-01T21:20:33.112469"
+  },
+  {
+    "model_name": "ollama/llama3.2",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Write a Python function to calculate fibonacci numbers.",
+      "expected_output": null,
+      "context": null,
+      "category": "coding",
+      "difficulty": "easy"
+    },
+    "actual_output": "# Fibonacci Number Calculation Function\n=====================================\n\nThe following is a Python function that calculates the nth number in the Fibonacci sequence.\n\n### Code\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number.\n\n    Args:\n        n (int): The position of the Fibonacci number to calculate.\n\n    Returns:\n        int: The nth Fibonacci number.\n    \"\"\"\n\n    # Base cases\n    if n <= 1:\n        return n\n    \n    # Initialize variables for dynamic programming\n    a, b = 0, 1\n\n    # Calculate the nth Fibonacci number using dynamic programming\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    \n    return b\n```\n\n### Example Usage\n\n```python\n# Calculate the first few Fibonacci numbers\nfor i in range(10):\n    print(f\"Fibonacci({i}) = {fibonacci(i)}\")\n```\n\nThis function uses dynamic programming to efficiently calculate large Fibonacci numbers. The time complexity of this function is O(n), where n is the input position.\n\n### Optimizations\n\n- For extremely large inputs, consider using matrix exponentiation or a closed-form expression like Binet's formula.\n- If you need to generate multiple Fibonacci numbers in a loop, consider precomputing and storing them in an array for efficient access.",
+    "relevancy_score": 0.89,
+    "faithfulness_score": 0.0,
+    "response_time": 17.880330324172974,
+    "token_count": 181,
+    "error": null,
+    "timestamp": "2025-07-01T21:21:41.817817"
+  },
+  {
+    "model_name": "ollama/llama3.2",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Analyze the geopolitical implications of renewable energy adoption.",
+      "expected_output": null,
+      "context": null,
+      "category": "analysis",
+      "difficulty": "hard"
+    },
+    "actual_output": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+    "relevancy_score": 0.0,
+    "faithfulness_score": 0.0,
+    "response_time": 30.032326698303223,
+    "token_count": 0,
+    "error": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+    "timestamp": "2025-07-01T21:22:11.850347"
+  },
+  {
+    "model_name": "ollama/llama3.2",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "What is 15 * 23?",
+      "expected_output": null,
+      "context": null,
+      "category": "math",
+      "difficulty": "easy"
+    },
+    "actual_output": "The answer to 15 * 23 is 345.",
+    "relevancy_score": 0.0,
+    "faithfulness_score": 0.0,
+    "response_time": 1.1122889518737793,
+    "token_count": 8,
+    "error": null,
+    "timestamp": "2025-07-01T21:22:38.651189"
+  },
+  {
+    "model_name": "ollama/llama3.2",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Summarize the key points of machine learning in 3 bullet points.",
+      "expected_output": null,
+      "context": null,
+      "category": "summarization",
+      "difficulty": "easy"
+    },
+    "actual_output": "Here are three key points about machine learning:\n\n\u2022 **Training Data**: Machine learning relies on large datasets to train models, which enables them to learn patterns and make predictions or decisions. The quality and quantity of this data have a significant impact on the accuracy and effectiveness of the model.\n\n\u2022 **Algorithms and Models**: There are various machine learning algorithms and models available, including supervised, unsupervised, and reinforcement learning. Supervised learning involves training models with labeled data to learn specific patterns, while unsupervised learning aims to identify hidden relationships in unlabeled data.\n\n\u2022 **Hyperparameter Tuning and Evaluation**: Effective machine learning requires adjusting hyperparameters (e.g., learning rate, batch size) to optimize model performance. This often involves cross-validation techniques to evaluate the model's performance on unseen data and iteratively refine the model through tuning.",
+    "relevancy_score": 0.7945454545454546,
+    "faithfulness_score": 0.0,
+    "response_time": 11.978555679321289,
+    "token_count": 132,
+    "error": null,
+    "timestamp": "2025-07-01T21:23:10.147942"
+  },
+  {
+    "model_name": "ollama/llama3.1",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Explain quantum computing in simple terms.",
+      "expected_output": null,
+      "context": null,
+      "category": "explanation",
+      "difficulty": "medium"
+    },
+    "actual_output": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+    "relevancy_score": 0.0,
+    "faithfulness_score": 0.0,
+    "response_time": 30.036484718322754,
+    "token_count": 0,
+    "error": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+    "timestamp": "2025-07-01T21:23:40.184861"
+  },
+  {
+    "model_name": "ollama/llama3.1",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Write a Python function to calculate fibonacci numbers.",
+      "expected_output": null,
+      "context": null,
+      "category": "coding",
+      "difficulty": "easy"
+    },
+    "actual_output": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+    "relevancy_score": 0.0,
+    "faithfulness_score": 0.0,
+    "response_time": 30.033368349075317,
+    "token_count": 0,
+    "error": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+    "timestamp": "2025-07-01T21:24:10.219401"
+  },
+  {
+    "model_name": "ollama/llama3.1",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Analyze the geopolitical implications of renewable energy adoption.",
+      "expected_output": null,
+      "context": null,
+      "category": "analysis",
+      "difficulty": "hard"
+    },
+    "actual_output": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+    "relevancy_score": 0.0,
+    "faithfulness_score": 0.0,
+    "response_time": 30.03255820274353,
+    "token_count": 0,
+    "error": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+    "timestamp": "2025-07-01T21:24:40.252227"
+  },
+  {
+    "model_name": "ollama/llama3.1",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "What is 15 * 23?",
+      "expected_output": null,
+      "context": null,
+      "category": "math",
+      "difficulty": "easy"
+    },
+    "actual_output": "15 \u00d7 23 = 345.",
+    "relevancy_score": 0.35,
+    "faithfulness_score": 0.0,
+    "response_time": 2.148184061050415,
+    "token_count": 5,
+    "error": null,
+    "timestamp": "2025-07-01T21:24:59.739816"
+  },
+  {
+    "model_name": "ollama/llama3.1",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Summarize the key points of machine learning in 3 bullet points.",
+      "expected_output": null,
+      "context": null,
+      "category": "summarization",
+      "difficulty": "easy"
+    },
+    "actual_output": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+    "relevancy_score": 0.0,
+    "faithfulness_score": 0.0,
+    "response_time": 30.029942274093628,
+    "token_count": 0,
+    "error": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+    "timestamp": "2025-07-01T21:25:29.769839"
+  }
+]

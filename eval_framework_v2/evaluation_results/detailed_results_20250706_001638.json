@@ -1,0 +1,182 @@
+[
+  {
+    "model_name": "ollama/llama3.2",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Explain quantum computing in simple terms.",
+      "expected_output": null,
+      "context": null,
+      "category": "explanation",
+      "difficulty": "medium"
+    },
+    "actual_output": "Quantum computing is a way of processing information that's different from the way regular computers work.\n\nRegular computers use \"bits\" to store and process information, which can only be 0 or 1 at a time. Think of it like a light switch - it's either on (1) or off (0).\n\nQuantum computers use \"qubits\" instead, which can be both 0 AND 1 at the same time. This is because qubits are made up of tiny particles called atoms and electrons that can exist in multiple states simultaneously.\n\nImagine a coin that can be both heads and tails at the same time - that's basically what a qubit is like!\n\nThis means that quantum computers can process information in many ways at once, making them incredibly fast for certain types of calculations. It's like having an infinite number of light switches, each one doing something different.\n\nBut here's the thing: quantum computing is still a new and complex field, and it requires special equipment to work properly. Scientists are still exploring its potential uses and limitations.\n\nSome potential benefits of quantum computing include:\n\n* Breaking complex codes and ciphers\n* Simulating complex systems and phenomena in chemistry and materials science\n* Optimizing logistics and supply chains\n\nHowever, there's also a lot that we don't know yet about how to use quantum computers effectively. It's still an exciting area of research!\n\nDoes that make sense?",
+    "relevancy_score": 1.0,
+    "faithfulness_score": 0.0,
+    "response_time": 7.094599485397339,
+    "token_count": 233,
+    "error": null,
+    "timestamp": "2025-07-06T00:13:48.228904"
+  },
+  {
+    "model_name": "ollama/llama3.2",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Write a Python function to calculate fibonacci numbers.",
+      "expected_output": null,
+      "context": null,
+      "category": "coding",
+      "difficulty": "easy"
+    },
+    "actual_output": "def fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number.\n\n    Args:\n        n (int): The position of the Fibonacci number to calculate.\n\n    Returns:\n        int: The nth Fibonacci number.\n    \"\"\"\n    if n <= 0:\n        return \"Input should be a positive integer.\"\n    elif n == 1:\n        return 0\n    elif n == 2:\n        return 1\n    else:\n        a, b = 0, 1\n        for _ in range(2, n):\n            a, b = b, a + b\n        return b",
+    "relevancy_score": 0.74,
+    "faithfulness_score": 0.0,
+    "response_time": 1.8343076705932617,
+    "token_count": 69,
+    "error": null,
+    "timestamp": "2025-07-06T00:14:00.373069"
+  },
+  {
+    "model_name": "ollama/llama3.2",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Analyze the geopolitical implications of renewable energy adoption.",
+      "expected_output": null,
+      "context": null,
+      "category": "analysis",
+      "difficulty": "hard"
+    },
+    "actual_output": "The increasing adoption of renewable energy sources has significant geopolitical implications, both positive and negative, that can shape the future of international relations, economic development, and global security.\n\nPositive Implications:\n\n1. **Reduced dependence on fossil fuels**: As renewable energy becomes a larger share of the global energy mix, countries will reduce their reliance on imported fossil fuels, decreasing their vulnerability to price volatility and geopolitical tensions.\n2. **Energy independence**: Renewable energy can enhance energy self-sufficiency for nations, allowing them to reduce their imports and promote domestic economic growth.\n3. **Increased cooperation**: The transition to renewable energy can foster international cooperation, as countries share knowledge, technologies, and best practices to address common challenges and achieve shared goals.\n4. **Enhanced non-proliferation efforts**: Renewable energy can help reduce the spread of nuclear weapons by providing a cleaner, safer alternative for energy production.\n\nNegative Implications:\n\n1. **Geopolitical competition**: The shift towards renewable energy can lead to increased competition among countries for access to resources, technologies, and markets.\n2. **Economic inequality**: The transition to renewable energy may exacerbate existing economic disparities between developed and developing nations, as some countries may struggle to invest in clean energy infrastructure while others reap the benefits of rapid growth.\n3. **Resource nationalism**: As renewable energy sources become more prominent, some governments may resort to resource nationalism, restricting access to resources and limiting foreign investment in renewable energy projects.\n4. **Conflict over water resources**: Renewable energy projects often require significant water resources for cooling systems or other purposes. Competition for these resources can lead to conflicts between countries with competing interests.\n\nRegional Implications:\n\n1. **Asia-Pacific**: The Asia-Pacific region is likely to experience significant growth in renewable energy adoption, driven by China's and India's large energy demands and their desire to reduce dependence on imported fossil fuels.\n2. **Europe**: Europe has been at the forefront of renewable energy adoption and will continue to play a leading role in promoting global cooperation on clean energy policies and technologies.\n3. **Africa**: Africa has significant potential for renewable energy development, particularly solar and wind power, but faces challenges related to infrastructure, finance, and governance.\n4. **Latin America**: Latin America is rich in renewable energy resources, including hydroelectric power, geothermal energy, and bioenergy. The region can leverage its strengths to promote sustainable development and reduce dependence on fossil fuels.\n\nStrategic Considerations:\n\n1. **Diversification of energy sources**: Countries should prioritize diversifying their energy mix to minimize reliance on a single source or technology.\n2. **Investment in clean energy infrastructure**: Governments and private investors must invest heavily in renewable energy infrastructure, such as wind farms, solar parks, and transmission networks.\n3. **International cooperation**: Global cooperation is essential for addressing the challenges and opportunities associated with renewable energy adoption, including climate change mitigation, energy security, and economic development.\n4. **Education and training**: Workforce development and education programs are crucial to ensure that workers have the skills needed to design, build, and operate renewable energy systems.\n\nIn conclusion, the geopolitical implications of renewable energy adoption are far-reaching and multifaceted. While there are many benefits to be gained from a transition to clean energy, there are also challenges to be addressed, including competition for resources, economic inequality, and conflict over water resources.",
+    "relevancy_score": 0.875,
+    "faithfulness_score": 0.0,
+    "response_time": 10.579935073852539,
+    "token_count": 532,
+    "error": null,
+    "timestamp": "2025-07-06T00:14:25.436303"
+  },
+  {
+    "model_name": "ollama/llama3.2",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "What is 15 * 23?",
+      "expected_output": null,
+      "context": null,
+      "category": "math",
+      "difficulty": "easy"
+    },
+    "actual_output": "The result of 15 * 23 is 345.",
+    "relevancy_score": 1.0,
+    "faithfulness_score": 0.0,
+    "response_time": 0.21233773231506348,
+    "token_count": 8,
+    "error": null,
+    "timestamp": "2025-07-06T00:14:27.524703"
+  },
+  {
+    "model_name": "ollama/llama3.2",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Summarize the key points of machine learning in 3 bullet points.",
+      "expected_output": null,
+      "context": null,
+      "category": "summarization",
+      "difficulty": "easy"
+    },
+    "actual_output": "Here are three key points summarizing machine learning:\n\n\u2022 **Supervised Learning**: Machine learning involves training algorithms on labeled datasets to learn patterns and relationships between variables. The algorithm learns from examples provided, allowing it to make predictions or decisions on new, unseen data.\n\n\u2022 **Unsupervised Learning**: Unsupervised learning involves analyzing unlabeled data to identify hidden patterns or structure. This type of learning is often used for clustering, dimensionality reduction, and anomaly detection.\n\n\u2022 **Self-Supervision and AutoML**: Recent advancements in machine learning have led to the development of self-supervised learning methods and automated machine learning (AutoML) tools. These enable algorithms to learn from unlabeled data or generate their own objectives, reducing the need for human annotation and increasing efficiency in machine learning workflows.",
+    "relevancy_score": 0.8571428571428571,
+    "faithfulness_score": 0.0,
+    "response_time": 2.4240736961364746,
+    "token_count": 122,
+    "error": null,
+    "timestamp": "2025-07-06T00:14:37.268806"
+  },
+  {
+    "model_name": "ollama/llama3.1",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Explain quantum computing in simple terms.",
+      "expected_output": null,
+      "context": null,
+      "category": "explanation",
+      "difficulty": "medium"
+    },
+    "actual_output": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+    "relevancy_score": 0.0,
+    "faithfulness_score": 0.0,
+    "response_time": 30.03194761276245,
+    "token_count": 0,
+    "error": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+    "timestamp": "2025-07-06T00:15:07.300848"
+  },
+  {
+    "model_name": "ollama/llama3.1",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Write a Python function to calculate fibonacci numbers.",
+      "expected_output": null,
+      "context": null,
+      "category": "coding",
+      "difficulty": "easy"
+    },
+    "actual_output": "**Fibonacci Function**\n=====================\n\nThe Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding ones, usually starting with 0 and 1.\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number.\n\n    Args:\n        n (int): The position of the Fibonacci number to calculate.\n\n    Returns:\n        int: The nth Fibonacci number.\n    \"\"\"\n    if n <= 0:\n        raise ValueError(\"n must be a positive integer\")\n    elif n == 1:\n        return 0\n    elif n == 2:\n        return 1\n    else:\n        fib_sequence = [0, 1]\n        while len(fib_sequence) < n:\n            fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])\n        return fib_sequence[-1]\n```\n\n**Example Use Cases**\n--------------------\n\n*   `fibonacci(5)` returns `3`\n*   `fibonacci(8)` returns `21`\n\nNote that this function uses a iterative approach to calculate Fibonacci numbers, which is more efficient than a recursive one for large values of n.",
+    "relevancy_score": 0.79,
+    "faithfulness_score": 0.0,
+    "response_time": 18.282696962356567,
+    "token_count": 131,
+    "error": null,
+    "timestamp": "2025-07-06T00:15:37.672928"
+  },
+  {
+    "model_name": "ollama/llama3.1",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Analyze the geopolitical implications of renewable energy adoption.",
+      "expected_output": null,
+      "context": null,
+      "category": "analysis",
+      "difficulty": "hard"
+    },
+    "actual_output": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+    "relevancy_score": 0.0,
+    "faithfulness_score": 0.0,
+    "response_time": 30.03100061416626,
+    "token_count": 0,
+    "error": "Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)",
+    "timestamp": "2025-07-06T00:16:07.703992"
+  },
+  {
+    "model_name": "ollama/llama3.1",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "What is 15 * 23?",
+      "expected_output": null,
+      "context": null,
+      "category": "math",
+      "difficulty": "easy"
+    },
+    "actual_output": "15 \u00d7 23 = 345.",
+    "relevancy_score": 1.0,
+    "faithfulness_score": 0.0,
+    "response_time": 1.058403730392456,
+    "token_count": 5,
+    "error": null,
+    "timestamp": "2025-07-06T00:16:13.710111"
+  },
+  {
+    "model_name": "ollama/llama3.1",
+    "provider": "ollama",
+    "test_case": {
+      "input_prompt": "Summarize the key points of machine learning in 3 bullet points.",
+      "expected_output": null,
+      "context": null,
+      "category": "summarization",
+      "difficulty": "easy"
+    },
+    "actual_output": "Here are three key points summarizing machine learning:\n\n\u2022 **Prediction and Generalization**: Machine learning allows computers to make predictions or decisions based on data, without being explicitly programmed for each scenario. This is achieved through complex mathematical models that can learn patterns in the data and generalize them to new, unseen situations.\n\n\u2022 **Training and Adaptation**: Machine learning models are trained on a dataset of examples, which enables them to adapt to changes in their environment or improve over time as they receive more data. This training process allows the model to adjust its parameters to better fit the data, making it more accurate and effective at performing tasks such as classification, regression, or clustering.\n\n\u2022 **Autonomous Decision-Making**: Once trained, machine learning models can operate autonomously, making decisions based on their learned patterns and relationships in the data. This autonomy enables them to perform complex tasks, make predictions, or classify data without human intervention \u2013 which is particularly useful in applications such as image recognition, speech processing, or natural language understanding.",
+    "relevancy_score": 1.0,
+    "faithfulness_score": 0.0,
+    "response_time": 17.466633081436157,
+    "token_count": 171,
+    "error": null,
+    "timestamp": "2025-07-06T00:16:37.062732"
+  }
+]
