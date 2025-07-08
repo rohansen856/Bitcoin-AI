@@ -996,6 +996,8 @@ class EvaluationConfig:
     ollama_base_url: str = "http://localhost:11434"
     anthropic_api_key: Optional[str] = None
     openai_api_key: Optional[str] = None
+    custom_llm_base_url: Optional[str] = None
+    custom_llm_api_key: Optional[str] = None
     evaluator_model: str = "llama3.2"
     output_dir: str = "evaluation_results"
     timeout: int = 30
@@ -1097,6 +1099,14 @@ class OpenAIProvider(ModelProvider):
         "gpt-3.5-turbo",
         "gpt-3.5-turbo-16k"
     ]
+```
+
+#### CustomProvider
+
+```python
+class CustomLLMProvider(ModelProvider):
+    def __init__(self, config: EvaluationConfig)
+    async def generate(self, prompt: str, model: str) -> Tuple[str, float, int]
 ```
 
 ### Utility Functions
