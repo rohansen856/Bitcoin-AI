@@ -1,0 +1,19 @@
+model,exercise,language,success,execution_time,token_count,error_message
+llama3.1:latest,two-fer,python,True,11.80,54,
+llama3.1:latest,leap,python,True,26.11,189,
+llama3.1:latest,fizzbuzz,javascript,False,7.39,44,Test failed
+llama3.1:latest,reverse-string,python,True,4.95,29,
+llama3.1:latest,sum-of-multiples,python,False,14.89,111,Test failed
+llama3.1:latest,hamming,python,True,11.14,67,
+llama3.2:latest,two-fer,python,True,2.70,27,
+llama3.2:latest,leap,python,True,2.02,75,
+llama3.2:latest,fizzbuzz,javascript,False,1.10,39,Test failed
+llama3.2:latest,reverse-string,python,True,0.56,14,
+llama3.2:latest,sum-of-multiples,python,False,1.52,44,Test failed
+llama3.2:latest,hamming,python,True,4.85,144,
+deepseek-coder:6.7b-instruct,two-fer,python,True,16.68,84,
+deepseek-coder:6.7b-instruct,leap,python,False,12.19,98,Test failed
+deepseek-coder:6.7b-instruct,fizzbuzz,javascript,False,14.43,99,Test failed
+deepseek-coder:6.7b-instruct,reverse-string,python,True,3.29,15,
+deepseek-coder:6.7b-instruct,sum-of-multiples,python,True,22.02,182,
+deepseek-coder:6.7b-instruct,hamming,python,True,15.28,99,

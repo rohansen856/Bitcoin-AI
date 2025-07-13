@@ -1,0 +1,96 @@
+{
+  "timestamp": "2025-07-09T19:40:18.603401",
+  "config": {
+    "timeout": 120,
+    "max_workers": 4,
+    "models": [
+      "llama3.2:latest"
+    ],
+    "exercises": [
+      "leap",
+      "hamming",
+      "fizzbuzz",
+      "reverse-string",
+      "two-fer",
+      "sum-of-multiples"
+    ],
+    "languages": [
+      "python",
+      "javascript"
+    ]
+  },
+  "results": [
+    {
+      "model": "llama3.2:latest",
+      "exercise": "two-fer",
+      "language": "python",
+      "success": false,
+      "execution_time": 1.6346900463104248,
+      "token_count": 58,
+      "error_message": "Test failed",
+      "generated_code": "def two_fer(name=None):\n    \"\"\"Returns 'One for X, one for me.' with the given name or 'you' if not provided.\"\"\"\n    return f\"One for {name if name else 'you'} , one for me.\"",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmptrst2kpj\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_two_fer FAILED                                             [100%]Running teardown with pytest sessionfinish...\n\n\n=================================== FAILURES ===================================\n_________________________________ test_two_fer _________________________________\n\n    def test_two_fer():\n        from solution import two_fer\n>       assert two_fer() == \"One for you, one for me.\"\nE       AssertionError: assert 'One for you , one for me.' == 'One for you, one for me.'\nE         \nE         - One for you, one for me.\nE         + One for you , one for me.\nE         ?            +\n\ntest.py:4: AssertionError\n=========================== short test summary info ============================\nFAILED test.py::test_two_fer - AssertionError: assert 'One for you , one for ...\n============================== 1 failed in 0.08s ===============================\n",
+      "timestamp": "2025-07-09T19:39:50.800966"
+    },
+    {
+      "model": "llama3.2:latest",
+      "exercise": "leap",
+      "language": "python",
+      "success": true,
+      "execution_time": 1.7988998889923096,
+      "token_count": 53,
+      "error_message": null,
+      "generated_code": "def is_leap_year(year):\n    \"\"\"Check if a year is a leap year.\"\"\"\n    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)\n\n# Example usage:\nif __name__ == \"__main__\":\n    test_cases = [2000, 1996, 2012, 1900, 2020]\n    for case in test_cases:\n        print(f\"Year: {case}, Leap Year: {is_leap_year(case)}\")",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmpreznkkl5\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_leap_year PASSED                                           [100%]Running teardown with pytest sessionfinish...\n\n\n============================== 1 passed in 0.01s ===============================\n",
+      "timestamp": "2025-07-09T19:39:55.828371"
+    },
+    {
+      "model": "llama3.2:latest",
+      "exercise": "fizzbuzz",
+      "language": "javascript",
+      "success": false,
+      "execution_time": 3.3460893630981445,
+      "token_count": 74,
+      "error_message": "Test failed",
+      "generated_code": "function fizzBuzz(n) {\n  if (n % 15 === 0) return 'FizzBuzz';\n  else if (n % 3 === 0) return 'Fizz';\n  else if (n % 5 === 0) return 'Buzz';\n  else return n.toString();\n}\n\n// Example usage\nconsole.log(fizzBuzz(1)); // \"1\"\nconsole.log(fizzBuzz(2)); // \"2\"\nconsole.log(fizzBuzz(3)); // \"Fizz\"\nconsole.log(fizzBuzz(4)); // \"4\"\nconsole.log(fizzBuzz(5)); // \"Buzz\"\nconsole.log(fizzBuzz(6)); // \"Fizz\"\nconsole.log(fizzBuzz(7)); // \"7\"\nconsole.log(fizzBuzz(8)); // \"8\"\nconsole.log(fizzBuzz(9)); // \"Fizz\"\nconsole.log(fizzBuzz(10)); // \"Buzz\"\nconsole.log(fizzBuzz(12)); // \"FizzBuzz\"\nconsole.log(fizzBuzz(15)); // \"FizzBuzz\"",
+      "test_output": "1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\nFizz\nFizzBuzz\n/tmp/tmpx1x6hcxq/test.js:4\nconsole.assert(fizzbuzz(3) === 'Fizz');\n               ^\n\nTypeError: fizzbuzz is not a function\n    at Object.<anonymous> (/tmp/tmpx1x6hcxq/test.js:4:16)\n    at Module._compile (node:internal/modules/cjs/loader:1356:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1414:10)\n    at Module.load (node:internal/modules/cjs/loader:1197:32)\n    at Module._load (node:internal/modules/cjs/loader:1013:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)\n    at node:internal/main/run_main_module:28:49\n\nNode.js v18.19.1\n",
+      "timestamp": "2025-07-09T19:39:59.248856"
+    },
+    {
+      "model": "llama3.2:latest",
+      "exercise": "reverse-string",
+      "language": "python",
+      "success": true,
+      "execution_time": 2.175091028213501,
+      "token_count": 77,
+      "error_message": null,
+      "generated_code": "def reverse_string(input_str):\n    \"\"\"Reverses a given string.\"\"\"\n    \n    # Initialize an empty list to store the characters\n    reversed_chars = []\n    \n    # Iterate over each character in the input string\n    for char in input_str:\n        # Append the character to the end of the list\n        reversed_chars.append(char)\n    \n    # Reverse the order of the characters using slicing\n    reversed_chars = reversed_chars[::-1]\n    \n    # Join the characters back into a string\n    reversed_str = ''.join(reversed_chars)\n    \n    return reversed_str\n\n# Test the function\nprint(reverse_string('hello'))  # Output: 'olleh'",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmp62lzo_v1\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_reverse_string PASSED                                      [100%]Running teardown with pytest sessionfinish...\n\n\n============================== 1 passed in 0.01s ===============================\n",
+      "timestamp": "2025-07-09T19:40:04.681010"
+    },
+    {
+      "model": "llama3.2:latest",
+      "exercise": "sum-of-multiples",
+      "language": "python",
+      "success": false,
+      "execution_time": 1.1273908615112305,
+      "token_count": 40,
+      "error_message": "Test failed",
+      "generated_code": "def sum_of_multiples(n, *multiples):\n    return sum(i for i in range(n) if any(i % m == 0 for m in multiples))\n\n# Example usage:\nprint(sum_of_multiples(10, 3))  # Sum of all unique multiples of 3 up to but not including 10",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmpdwaig_e3\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_sum_of_multiples FAILED                                    [100%]Running teardown with pytest sessionfinish...\n\n\n=================================== FAILURES ===================================\n____________________________ test_sum_of_multiples _____________________________\n\n    def test_sum_of_multiples():\n        from solution import sum_of_multiples\n>       assert sum_of_multiples(20, [3, 5]) == 78\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\ntest.py:4: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nsolution.py:2: in sum_of_multiples\n    return sum(i for i in range(n) if any(i % m == 0 for m in multiples))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsolution.py:2: in <genexpr>\n    return sum(i for i in range(n) if any(i % m == 0 for m in multiples))\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n.0 = <tuple_iterator object at 0x70592604b520>\n\n>   return sum(i for i in range(n) if any(i % m == 0 for m in multiples))\n                                          ^^^^^\nE   TypeError: unsupported operand type(s) for %: 'int' and 'list'\n\nsolution.py:2: TypeError\n----------------------------- Captured stdout call -----------------------------\n18\n=========================== short test summary info ============================\nFAILED test.py::test_sum_of_multiples - TypeError: unsupported operand type(s...\n============================== 1 failed in 0.08s ===============================\n",
+      "timestamp": "2025-07-09T19:40:09.194092"
+    },
+    {
+      "model": "llama3.2:latest",
+      "exercise": "hamming",
+      "language": "python",
+      "success": true,
+      "execution_time": 5.816684246063232,
+      "token_count": 209,
+      "error_message": null,
+      "generated_code": "def hamming_distance(dna1: str, dna2: str) -> int:\n    \"\"\"\n    Calculate the Hamming distance between two DNA strands.\n\n    Args:\n    dna1 (str): The first DNA strand.\n    dna2 (str): The second DNA strand.\n\n    Returns:\n    int: The number of point mutations between the two strings.\n\n    Raises:\n    ValueError: If the lengths of the two DNA strands do not match.\n    \"\"\"\n\n    # Check if both DNA strands have the same length\n    if len(dna1) != len(dna2):\n        raise ValueError(\"Both DNA strands must have the same length.\")\n\n    # Initialize a counter for Hamming distance\n    hamming_dist = 0\n\n    # Iterate over each nucleotide in the DNA strands\n    for nucl1, nucl2 in zip(dna1, dna2):\n        # Check if the nucleotides are different\n        if nucl1 != nucl2:\n            # If they are different, increment the Hamming distance counter\n            hamming_dist += 1\n\n    # Return the total Hamming distance\n    return hamming_dist\n\n# Example usage\ndna_strand1 = \"ATCG\"\ndna_strand2 = \"ATGC\"\n\nprint(f\"The Hamming distance between {dna_strand1} and {dna_strand2} is: \", hamming_distance(dna_strand1, dna_strand2))",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmpydxy9ey7\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_hamming PASSED                                             [100%]Running teardown with pytest sessionfinish...\n\n\n============================== 1 passed in 0.01s ===============================\n",
+      "timestamp": "2025-07-09T19:40:18.602720"
+    }
+  ]
+}

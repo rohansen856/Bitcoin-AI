@@ -1,0 +1,7 @@
+model,exercise,language,success,execution_time,token_count,error_message
+llama3.2:latest,two-fer,python,False,1.63,58,Test failed
+llama3.2:latest,leap,python,True,1.80,53,
+llama3.2:latest,fizzbuzz,javascript,False,3.35,74,Test failed
+llama3.2:latest,reverse-string,python,True,2.18,77,
+llama3.2:latest,sum-of-multiples,python,False,1.13,40,Test failed
+llama3.2:latest,hamming,python,True,5.82,209,

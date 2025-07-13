@@ -1,0 +1,242 @@
+{
+  "timestamp": "2025-07-09T19:51:47.755562",
+  "config": {
+    "timeout": 120,
+    "max_workers": 4,
+    "models": [
+      "llama3.2:latest",
+      "deepseek-coder:6.7b-instruct",
+      "llama3.1:latest"
+    ],
+    "exercises": [
+      "fizzbuzz",
+      "two-fer",
+      "hamming",
+      "leap",
+      "sum-of-multiples",
+      "reverse-string"
+    ],
+    "languages": [
+      "python",
+      "javascript"
+    ]
+  },
+  "results": [
+    {
+      "model": "llama3.1:latest",
+      "exercise": "two-fer",
+      "language": "python",
+      "success": true,
+      "execution_time": 11.802901029586792,
+      "token_count": 54,
+      "error_message": null,
+      "generated_code": "def two_fer(name=None):\n    \"\"\"\n    Returns a message with the given name or 'you' if not provided.\n    \n    Parameters:\n    name (str): The name to be used in the message. Defaults to None.\n\n    Returns:\n    str: A message with the format 'One for X, one for me.'\n    \"\"\"\n    return f\"One for {name or 'you'}, one for me.\"",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmp36aiyf8o\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_two_fer PASSED                                             [100%]Running teardown with pytest sessionfinish...\n\n\n============================== 1 passed in 0.01s ===============================\n",
+      "timestamp": "2025-07-09T19:48:16.250115"
+    },
+    {
+      "model": "llama3.1:latest",
+      "exercise": "leap",
+      "language": "python",
+      "success": true,
+      "execution_time": 26.107801914215088,
+      "token_count": 189,
+      "error_message": null,
+      "generated_code": "def is_leap_year(year: int) -> bool:\n    \"\"\"\n    Determine if a given year is a leap year.\n    \n    A leap year occurs on every year that is evenly divisible by 4, except for end-of-century years which must be evenly divisible by 400. \n    This rule applies to all years ending in 00. Therefore, the year 2000 was a leap year, although 1900 was not.\n\n    Args:\n        year (int): The year to check\n\n    Returns:\n        bool: True if the year is a leap year, False otherwise\n    \"\"\"\n    \n    # Check if the year is evenly divisible by 4\n    if year % 4 == 0:\n        \n        # If the year is evenly divisible by 100, it's not a leap year unless it's also evenly divisible by 400\n        if year % 100 == 0:\n            return year % 400 == 0\n        \n        # If the year is not evenly divisible by 100, then it's a leap year\n        return True\n    \n    # If the year is not evenly divisible by 4, then it's not a leap year\n    return False\n\n# Test cases\nprint(is_leap_year(2000))   # Expected output: True\nprint(is_leap_year(1900))   # Expected output: False\nprint(is_leap_year(2020))   # Expected output: True\nprint(is_leap_year(2019))   # Expected output: False",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmpuvp6mmei\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_leap_year PASSED                                           [100%]Running teardown with pytest sessionfinish...\n\n\n============================== 1 passed in 0.01s ===============================\n",
+      "timestamp": "2025-07-09T19:48:46.408786"
+    },
+    {
+      "model": "llama3.1:latest",
+      "exercise": "fizzbuzz",
+      "language": "javascript",
+      "success": false,
+      "execution_time": 7.385167360305786,
+      "token_count": 44,
+      "error_message": "Test failed",
+      "generated_code": "function fizzBuzz(n) {\n  if (n % 15 === 0) return 'FizzBuzz';\n  if (n % 5 === 0) return 'Buzz';\n  if (n % 3 === 0) return 'Fizz';\n  return n;\n}\n\nfor (let i = 1; i <= 100; i++) {\n  console.log(fizzBuzz(i));\n}",
+      "test_output": "1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n14\nFizzBuzz\n16\n17\nFizz\n19\nBuzz\nFizz\n22\n23\nFizz\nBuzz\n26\nFizz\n28\n29\nFizzBuzz\n31\n32\nFizz\n34\nBuzz\nFizz\n37\n38\nFizz\nBuzz\n41\nFizz\n43\n44\nFizzBuzz\n46\n47\nFizz\n49\nBuzz\nFizz\n52\n53\nFizz\nBuzz\n56\nFizz\n58\n59\nFizzBuzz\n61\n62\nFizz\n64\nBuzz\nFizz\n67\n68\nFizz\nBuzz\n71\nFizz\n73\n74\nFizzBuzz\n76\n77\nFizz\n79\nBuzz\nFizz\n82\n83\nFizz\nBuzz\n86\nFizz\n88\n89\nFizzBuzz\n91\n92\nFizz\n94\nBuzz\nFizz\n97\n98\nFizz\nBuzz\n/tmp/tmpn0ic_58y/test.js:4\nconsole.assert(fizzbuzz(3) === 'Fizz');\n               ^\n\nTypeError: fizzbuzz is not a function\n    at Object.<anonymous> (/tmp/tmpn0ic_58y/test.js:4:16)\n    at Module._compile (node:internal/modules/cjs/loader:1356:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1414:10)\n    at Module.load (node:internal/modules/cjs/loader:1197:32)\n    at Module._load (node:internal/modules/cjs/loader:1013:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)\n    at node:internal/main/run_main_module:28:49\n\nNode.js v18.19.1\n",
+      "timestamp": "2025-07-09T19:48:53.880416"
+    },
+    {
+      "model": "llama3.1:latest",
+      "exercise": "reverse-string",
+      "language": "python",
+      "success": true,
+      "execution_time": 4.9482409954071045,
+      "token_count": 29,
+      "error_message": null,
+      "generated_code": "def reverse_string(s: str) -> str:\n    \"\"\"\n    Reverses a given string.\n\n    Args:\n        s (str): The input string to be reversed.\n\n    Returns:\n        str: The reversed string.\n    \"\"\"\n    return s[::-1]",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmpjac4puhc\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_reverse_string PASSED                                      [100%]Running teardown with pytest sessionfinish...\n\n\n============================== 1 passed in 0.01s ===============================\n",
+      "timestamp": "2025-07-09T19:49:02.534994"
+    },
+    {
+      "model": "llama3.1:latest",
+      "exercise": "sum-of-multiples",
+      "language": "python",
+      "success": false,
+      "execution_time": 14.894286632537842,
+      "token_count": 111,
+      "error_message": "Test failed",
+      "generated_code": "def sum_of_multiples(numbers):\n    \"\"\"\n    Sum of Multiples\n    \n    Given a number, find the sum of all the unique multiples of particular numbers up to but not including that number.\n    \n    Parameters:\n    numbers (list): A list of base numbers for which we want to find the sum of their multiples\n    \n    Returns:\n    int: The sum of all the unique multiples of the given numbers\n    \"\"\"\n    limit = 1000  # assuming this is the upper limit, can be changed as per requirement\n    total_sum = set()  # use a set for unique multiples\n\n    for num in numbers:\n        for multiple in range(num, limit):\n            total_sum.add(multiple)\n\n    return sum(total_sum)\n\n# Example usage:\nnumbers = [3, 5]\nprint(sum_of_multiples(numbers))  # Output: 228",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmp66up6jqg\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_sum_of_multiples FAILED                                    [100%]Running teardown with pytest sessionfinish...\n\n\n=================================== FAILURES ===================================\n____________________________ test_sum_of_multiples _____________________________\n\n    def test_sum_of_multiples():\n        from solution import sum_of_multiples\n>       assert sum_of_multiples(20, [3, 5]) == 78\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       TypeError: sum_of_multiples() takes 1 positional argument but 2 were given\n\ntest.py:4: TypeError\n----------------------------- Captured stdout call -----------------------------\n499497\n=========================== short test summary info ============================\nFAILED test.py::test_sum_of_multiples - TypeError: sum_of_multiples() takes 1...\n============================== 1 failed in 0.09s ===============================\n",
+      "timestamp": "2025-07-09T19:49:21.400699"
+    },
+    {
+      "model": "llama3.1:latest",
+      "exercise": "hamming",
+      "language": "python",
+      "success": true,
+      "execution_time": 11.138620376586914,
+      "token_count": 67,
+      "error_message": null,
+      "generated_code": "def hamming_distance(strand1, strand2):\n    \"\"\"\n    Calculate the Hamming distance between two DNA strands.\n\n    Args:\n        strand1 (str): The first DNA strand.\n        strand2 (str): The second DNA strand.\n\n    Returns:\n        int: The Hamming distance between the two strands.\n\n    Raises:\n        ValueError: If the strands are of different lengths.\n    \"\"\"\n    if len(strand1) != len(strand2):\n        raise ValueError(\"Strands must be of equal length\")\n\n    return sum(el1 != el2 for el1, el2 in zip(strand1, strand2))",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmpauw39w04\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_hamming PASSED                                             [100%]Running teardown with pytest sessionfinish...\n\n\n============================== 1 passed in 0.01s ===============================\n",
+      "timestamp": "2025-07-09T19:49:35.714756"
+    },
+    {
+      "model": "llama3.2:latest",
+      "exercise": "two-fer",
+      "language": "python",
+      "success": true,
+      "execution_time": 2.6956911087036133,
+      "token_count": 27,
+      "error_message": null,
+      "generated_code": "def two_fer(name=None):\n    if name is None or name == '':\n        return 'One for you, one for me.'\n    else:\n        return f'One for {name}, one for me.'",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmpxzwntmy1\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_two_fer PASSED                                             [100%]Running teardown with pytest sessionfinish...\n\n\n============================== 1 passed in 0.01s ===============================\n",
+      "timestamp": "2025-07-09T19:49:41.858827"
+    },
+    {
+      "model": "llama3.2:latest",
+      "exercise": "leap",
+      "language": "python",
+      "success": true,
+      "execution_time": 2.0180633068084717,
+      "token_count": 75,
+      "error_message": null,
+      "generated_code": "def is_leap_year(year):\n    if year % 400 == 0:\n        return True\n    elif year % 100 == 0:\n        return False\n    else:\n        return year % 4 == 0",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmp6y_h9n0e\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_leap_year PASSED                                           [100%]Running teardown with pytest sessionfinish...\n\n\n============================== 1 passed in 0.01s ===============================\n",
+      "timestamp": "2025-07-09T19:49:47.078816"
+    },
+    {
+      "model": "llama3.2:latest",
+      "exercise": "fizzbuzz",
+      "language": "javascript",
+      "success": false,
+      "execution_time": 1.1043152809143066,
+      "token_count": 39,
+      "error_message": "Test failed",
+      "generated_code": "function fizzBuzz(n) {\n    if (n % 3 === 0 && n % 5 === 0) return \"FizzBuzz\";\n    else if (n % 3 === 0) return \"Fizz\";\n    else if (n % 5 === 0) return \"Buzz\";\n    else return n;\n}",
+      "test_output": "/tmp/tmp5u_dd882/test.js:4\nconsole.assert(fizzbuzz(3) === 'Fizz');\n               ^\n\nTypeError: fizzbuzz is not a function\n    at Object.<anonymous> (/tmp/tmp5u_dd882/test.js:4:16)\n    at Module._compile (node:internal/modules/cjs/loader:1356:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1414:10)\n    at Module.load (node:internal/modules/cjs/loader:1197:32)\n    at Module._load (node:internal/modules/cjs/loader:1013:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)\n    at node:internal/main/run_main_module:28:49\n\nNode.js v18.19.1\n",
+      "timestamp": "2025-07-09T19:49:48.263872"
+    },
+    {
+      "model": "llama3.2:latest",
+      "exercise": "reverse-string",
+      "language": "python",
+      "success": true,
+      "execution_time": 0.5564084053039551,
+      "token_count": 14,
+      "error_message": null,
+      "generated_code": "def reverse_string(s):\n    return s[::-1]\n\n# Test the function\nprint(reverse_string(\"hello\"))  # Output: olleh",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmppb1xdkvf\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_reverse_string PASSED                                      [100%]Running teardown with pytest sessionfinish...\n\n\n============================== 1 passed in 0.01s ===============================\n",
+      "timestamp": "2025-07-09T19:49:52.000926"
+    },
+    {
+      "model": "llama3.2:latest",
+      "exercise": "sum-of-multiples",
+      "language": "python",
+      "success": false,
+      "execution_time": 1.515937089920044,
+      "token_count": 44,
+      "error_message": "Test failed",
+      "generated_code": "def sum_of_multiples(n):\n    max_multiple = n - 1\n    total = 0\n    \n    for i in range(1, int(max_multiple**0.5) + 1):\n        if max_multiple % i == 0:\n            total += i * (max((i + 1), (max_multiple // i)) - i)\n    \n    return total\n\n# Test the function\nprint(sum_of_multiples(10))",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmpu8t108k9\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_sum_of_multiples FAILED                                    [100%]Running teardown with pytest sessionfinish...\n\n\n=================================== FAILURES ===================================\n____________________________ test_sum_of_multiples _____________________________\n\n    def test_sum_of_multiples():\n        from solution import sum_of_multiples\n>       assert sum_of_multiples(20, [3, 5]) == 78\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       TypeError: sum_of_multiples() takes 1 positional argument but 2 were given\n\ntest.py:4: TypeError\n----------------------------- Captured stdout call -----------------------------\n11\n=========================== short test summary info ============================\nFAILED test.py::test_sum_of_multiples - TypeError: sum_of_multiples() takes 1...\n============================== 1 failed in 0.08s ===============================\n",
+      "timestamp": "2025-07-09T19:49:57.422479"
+    },
+    {
+      "model": "llama3.2:latest",
+      "exercise": "hamming",
+      "language": "python",
+      "success": true,
+      "execution_time": 4.847574710845947,
+      "token_count": 144,
+      "error_message": null,
+      "generated_code": "def hamming_distance(strand1: str, strand2: str) -> int:\n    \"\"\"\n    Calculate the Hamming distance between two DNA strands.\n\n    Args:\n        strand1 (str): The first DNA strand.\n        strand2 (str): The second DNA strand.\n\n    Returns:\n        int: The number of point mutations between the two strands.\n\n    Raises:\n        ValueError: If the input strands are not of equal length.\n    \"\"\"\n    if len(strand1) != len(strand2):\n        raise ValueError(\"Both strands must be of equal length\")\n\n    return sum(c1 != c2 for c1, c2 in zip(strand1, strand2))\n\n# Example usage:\nif __name__ == \"__main__\":\n    # Test case 1: Equal-length strands\n    print(hamming_distance(\"ATCG\", \"ATGC\"))  # Expected output: 1\n\n    # Test case 2: Unequal-length strands\n    try:\n        print(hamming_distance(\"ATCG\", \"ATGCT\"))\n    except ValueError as e:\n        print(e)  # Expected output: Both strands must be of equal length\n\n    # Test case 3: Single character difference\n    print(hamming_distance(\"ACGT\", \"ATTG\"))  # Expected output: 2\n\n    # Test case 4: No differences\n    print(hamming_distance(\"ATCG\", \"ATCG\"))  # Expected output: 0",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmp76idf81i\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_hamming PASSED                                             [100%]Running teardown with pytest sessionfinish...\n\n\n============================== 1 passed in 0.01s ===============================\n",
+      "timestamp": "2025-07-09T19:50:05.623923"
+    },
+    {
+      "model": "deepseek-coder:6.7b-instruct",
+      "exercise": "two-fer",
+      "language": "python",
+      "success": true,
+      "execution_time": 16.677764415740967,
+      "token_count": 84,
+      "error_message": null,
+      "generated_code": "def two_fer(name=None):\n    if name is None:\n        return 'One for you, one for me.'\n    else:\n        return f'One for {name}, one for me.'",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmptnx595oe\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_two_fer PASSED                                             [100%]Running teardown with pytest sessionfinish...\n\n\n============================== 1 passed in 0.01s ===============================\n",
+      "timestamp": "2025-07-09T19:50:25.921504"
+    },
+    {
+      "model": "deepseek-coder:6.7b-instruct",
+      "exercise": "leap",
+      "language": "python",
+      "success": false,
+      "execution_time": 12.189667463302612,
+      "token_count": 98,
+      "error_message": "Test failed",
+      "generated_code": "def is_leap(year):\n    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmpp2u2vyaa\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_leap_year FAILED                                           [100%]Running teardown with pytest sessionfinish...\n\n\n=================================== FAILURES ===================================\n________________________________ test_leap_year ________________________________\n\n    def test_leap_year():\n>       from solution import is_leap_year\nE       ImportError: cannot import name 'is_leap_year' from 'solution' (/tmp/tmpp2u2vyaa/solution.py)\n\ntest.py:3: ImportError\n=========================== short test summary info ============================\nFAILED test.py::test_leap_year - ImportError: cannot import name 'is_leap_yea...\n============================== 1 failed in 0.09s ===============================\n",
+      "timestamp": "2025-07-09T19:50:41.500581"
+    },
+    {
+      "model": "deepseek-coder:6.7b-instruct",
+      "exercise": "fizzbuzz",
+      "language": "javascript",
+      "success": false,
+      "execution_time": 14.427709817886353,
+      "token_count": 99,
+      "error_message": "Test failed",
+      "generated_code": "function fizzBuzz(n) {\n    if (n % 3 === 0 && n % 5 === 0) return 'FizzBuzz';\n    else if (n % 3 === 0) return 'Fizz';\n    else if (n % 5 === 0) return 'Buzz';\n    else return n;\n}",
+      "test_output": "/tmp/tmpw1atyk94/test.js:4\nconsole.assert(fizzbuzz(3) === 'Fizz');\n               ^\n\nTypeError: fizzbuzz is not a function\n    at Object.<anonymous> (/tmp/tmpw1atyk94/test.js:4:16)\n    at Module._compile (node:internal/modules/cjs/loader:1356:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1414:10)\n    at Module.load (node:internal/modules/cjs/loader:1197:32)\n    at Module._load (node:internal/modules/cjs/loader:1013:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)\n    at node:internal/main/run_main_module:28:49\n\nNode.js v18.19.1\n",
+      "timestamp": "2025-07-09T19:50:56.005778"
+    },
+    {
+      "model": "deepseek-coder:6.7b-instruct",
+      "exercise": "reverse-string",
+      "language": "python",
+      "success": true,
+      "execution_time": 3.2867040634155273,
+      "token_count": 15,
+      "error_message": null,
+      "generated_code": "def reverse_string(s):\n    return s[::-1]",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmpcts9xpcm\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_reverse_string PASSED                                      [100%]Running teardown with pytest sessionfinish...\n\n\n============================== 1 passed in 0.01s ===============================\n",
+      "timestamp": "2025-07-09T19:51:02.810425"
+    },
+    {
+      "model": "deepseek-coder:6.7b-instruct",
+      "exercise": "sum-of-multiples",
+      "language": "python",
+      "success": true,
+      "execution_time": 22.022778034210205,
+      "token_count": 182,
+      "error_message": null,
+      "generated_code": "def sum_of_multiples(n, nums):\n    multiples = set()  # use a set to store unique values\n    \n    for i in range(1, n):  # iterate from 1 to n-1\n        for num in nums:  \n            if i % num == 0 and i not in multiples:  # check if multiple of each number and is not already in the set\n                multiples.add(i)                     # add to the set if it's a unique multiple\n    return sum(multiples)                            # calculate and return the sum of all numbers in the set",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmp4qyzoxud\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_sum_of_multiples PASSED                                    [100%]Running teardown with pytest sessionfinish...\n\n\n============================== 1 passed in 0.01s ===============================\n",
+      "timestamp": "2025-07-09T19:51:28.740990"
+    },
+    {
+      "model": "deepseek-coder:6.7b-instruct",
+      "exercise": "hamming",
+      "language": "python",
+      "success": true,
+      "execution_time": 15.279252052307129,
+      "token_count": 99,
+      "error_message": null,
+      "generated_code": "def hamming_distance(dna1, dna2):\n    if len(dna1) != len(dna2):\n        raise ValueError(\"Strands must be of equal length\")\n    \n    return sum(x != y for x, y in zip(dna1, dna2))",
+      "test_output": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/rcsen/Documents/summer_of_bitcoin/Bitcoin-AI/venv/bin/python3\ncachedir: .pytest_cache\nrootdir: /tmp/tmptmgt95j3\nplugins: xdist-3.7.0, deepeval-3.2.2, rerunfailures-12.0, anyio-4.9.0, repeat-0.9.4, asyncio-1.0.0\nasyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntest.py::test_hamming PASSED                                             [100%]Running teardown with pytest sessionfinish...\n\n\n============================== 1 passed in 0.01s ===============================\n",
+      "timestamp": "2025-07-09T19:51:47.752761"
+    }
+  ]
+}
